@@ -40,7 +40,7 @@
 	<flap0 start="0.0" end="0.52" lift="1.6" drag="2.1" />
 	<flap1 start="0.53" end="0.825" lift="1.2" drag="1.4" />
 	<slat start="0.0" end="0.85" aoa="3.0" drag="1.1" />
-	<spoiler start="0.03" end="0.45" lift="1.0" drag="2.1" />
+	<spoiler start="0.03" end="0.45" lift="0.5" drag="2.1" />
 	<control-input axis="/controls/flight/flaps" control="FLAP0"/>
 	<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
 	<control-input axis="/surface-positions/flap-pos-norm" control="SLAT" src0="0" dst0="0" src1="0.1428" dst1="1.0"/>
