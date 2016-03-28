@@ -42,40 +42,6 @@
             </orientation-->
         </engine>
         <engine>
-            <name>Engine 1 sound 2 external</name>
-            <path>Aircraft/MD-11/Sounds/jet.wav</path>
-            <mode>looped</mode>
-            <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[0]/rpm</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
-            </condition>
-            <volume>
-                <property>engines/engine[0]/rpm</property>
-                <offset>0</offset>
-                <factor>0.05</factor>
-            </volume>
-            <pitch>
-                <property>engines/engine[0]/rpm</property>
-                <offset>0</offset>
-                <factor>0.01</factor>
-            </pitch>
-            <!--orientation>
-                <x>1</x>
-                <y>0</y>
-                <z>0</z>
-                <inner-angle>75</inner-angle>
-                <outer-angle>210</outer-angle>
-                <outer-gain>0.1</outer-gain>
-            </orientation-->
-        </engine>
-        <engine>
             <name>Engine 1 reverse thrust</name>
             <path>Sounds/exhaust_loop.wav</path>
             <mode>looped</mode>
@@ -136,40 +102,6 @@
             </orientation-->
         </engine>
         <engine>
-            <name>Engine 2 sound 2 external</name>
-            <path>Aircraft/MD-11/Sounds/jet.wav</path>
-            <mode>looped</mode>
-            <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[1]/rpm</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
-            </condition>
-            <volume>
-                <property>engines/engine[1]/rpm</property>
-                <offset>0</offset>
-                <factor>0.05</factor>
-            </volume>
-            <pitch>
-                <property>engines/engine[1]/rpm</property>
-                <offset>0</offset>
-                <factor>0.01</factor>
-            </pitch>
-            <!--orientation>
-                <x>1</x>
-                <y>0</y>
-                <z>0</z>
-                <inner-angle>75</inner-angle>
-                <outer-angle>210</outer-angle>
-                <outer-gain>0.1</outer-gain>
-            </orientation-->
-        </engine>
-        <engine>
             <name>Engine 2 reverse thrust</name>
             <path>Sounds/exhaust_loop.wav</path>
             <mode>looped</mode>
@@ -222,40 +154,6 @@
             </pitch>
             <!--orientation>
                 <x>-1</x>
-                <y>0</y>
-                <z>0</z>
-                <inner-angle>75</inner-angle>
-                <outer-angle>210</outer-angle>
-                <outer-gain>0.1</outer-gain>
-            </orientation-->
-        </engine>
-        <engine>
-            <name>Engine 2 sound 3 external</name>
-            <path>Aircraft/MD-11/Sounds/jet.wav</path>
-            <mode>looped</mode>
-            <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[2]/rpm</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
-            </condition>
-            <volume>
-                <property>engines/engine[2]/rpm</property>
-                <offset>0</offset>
-                <factor>0.05</factor>
-            </volume>
-            <pitch>
-                <property>engines/engine[2]/rpm</property>
-                <offset>0</offset>
-                <factor>0.01</factor>
-            </pitch>
-            <!--orientation>
-                <x>1</x>
                 <y>0</y>
                 <z>0</z>
                 <inner-angle>75</inner-angle>
