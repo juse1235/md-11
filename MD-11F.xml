@@ -37,8 +37,8 @@
 
     <wing x="-1.08" y="3.0" z="4.235" length="28.06" chord="12.0" sweep="35.0" taper="0.31" camber="0.20" dihedral="6.4" incidence="3.2" twist="-2.9" idrag="1.7">
 	<stall aoa="8.6" width="5" peak="0.8" />
-	<flap0 start="0.0" end="0.52" lift="1.5" drag="2.2" />
-	<flap1 start="0.53" end="0.825" lift="1.1" drag="1.5" />
+ 	<flap0 start="0.0" end="0.52" lift="1.6" drag="2.1" />
+ 	<flap1 start="0.53" end="0.825" lift="1.2" drag="1.4" />
 	<slat start="0.0" end="0.85" aoa="3.0" drag="1.1" />
 	<spoiler start="0.03" end="0.45" lift="0.5" drag="1.6" />
 	<control-input axis="/controls/flight/flaps" control="FLAP0"/>
