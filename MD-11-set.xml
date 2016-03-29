@@ -5,7 +5,7 @@
 
     <sim>
 	<description>Boeing/McDonnell Douglas MD-11</description>
-	<flight-model>yasim</flight-model>
+	<flight-model>jsb</flight-model>
 	<aero>MD-11</aero>
 	<startup>
             <splash-texture>Aircraft/MD-11/splash.png</splash-texture>
