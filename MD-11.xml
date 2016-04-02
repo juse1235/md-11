@@ -9,6 +9,8 @@
 Models        </description>
         <version> 0.1 </version>
         <reference refID="" author="MD-11.ORG" title="http://www.md-11.org/md11/Fuel%20Panel.pdf" date=""/>
+        <reference refID="" author="Wikipedia contributors" title="https://en.wikipedia.org/wiki/McDonnell_Douglas_MD-11" date=""/>
+        <reference refID="" author="Wikipedia contributors" title="https://en.wikipedia.org/wiki/General_Electric_CF6" date=""/>
     </fileheader>
 
     <metrics>
@@ -119,7 +121,7 @@ Models        </description>
             <damping_coeff unit="LBS/FT/SEC"> 602 </damping_coeff>
             <max_steer unit="DEG"> 0 </max_steer>
             <brake_group> NONE </brake_group>
-            <retractable> 1 </retractable>
+            <retractable> 0 </retractable>
         </contact>
         <contact type="STRUCTURE" name="RIGHT_WING">
             <location unit="FT">
@@ -134,7 +136,7 @@ Models        </description>
             <damping_coeff unit="LBS/FT/SEC"> 602 </damping_coeff>
             <max_steer unit="DEG"> 0 </max_steer>
             <brake_group> NONE </brake_group>
-            <retractable> 1 </retractable>
+            <retractable> 0 </retractable>
         </contact>
         <contact type="BOGEY" name="TAIL">
             <location unit="FT">
@@ -149,7 +151,37 @@ Models        </description>
             <damping_coeff unit="LBS/FT/SEC"> 0 </damping_coeff>
             <max_steer unit="DEG"> 0 </max_steer>
             <brake_group> NONE </brake_group>
-            <retractable> 1 </retractable>
+            <retractable> 0 </retractable>
+        </contact>
+        <contact type="BOGEY" name="LEFT_ENGINE">
+            <location unit="FT">
+                <x> -11.9123 </x>
+                <y> -26.9476 </y>
+                <z> 6.9169 </z>
+            </location>
+            <static_friction> 0 </static_friction>
+            <dynamic_friction> 0 </dynamic_friction>
+            <rolling_friction> 0 </rolling_friction>
+            <spring_coeff unit="N/M"> 0 </spring_coeff>
+            <damping_coeff unit="N/M/SEC"> 0 </damping_coeff>
+            <max_steer unit="DEG"> 0 </max_steer>
+            <brake_group> NONE </brake_group>
+            <retractable> 0 </retractable>
+        </contact>
+        <contact type="BOGEY" name="RIGHT_ENGINE">
+            <location unit="FT">
+                <x> -11.9123 </x>
+                <y> 26.9476 </y>
+                <z> 6.9169 </z>
+            </location>
+            <static_friction> 0 </static_friction>
+            <dynamic_friction> 0 </dynamic_friction>
+            <rolling_friction> 0 </rolling_friction>
+            <spring_coeff unit="N/M"> 0 </spring_coeff>
+            <damping_coeff unit="N/M/SEC"> 0 </damping_coeff>
+            <max_steer unit="DEG"> 0 </max_steer>
+            <brake_group> NONE </brake_group>
+            <retractable> 0 </retractable>
         </contact>
     </ground_reactions>
 
