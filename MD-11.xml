@@ -28,9 +28,9 @@ Models        </description>
             <z> 0 </z>
         </location>
         <location name="EYEPOINT" unit="IN">
-            <x> 169.81 </x>
-            <y> -30 </y>
-            <z> 75 </z>
+            <x> 0 </x>
+            <y> 0 </y>
+            <z> 0 </z>
         </location>
         <location name="VRP" unit="IN">
             <x> 0 </x>
@@ -47,63 +47,63 @@ Models        </description>
         <iyz unit="KG*M2">0</iyz>
         <ixy unit="KG*M2">0</ixy>
         <emptywt unit="LBS">283975</emptywt>
-        <location name="CG" unit="IN">
-            <x>1334.26</x>
+        <location name="CG" unit="FT">
+            <x>75</x>
             <y>0</y>
-            <z>-60.65</z>
+            <z>30</z>
         </location>
         <pointmass name="Payload">
-            <weight unit="LBS">-141788</weight>
-            <location unit="IN">
-                <x>1334.26</x>
+            <weight unit="LBS">141788</weight>
+            <location unit="FT">
+                <x>-50</x>
                 <y>0</y>
-                <z>-60.65</z>
+                <z>30</z>
             </location>
         </pointmass>
     </mass_balance>
 
     <ground_reactions>
         <contact type="BOGEY" name="NOSE">
-            <location unit="FT">
-                <x> -67.9894 </x>
-                <y> -1.46433 </y>
-                <z> 2.6178 </z>
+            <location unit="M">
+                <x> -21 </x>
+                <y> 0 </y>
+                <z> 0 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 180.6 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 301 </damping_coeff>
+            <spring_coeff unit="LBS/FT"> 602500 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 30000 </damping_coeff>
             <max_steer unit="DEG"> 60 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable> 1 </retractable>
         </contact>
         <contact type="BOGEY" name="LEFT_MAIN">
-            <location unit="FT">
-                <x> 10.1853 </x>
-                <y> -19.3698 </y>
-                <z> 1.87456 </z>
+            <location unit="M">
+                <x> 35 </x>
+                <y> -5 </y>
+                <z> 0 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 602 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 301 </damping_coeff>
+            <spring_coeff unit="LBS/FT"> 602500 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 30000 </damping_coeff>
             <max_steer unit="DEG"> 0 </max_steer>
             <brake_group> LEFT </brake_group>
             <retractable> 1 </retractable>
         </contact>
         <contact type="BOGEY" name="RIGHT_MAIN">
-            <location unit="FT">
-                <x> 10.1853 </x>
-                <y> 19.3698 </y>
-                <z> 1.8756 </z>
+            <location unit="M">
+                <x> 35 </x>
+                <y> 5 </y>
+                <z> 0 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 602 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 301 </damping_coeff>
+            <spring_coeff unit="LBS/FT"> 602500 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 30000 </damping_coeff>
             <max_steer unit="DEG"> 0 </max_steer>
             <brake_group> RIGHT </brake_group>
             <retractable> 1 </retractable>
@@ -112,7 +112,7 @@ Models        </description>
             <location unit="FT">
                 <x> 44.5381 </x>
                 <y> -84.1225 </y>
-                <z> 17.6625 </z>
+                <z> -17.6625 </z>
             </location>
             <static_friction> 1 </static_friction>
             <dynamic_friction> 1 </dynamic_friction>
@@ -127,7 +127,7 @@ Models        </description>
             <location unit="FT">
                 <x> 44.5381 </x>
                 <y> 84.1225 </y>
-                <z> 17.6625 </z>
+                <z> -17.6625 </z>
             </location>
             <static_friction> 1 </static_friction>
             <dynamic_friction> 1 </dynamic_friction>
@@ -142,7 +142,7 @@ Models        </description>
             <location unit="FT">
                 <x> 95.9229 </x>
                 <y> -0.19364 </y>
-                <z> 22.5383 </z>
+                <z> -22.5383 </z>
             </location>
             <static_friction> 0 </static_friction>
             <dynamic_friction> 0 </dynamic_friction>
@@ -157,7 +157,7 @@ Models        </description>
             <location unit="FT">
                 <x> -11.9123 </x>
                 <y> -26.9476 </y>
-                <z> 6.9169 </z>
+                <z> -6.9169 </z>
             </location>
             <static_friction> 0 </static_friction>
             <dynamic_friction> 0 </dynamic_friction>
@@ -172,7 +172,7 @@ Models        </description>
             <location unit="FT">
                 <x> -11.9123 </x>
                 <y> 26.9476 </y>
-                <z> 6.9169 </z>
+                <z> -6.9169 </z>
             </location>
             <static_friction> 0 </static_friction>
             <dynamic_friction> 0 </dynamic_friction>
