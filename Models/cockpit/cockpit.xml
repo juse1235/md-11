@@ -606,6 +606,12 @@
 		<type>pick</type>
 		<object-name>yoke.autodsg</object-name>
 		<action>
+			<fx>
+			  <apoff>
+				<name>apoff</name>
+				<path>Sounds/apoff.wav</path>
+			  </apoff>
+			</fx>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
