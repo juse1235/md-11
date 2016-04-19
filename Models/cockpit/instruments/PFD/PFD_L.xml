@@ -427,7 +427,6 @@ Syd Adams
         </axis>
     </animation>
 
-
     <animation>
         <type>rotate</type>
         <object-name>Roll.needle</object-name>
@@ -479,7 +478,7 @@ Syd Adams
     <animation>
         <type>texrotate</type>
         <object-name>Hsi</object-name>
-        <property>instrumentation/afds/inputs/reference-deg</property>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
         <center>
             <x>0.75</x>
             <y>0.75</y>
