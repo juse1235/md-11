@@ -35,17 +35,10 @@
 	<animation>
 		<type>material</type>
 		<object-name>LCD</object-name>
-		<condition>
-			<greater-than-equals>
-				<property>systems/electrical/outputs/standby-instrument</property>
-				<value>15</value>
-			</greater-than-equals>
-		</condition>
 		<emission>
 			<red>1</red>
-			<green>0.965</green>
-			<blue>0.42</blue>
-			<factor-prop>instrumentation/standby/brightness-norm</factor-prop>
+			<green>1</green>
+			<blue>1</blue>
 		</emission>
 	</animation>
 

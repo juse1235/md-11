@@ -174,7 +174,7 @@
     <!-- Redistribute the mass toward the nose -->
     <ballast x="25.0" y="0.0" z="2.3" mass="50000.0" />
     <!-- Weight of the main landing gear assemblies (approx.) -->
-    <ballast x="-8.8" y="0.0" z="2.3" mass="150000.0" />
+    <ballast x="-8.8" y="0.0" z="2.3" mass="160000.0" />
 
     <!-- Payload information from http://www.acp-logistics.com/DC-10-charter-mcdonnell-douglas.html -->
     <!-- Crew -->
