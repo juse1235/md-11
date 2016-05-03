@@ -10,7 +10,7 @@
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label> Autopilot Control</label>
+            <label>MD-11 Autopilot Control</label>
         </text>
         <button>
             <halign>right</halign>
