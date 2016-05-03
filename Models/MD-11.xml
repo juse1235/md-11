@@ -930,7 +930,7 @@
 				<animation>
 		<type>rotate</type>
 		<object-name>elevator.1</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
+		<property>/controls/flight/elevator</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>25.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -949,7 +949,7 @@
 					<animation>
 		<type>rotate</type>
 		<object-name>elevator.2</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
+		<property>/controls/flight/elevator</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>-25.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -965,7 +965,7 @@
 		</axis>
 	</animation>
 	
-		<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>HorzStab1</object-name>
 		<object-name>HorzStab2</object-name>

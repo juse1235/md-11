@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>FedEx</name>
-				<texture>Liveries/MD-11F/FED.png</texture>
+				<texture>FED.png</texture>
 			</livery>
 		</model>
 	</sim>

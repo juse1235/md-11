@@ -578,6 +578,7 @@ controls.toggleLandingLights = func()
 var Startup = func{
     setprop("sim/model/armrest",1);
     balance_fuel();
+	setprop("controls/switches/emgpwr", 1);
     setprop("controls/fuel/auto-manage",1);
     setprop("consumables/fuel/tank[0]/selected",1);
     setprop("consumables/fuel/tank[1]/selected",1);
@@ -624,6 +625,7 @@ var Startup = func{
 var Shutdown = func{
     setprop("controls/electric/APU-generator",0);
     setprop("systems/electrical/outputs/avionics",0);
+	setprop("controls/switches/emgpwr", 0);
     setprop("controls/electric/battery-switch",0);
     setprop("controls/electric/inverter-switch",0);
     setprop("controls/lighting/instruments-norm",0);
