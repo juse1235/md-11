@@ -18,7 +18,7 @@
 		<condition>
 <greater-than>
     <property>engines/engine[0]/n2rpm</property>
-    <value>10</value>
+    <value>1</value>
 </greater-than>
 </condition>
 	</animation>
@@ -138,7 +138,7 @@
 		<condition>
 <greater-than>
     <property>engines/engine[1]/n2rpm</property>
-    <value>10</value>
+    <value>1</value>
 </greater-than>
 </condition>
 	</animation>
@@ -258,7 +258,7 @@
 		<condition>
 <greater-than>
     <property>engines/engine[2]/n2rpm</property>
-    <value>10</value>
+    <value>1</value>
 </greater-than>
 </condition>
 	</animation>

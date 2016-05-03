@@ -11,9 +11,9 @@ var autobrakes = {
 	m = { parents : [autobrakes] };
 
 	m.mode = props.globals.initNode("autopilot/autobrake/step",0,"INT");
-	m.touchdown = props.globals.getNode("gear/gear[3]/wow",1);
+	m.touchdown = props.globals.getNode("gear/gear[2]/wow",1);
 	m.nlg = props.globals.getNode("gear/gear/wow",1);
-	m.rollspeed = props.globals.getNode("gear/gear[3]/rollspeed-ms",1);
+	m.rollspeed = props.globals.getNode("gear/gear[2]/rollspeed-ms",1);
 
 	m.brake_left = props.globals.getNode("controls/gear/brake-left",1);
 	m.brake_right = props.globals.getNode("controls/gear/brake-right",1);
@@ -105,7 +105,7 @@ var autobrakes = {
 	if (me.mode.getValue() > 0) {
 	    if (abl_arm == 0) {
 		abl_arm = 1;
-		me.td = setlistener("gear/gear[3]/wow", func {
+		me.td = setlistener("gear/gear[2]/wow", func {
 		    if (me.touchdown.getBoolValue())
 			settimer(func me.auto_brake(),1);
 		},0,0);

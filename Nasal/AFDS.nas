@@ -536,7 +536,7 @@ var AFDS = {
 			wpt_eta = abs(wpt_eta * math.cos(brg_err));
 		    }
 
-		    if((getprop("gear/gear[1]/wow") == 0) and (getprop("gear/gear[2]/wow") == 0)) {
+		    if((getprop("gear/gear[1]/wow") == 0) and (getprop("gear/gear[1]/wow") == 0)) {
 		    	if(change_wp > 180) change_wp = (360 - change_wp);
 		    	if (((me.heading_change_rate * change_wp) > wpt_eta) or (wpt_eta < wp_lead)) {
 			    if(atm_wpt < (max_wpt - 1)) {

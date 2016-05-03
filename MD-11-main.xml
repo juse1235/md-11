@@ -160,8 +160,6 @@
                 <float n="1" alias="/gear/gear[1]/compression-m"/>
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[3]/compression-m"/>
-                <float n="4" alias="/gear/gear[4]/compression-m"/>
-                <float n="5" alias="/gear/gear[5]/compression-m"/>
                 <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
                 <float n="7" alias="/surface-positions/reverser-norm"/>
                 <string  alias="/sim/multiplay/callsign"/>
@@ -270,7 +268,7 @@
         </engine>
     </engines>
     
-        <gear n="0">
+    <gear n="0">
         <gear n="0">
             <tyre-smoke type="bool">0</tyre-smoke>
             <sprayspeed-ms type="double">0</sprayspeed-ms>
@@ -288,16 +286,6 @@
             <spray-density type="double">0</spray-density>
         </gear>
         <gear n="3">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
-        <gear n="4">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
-        <gear n="5">
             <tyre-smoke type="bool">0</tyre-smoke>
             <sprayspeed-ms type="double">0</sprayspeed-ms>
             <spray-density type="double">0</spray-density>

@@ -49,6 +49,17 @@
 </model>
 
 <model>
+	<name>stby-alt</name>
+	<path>Aircraft/MD-11/Models/cockpit/instruments/stby-alt/stby-alt.xml</path>
+			<offsets>
+      <x-m>-27.473</x-m>
+      <y-m>-0.047</y-m>
+      <z-m>6.7501</z-m>
+			<pitch-deg>-20.12</pitch-deg>
+		</offsets>
+</model>
+
+<model>
 	<name>brakes</name>
 	<path>Aircraft/MD-11/Models/cockpit/instruments/brakes/brakes.xml</path>
 			<offsets>

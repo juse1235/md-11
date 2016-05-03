@@ -1,4 +1,4 @@
-#777 systems
+#MD-11 systems
 #Syd Adams
 #
 var SndOut = props.globals.getNode("sim/sound/Ovolume",1);
@@ -1151,10 +1151,10 @@ var update_systems = func {
     if(getprop("controls/gear/gear-down")){
         setprop("sim/multiplay/generic/float[0]",getprop("gear/gear[0]/compression-m"));
         setprop("sim/multiplay/generic/float[1]",getprop("gear/gear[1]/compression-m"));
-        setprop("sim/multiplay/generic/float[2]",getprop("gear/gear[2]/compression-m"));
-        setprop("sim/multiplay/generic/float[3]",getprop("gear/gear[3]/compression-m"));
-        setprop("sim/multiplay/generic/float[4]",getprop("gear/gear[4]/compression-m"));
-        setprop("sim/multiplay/generic/float[5]",getprop("gear/gear[5]/compression-m"));
+        setprop("sim/multiplay/generic/float[2]",getprop("gear/gear[1]/compression-m"));
+        setprop("sim/multiplay/generic/float[3]",getprop("gear/gear[2]/compression-m"));
+        setprop("sim/multiplay/generic/float[4]",getprop("gear/gear[2]/compression-m"));
+        setprop("sim/multiplay/generic/float[5]",getprop("gear/gear[3]/compression-m"));
     }
 
     var et_tmp = getprop("instrumentation/clock/ET-sec");

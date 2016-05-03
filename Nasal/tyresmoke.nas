@@ -25,8 +25,8 @@ setlistener("gear/gear[1]/position-norm", func {
 	}
 },1,0);
 
-setlistener("gear/gear[2]/position-norm", func {
-	var gear = getprop("gear/gear[2]/position-norm");
+setlistener("gear/gear[1]/position-norm", func {
+	var gear = getprop("gear/gear[1]/position-norm");
 	if (gear == 1 ){
 		run_tyresmoke2 = 1;
 	}else{

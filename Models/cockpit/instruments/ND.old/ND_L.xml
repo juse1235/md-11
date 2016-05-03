@@ -1,10 +1,10 @@
 <!--
-MD-11 Navigation display
+777 Navigation display
 -->
 
 <PropertyList>
 
-<path>ND_R.ac</path>
+<path>ND_L.ac</path>
     <animation>
         <type>select</type>
         <object-name>Power.off</object-name>
@@ -18,7 +18,7 @@ MD-11 Navigation display
 
     <animation>
         <type>select</type>
-        <object-name>ND.screenR</object-name>
+        <object-name>ND.screenL</object-name>
         <condition>
             <greater-than>
                 <property>systems/electrical/outputs/efis</property>
@@ -29,13 +29,13 @@ MD-11 Navigation display
 
 <animation>
 	<type>pick</type>
-	<object-name>ND.screenR</object-name>
+	<object-name>ND.screenL</object-name>
 	<action>
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>MD11.showNd("fo");</script>
+			<script>MD11.showNd();</script>
 		</binding>
 	</action>
 </animation>

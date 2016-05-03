@@ -67,10 +67,10 @@
 					<value>50</value>
 				</less-than>
 				<not>
-					<property>gear/gear[2]/wow</property>
+					<property>gear/gear[1]/wow</property>
 				<not>
 				</not>
-					<property>gear/gear[3]/wow</property>
+					<property>gear/gear[2]/wow</property>
 				</not>
 				<not>
 					<property>autopilot/autoland/rollout-phase</property>
@@ -84,8 +84,8 @@
 		<input>
 			<and>
 				<property>autopilot/autoland/engaged</property>
+				<property>gear/gear[1]/wow</property>
 				<property>gear/gear[2]/wow</property>
-				<property>gear/gear[3]/wow</property>
 				<not>
 					<property>gear/gear[0]/wow</property>
 				</not>
