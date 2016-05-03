@@ -119,6 +119,7 @@ var AFDS = {
 		    me.AP.setBoolValue(1);
 			me.at1.setBoolValue(1);
 			me.at2.setBoolValue(1);
+			setprop("controls/switches/apoffsound", 0)
     },
 
 ####    Yoke AP Disconnect Button    ####
@@ -308,7 +309,7 @@ var AFDS = {
         if(hdgoffset > 180) hdgoffset +=-360;
         setprop("autopilot/internal/fdm-heading-bug-error-deg",hdgoffset);
 
-	var radaralt = getprop("position/altitude-agl-ft");
+		var radaralt = getprop("position/altitude-agl-ft");
         if(radaralt < 200 and me.vertical_mode.getValue() == 6 and me.AP.getBoolValue()) {
 	    me.at1.setBoolValue(0);
 	    me.autoland.setBoolValue(1);
@@ -316,12 +317,20 @@ var AFDS = {
 	    me.autoland.setBoolValue(0);
 	}
         if (radaralt < 100) {
-	    me.at1.setBoolValue(0);
 	    if (!me.autoland.getBoolValue()) {
 		me.AP.setBoolValue(0);
 #		me.at2.setBoolValue(0);
-	    }
-	}
+			}
+		}
+		var apmodespdauto = getprop("instrumentation/afds/ap-modes/speed-mode");
+		var flapsett = getprop("surface-positions/flap-pos-norm");
+		if (radaralt < 100 and flapsett > 0.68 and apmodespdauto == "THRUST") {
+			setprop("autopilot/settings/target-speed-kt", 0);
+		}
+	
+		if (radaralt < 20) {
+		    me.at1.setBoolValue(0);
+		}
 
         if(me.step==0){ ### glideslope armed ?###
 #            msg="";
@@ -599,7 +608,8 @@ var afds = AFDS.new();
 
 setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_afds, 6);
-    print("AFDS System ... check");
+	setprop("controls/switches/apoffsound", 1);
+    print("AUTOFLIGHT ... FINE!");
 });
 
 var lim=30;

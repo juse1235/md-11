@@ -678,7 +678,7 @@
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
 	</text>
 	
-			<text>
+	<text>
 		<name>No smoking</name>
 		<offsets>
 			<x-m>0.0013</x-m>
@@ -694,12 +694,45 @@
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
 	</text>
+	<text>
+		<name>Seatbelts</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>0.064</y-m>
+			<z-m>-0.0541</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">SEATBELTS</format>
+		<property>autopilot/serviceable</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.006</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+
+	<text>
+		<name>CONFIG</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>0.064</y-m>
+			<z-m>-0.0741</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">CONFIG</format>
+		<property>autopilot/serviceable</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.006</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
 	
-	    <animation>
+	<animation>
 		<type>select</type>
 		<object-name>No smoking</object-name>
-    <condition>
-    <or>
+		<condition>
+			<or>
 					<equals>
     	    	        <property>controls/cabin/NoSmoking-knob</property>
 						<value>1</value>
@@ -708,8 +741,50 @@
     	    	        <property>controls/cabin/NoSmoking-knob</property>
 						<value>0</value>
 					</equals>
-					</or>
-    </condition>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Seatbelts</object-name>
+		<condition>
+			<or>
+				<equals>
+    	    	    <property>controls/cabin/SeatBelt-knob</property>
+					<value>1</value>
+				</equals>
+				<equals>
+    	    	    <property>controls/cabin/SeatBelt-knob</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>CONFIG</object-name>
+		<condition>
+			<less-than>
+				<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>120</value>
+			</less-than>
+			<or>
+				<less-than>
+    	    	    <property>surface-positions/flap-pos-norm</property>
+					<value>0.19</value>
+				</less-than>
+				<greater-than>
+    	    	    <property>surface-positions/flap-pos-norm</property>
+					<value>0.46</value>
+				</greater-than>
+				<equals>
+					<property>controls/flight/autospeedbrakes-armed</property>
+					<value>false</value>
+				</equals>
+			</or>
+		</condition>
 	</animation>
 	
     <animation>
@@ -921,6 +996,7 @@
 		<object-name>Fuel off 2</object-name>
 		<object-name>Fuel off 3</object-name>
 		<object-name>No smoking</object-name>
+		<object-name>Seatbelts</object-name>
         <emission>
             <red>0.51</red>
             <green>1.53</green>

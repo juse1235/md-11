@@ -5,6 +5,17 @@
 
 <PropertyList>
 	<!-- Because of the way this file is "included," the <fx> element is already present and need not be defined -->
+	
+  <apoff>
+   <name>apoff</name>
+   <path>/Aircraft/MD-11/Sounds/apoff.wav</path>
+   <condition>
+     <property>/controls/switches/apoffsound</property>
+   </condition>
+   <volume>
+    <factor>10.0</factor>
+   </volume>
+  </apoff>
 
 	<!-- Engine 1 sound -->
 	<engine>

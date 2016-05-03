@@ -606,12 +606,6 @@
 		<type>pick</type>
 		<object-name>yoke.autodsg</object-name>
 		<action>
-			<fx>
-			  <apoff>
-				<name>apoff</name>
-				<path>Sounds/apoff.wav</path>
-			  </apoff>
-			</fx>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
@@ -625,11 +619,11 @@
 				<value type="bool">false</value>
 			    </binding>
 			</mod-up>
-			<!--binding>
+			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/afds/inputs/AP</property>
-				<value>0</value>
-			</binding-->
+				<property>controls/switches/apoffsound</property>
+				<value>1</value>
+			</binding>
 			<binding>
 				<command>nasal</command>
 				<script>MD11.afds.APyokebtn(); controls.click(1);</script>

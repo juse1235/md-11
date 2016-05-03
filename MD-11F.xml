@@ -8,7 +8,7 @@
 	<control-setting axis="/controls/engines/engine[0]/throttle-act" value="0.3" />
 	<control-setting axis="/controls/engines/engine[1]/throttle-act" value="0.3" />
 	<control-setting axis="/controls/engines/engine[2]/throttle-act" value="0.3" />
-	<control-setting axis="/controls/flight/flaps" value="1.0" />
+	<control-setting axis="/controls/flight/flaps" value="0.70" />
 	<control-setting axis="/controls/flight/slats" value="1.0" />
 	<control-setting axis="/controls/gear/gear-down" value="1.0" />
 	<solve-weight idx="0" weight="600.0" />

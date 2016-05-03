@@ -1,11 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- McDonnell Douglas DC-10 -->
+<!-- McDonnell Douglas MD-11-->
 <!-- External sound configuration -->
 
 <PropertyList>
 
     <fx>
+	
+  <apoff>
+   <name>apoff</name>
+   <path>/Aircraft/MD-11/Sounds/apoff.wav</path>
+   <condition>
+     <property>/controls/switches/apoffsound</property>
+   </condition>
+   <volume>
+    <factor>10.0</factor>
+   </volume>
+  </apoff>
         <!-- Engine 1 sound -->
         <engine>
             <name>Engine 1 sound 1 external</name>
