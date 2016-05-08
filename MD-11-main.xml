@@ -40,6 +40,21 @@
 		<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 	    </config>
 	</view>
+	<view n="102">
+	    <name>Wing View</name>
+	    <type>lookfrom</type>
+	    <enabled type="bool">true</enabled>
+	    <internal type="bool" archive="y">true</internal>
+	    <config>
+		<from-model type="bool">true</from-model>
+		<x-offset-m archive="y">3.53</x-offset-m>
+		<y-offset-m archive="y">6.96</y-offset-m>
+		<z-offset-m archive="y">7.11</z-offset-m>
+		<default-field-of-view-deg type="double">97.4</default-field-of-view-deg>
+		<heading-offset-deg archive="y">250</heading-offset-deg>
+		<pitch-offset-deg archive="y">-5</pitch-offset-deg>
+	    </config>
+	</view>
 	<view n="100">
 	    <name>First Officer View</name>
 	    <type>lookfrom</type>
@@ -53,7 +68,7 @@
 		<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 	    </config>
 	</view>
-	<view n="101">
+	<view n="101"> 
 	    <name>Overhead Panel</name>
 	    <type>lookfrom</type>
 	    <enabled type="bool">true</enabled>

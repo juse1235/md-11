@@ -717,7 +717,7 @@
 		<type>rotate</type>
 		<object-name>AileronL1</object-name>
         <property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
 			<y1-m>-7.3613</y1-m>
@@ -737,7 +737,7 @@
 			</greater-than>
         </condition>
         <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>15</factor>
+        <factor>5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>-22.7524</y1-m>
@@ -753,7 +753,7 @@
 		<type>rotate</type>
 		<object-name>AileronR1</object-name>
         <property>surface-positions/right-aileron-pos-norm</property>
-		<factor>30</factor>
+		<factor>10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
 			<y1-m>7.3613</y1-m>
@@ -774,7 +774,7 @@
 			</greater-than>
         </condition>
         <property>surface-positions/right-aileron-pos-norm</property>
-        <factor>-15</factor>
+        <factor>-5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>22.7524</y1-m>
