@@ -1370,7 +1370,7 @@
 			
 			<volume>
 				<property>sim/sound/other/inside</property>
-				<factor>2</factor>
+				<factor>1.4</factor>
 				<offset>0.1</offset>
 			</volume>
 		</misc>
