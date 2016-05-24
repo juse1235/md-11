@@ -237,6 +237,9 @@
             <property-rule n="101">
                 <path>Aircraft/MD-11/Systems/MD11-PFD.xml</path>
             </property-rule>
+			<property-rule n="102">
+                <path>Sounds/MD11-sound-variables.xml</path>
+            </property-rule>
         </systems>
         
         <instrumentation>
@@ -245,7 +248,7 @@
 
 	
         <sound>
-	    <path>Aircraft/MD-11/Sounds/MD-11-external-sound.xml</path>
+	    <path>Aircraft/MD-11/Sounds/MD11-sound.xml</path>
             <stall type="bool">0</stall>
             <click1 type="bool">0</click1>
             <click2 type="bool">0</click2>
