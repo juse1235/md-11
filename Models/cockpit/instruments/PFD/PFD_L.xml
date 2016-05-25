@@ -374,7 +374,7 @@ Syd Adams
         </condition>
     </animation-->
 
-    <animation>
+    <!--animation>
         <object-name>fl1-text</object-name>
         <property>instrumentation/pfd/fl1-diff</property>
         <type>translate</type>
@@ -429,7 +429,7 @@ Syd Adams
         <condition>
 	    <property>instrumentation/weu/state/fl15-on</property>
 	</condition>
-    </animation>
+    </animation-->
 
     <animation>
         <object-name>SpeedTarget</object-name>
@@ -1636,9 +1636,9 @@ Syd Adams
         <object-name>vr-text</object-name>
         <object-name>v2-text</object-name>
         <object-name>flap-text</object-name>
-        <object-name>fl1-text</object-name>
+        <!--object-name>fl1-text</object-name>
         <object-name>fl5-text</object-name>
-        <object-name>fl15-text</object-name>
+        <object-name>fl15-text</object-name-->
         <emission>
             <red>0</red>
             <green>0.8</green>
