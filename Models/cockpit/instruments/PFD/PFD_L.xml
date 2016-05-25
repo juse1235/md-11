@@ -2182,7 +2182,7 @@ Syd Adams
             <width type="int">32</width>
             <height type="int">32</height>
         </font-resolution>
-    </text-->
+    </text>
     <text>
         <name>flap-text</name>
         <offsets>
@@ -2258,7 +2258,7 @@ Syd Adams
             <width type="int">32</width>
             <height type="int">32</height>
         </font-resolution>
-    </text>
+    </text-->
 
 
     <animation>
