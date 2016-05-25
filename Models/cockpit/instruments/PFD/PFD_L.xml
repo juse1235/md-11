@@ -90,11 +90,6 @@ Syd Adams
         <type>select</type>
         <object-name>SPD-THRUST</object-name>
         <condition>
-		<and>
-        <less-than>
-		<property>instrumentation/afds/ap-modes/mode-annunciator</property>
-		<value>A/P</value>
-	    </less-than>
 		<or>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
@@ -117,7 +112,6 @@ Syd Adams
 		<value></value>
 		</equals>
 		</or>
-		</and>
         </condition>
     </animation>
 	
