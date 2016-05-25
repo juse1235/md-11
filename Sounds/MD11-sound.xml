@@ -1363,9 +1363,10 @@
 			<mode>looped</mode>
 			<path>FL2070/11_cockpit.wav</path>
 			<condition>
-				<!--
-				
-				-->
+			<greater-than>
+            <property>systems/electrical/outputs/efis</property>
+            <value>1</value>
+			</greater-than>
 			</condition>
 			
 			<volume>
