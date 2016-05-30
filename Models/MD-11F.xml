@@ -1726,7 +1726,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.outer</object-name>
-		<property>controls/flight/speedbrake-angle</property>
+		<property>surface-positions/speedbrake-pos-norm</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1758,7 +1758,7 @@
 		<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.inner</object-name>
-		<property>controls/flight/speedbrake-angle</property>
+		<property>surface-positions/speedbrake-pos-norm</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1790,7 +1790,7 @@
 			<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.outer</object-name>
-		<property>controls/flight/speedbrake-angle</property>
+		<property>surface-positions/speedbrake-pos-norm</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1822,7 +1822,7 @@
 			<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.inner</object-name>
-		<property>controls/flight/speedbrake-angle</property>
+		<property>surface-positions/speedbrake-pos-norm</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
