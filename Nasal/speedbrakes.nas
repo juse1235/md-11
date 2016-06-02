@@ -78,11 +78,9 @@ var spoilers = {
 	    me.pos_cmd.setValue(0.750);
 	    setprop("controls/flight/speedbrake-lever", 3);
 		var spdbrkpos = getprop("controls/flight/speedbrake-lever");
-		if (spdbrkpos == 3) {
-			if (getprop("gear/gear[0]/wow")) {
+		if (getprop("gear/gear[0]/wow")) {
 			me.pos_cmd.setValue(1.0);
 			setprop("controls/flight/speedbrake-lever", 4);
-			}
 		}
 	}
     },
