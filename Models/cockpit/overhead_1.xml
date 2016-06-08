@@ -1595,7 +1595,7 @@ FSC.btn
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/landing-light-port</property>
+                <property>controls/lighting/landing-light</property>
             </binding>
             <binding>
                 <command>nasal</command>
@@ -1607,7 +1607,7 @@ FSC.btn
 	<animation>
         <type>rotate</type>
         <object-name>L-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light-port</property>
+        <property>controls/lighting/landing-light</property>
         <factor>30</factor>
         <center>
             <x-m>-21.7985</x-m>
@@ -1629,7 +1629,7 @@ FSC.btn
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/landing-light-stbd</property>
+                <property>controls/lighting/landing-light[2]</property>
             </binding>
             <binding>
                 <command>nasal</command>
@@ -1641,7 +1641,7 @@ FSC.btn
 	<animation>
         <type>rotate</type>
         <object-name>R-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light-stbd</property>
+        <property>controls/lighting/landing-light[2]</property>
         <factor>30</factor>
         <center>
             <x-m>-21.7985</x-m>
@@ -1663,7 +1663,7 @@ FSC.btn
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/landing-light-nose[1]</property>
+                <property>controls/lighting/landing-light[1]</property>
             </binding>
             <binding>
                 <command>nasal</command>
@@ -1675,7 +1675,7 @@ FSC.btn
 	<animation>
         <type>rotate</type>
         <object-name>C-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light-nose[1]</property>
+        <property>controls/lighting/landing-light[1]</property>
         <factor>30</factor>
         <center>
             <x-m>-21.7985</x-m>
