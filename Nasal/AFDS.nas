@@ -119,7 +119,6 @@ var AFDS = {
 		    me.AP.setBoolValue(1);
 			me.at1.setBoolValue(1);
 			me.at2.setBoolValue(1);
-			setprop("controls/switches/apoffsound", 0)
     },
 
 ####    Yoke AP Disconnect Button    ####
@@ -608,7 +607,15 @@ var afds = AFDS.new();
 
 setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_afds, 6);
-	setprop("controls/switches/apoffsound", 1);
+    var APlisten = func {
+	setlistener("instrumentation/afds/inputs/AP", func {
+	    if (!getprop("instrumentation/afds/inputs/AP")) {
+		setprop("controls/switches/apoffsound", 1);
+		settimer(func{setprop("controls/switches/apoffsound",0)},3);
+	    }
+	},0,0);
+    }
+    settimer(APlisten,3);
     print("AUTOFLIGHT ... Check!");
 });
 

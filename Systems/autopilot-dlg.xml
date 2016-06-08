@@ -899,11 +899,6 @@
 		<property>instrumentation/afds/inputs/AP</property>
 		<value>0</value>
 	    </binding>
-	    <binding>
-		<command>property-assign</command>
-		<property>controls/switches/apoffsound</property>
-		<value>1</value>
-	    </binding>
 	</button>
 	<button>
 	    <pref-width>60</pref-width>

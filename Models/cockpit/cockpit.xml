@@ -620,11 +620,6 @@
 			    </binding>
 			</mod-up>
 			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/apoffsound</property>
-				<value>1</value>
-			</binding>
-			<binding>
 				<command>nasal</command>
 				<script>MD11.afds.APyokebtn(); controls.click(1);</script>
 			</binding>
