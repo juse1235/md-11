@@ -245,6 +245,14 @@ var AFDS = {
         if((disabled)and(output==0)){output = 1;me.AP.setValue(0);}
         setprop("autopilot/internal/target-pitch-deg",getprop("orientation/pitch-deg"));
         setprop("autopilot/internal/target-roll-deg",0);
+	if (output == 0) {
+            if (abs(getprop("/velocities/vertical-speed-fps")*60) < 300) {
+		if (me.vertical_mode.getValue() == 0) me.input(1,1);
+	    } else {
+		if (me.vertical_mode.getValue() == 0) me.input(1,2);
+	    }
+	    if (me.lateral_mode.getValue() == 0) me.input(0,2);
+	}
         me.AP_passive.setValue(output);
     },
 ###################
