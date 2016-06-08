@@ -162,14 +162,6 @@
                 <type>float</type>
                 <property type="string">gear/gear[3]/compression-m</property>
             </signal>
-            <signal>
-                <type>float</type>
-                <property type="string">gear/gear[4]/compression-m</property>
-            </signal>
-            <signal>
-                <type>float</type>
-                <property type="string">gear/gear[5]/compression-m</property>
-            </signal>
 
             <signal>
                 <type>float</type><property type="string">controls/gear/nosegear-steering-cmd-norm</property>

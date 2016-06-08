@@ -674,7 +674,7 @@
     </input>
     <reference>
       <prop>/autopilot/settings/vertical-speed-fpm</prop>
-      <scale>0.01666666</scale>
+      <scale>0.01888888</scale>
     </reference>
     <output>
       <prop>/autopilot/internal/target-pitch-deg</prop>
@@ -682,7 +682,7 @@
     </output>
     <config>
       <!--Ts>0.05</Ts--> 
-      <Kp>0.01</Kp>
+      <Kp>0.08</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
@@ -913,5 +913,37 @@
                 <input>controls/gear/maingear-steering-cmd</input>
                 <output>controls/gear/maingear-steering-cmd-norm</output>
         </filter>
+		
+	<!-- Filters: Slow movement of surfaces to prevent abrupt movement. -->
+		
+    <filter>
+        <name>Elevator filter</name>
+        <debug>false</debug>
+        <feedback-if-disabled>false</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+        <input>
+            <property>/controls/flight/elevator</property>
+        </input>
+        <output>
+			<property>/controls/flight/elevator-filter</property>
+		</output>
+        <type>noise-spike</type>
+        <max-rate-of-change>0.5</max-rate-of-change>
+    </filter>
+	
+    <filter>
+        <name>Aileron filter</name>
+        <debug>false</debug>
+        <feedback-if-disabled>false</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+        <input>
+            <property>/controls/flight/aileron</property>
+        </input>
+        <output>
+			<property>/controls/flight/aileron-filter</property>
+		</output>
+        <type>noise-spike</type>
+        <max-rate-of-change>4.0</max-rate-of-change>
+    </filter>
 
 </PropertyList>

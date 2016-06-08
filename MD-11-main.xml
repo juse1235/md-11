@@ -5,11 +5,11 @@
 <PropertyList>
 
     <sim>
-	<author>Juuso Tapaninen</author>
-	<status>alpha</status>
+	<author>jormapaappa1235, tikibar, and Joshua Davidson (it0uchpods/411)</author>
+	<status>beta</status>
         <rating>
             <FDM type="int">4</FDM>
-            <systems type="int">3</systems>
+            <systems type="int">4</systems>
             <cockpit type="int">3</cockpit>
             <model type="int">5</model>
         </rating>
@@ -40,6 +40,21 @@
 		<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 	    </config>
 	</view>
+	<view n="102">
+	    <name>Wing View</name>
+	    <type>lookfrom</type>
+	    <enabled type="bool">true</enabled>
+	    <internal type="bool" archive="y">true</internal>
+	    <config>
+		<from-model type="bool">true</from-model>
+		<x-offset-m archive="y">3.53</x-offset-m>
+		<y-offset-m archive="y">6.96</y-offset-m>
+		<z-offset-m archive="y">7.11</z-offset-m>
+		<default-field-of-view-deg type="double">97.4</default-field-of-view-deg>
+		<heading-offset-deg archive="y">250</heading-offset-deg>
+		<pitch-offset-deg archive="y">-5</pitch-offset-deg>
+	    </config>
+	</view>
 	<view n="100">
 	    <name>First Officer View</name>
 	    <type>lookfrom</type>
@@ -53,7 +68,7 @@
 		<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 	    </config>
 	</view>
-	<view n="101">
+	<view n="101"> 
 	    <name>Overhead Panel</name>
 	    <type>lookfrom</type>
 	    <enabled type="bool">true</enabled>
@@ -81,7 +96,7 @@
                 <menu n="100">
                     <enabled type="bool">true</enabled>
                     <item>
-                        <label>Autostart</label>
+                        <label>QuickStartup</label>
                         <binding>
                             <command>nasal</command>
                             <script>controls.autostart();</script>
@@ -160,8 +175,6 @@
                 <float n="1" alias="/gear/gear[1]/compression-m"/>
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[3]/compression-m"/>
-                <float n="4" alias="/gear/gear[4]/compression-m"/>
-                <float n="5" alias="/gear/gear[5]/compression-m"/>
                 <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
                 <float n="7" alias="/surface-positions/reverser-norm"/>
                 <string  alias="/sim/multiplay/callsign"/>
@@ -182,7 +195,7 @@
             <path>sim/view[100]/enabled</path>
             <path>sim/view[101]/enabled</path>
             <path>sim/yokes-visible</path>
-            <path>controls/gear/tiller-enabled</path>
+            <!--path>controls/gear/tiller-enabled</path-->
             <path>sim/weight[0]/weight-lb</path>
             <path>sim/weight[1]/weight-lb</path>
         </aircraft-data>
@@ -190,8 +203,8 @@
         
 	<flaps>
 	    <setting>0.00</setting>	<!-- 0 -->
-	    <setting>0.44</setting>	<!-- 22 -->
-	    <setting>0.56</setting>	<!-- 28-->
+	    <setting>0.31</setting>	<!-- 15 -->
+	    <setting>0.58</setting>	<!-- 28-->
 	    <setting>0.70</setting>	<!-- 35 -->
 	    <setting>1.00</setting>	<!-- 50 -->
 	</flaps>
@@ -224,6 +237,9 @@
             <property-rule n="101">
                 <path>Aircraft/MD-11/Systems/MD11-PFD.xml</path>
             </property-rule>
+			<property-rule n="102">
+                <path>Sounds/MD11-sound-variables.xml</path>
+            </property-rule>
         </systems>
         
         <instrumentation>
@@ -232,7 +248,7 @@
 
 	
         <sound>
-	    <path>Aircraft/MD-11/Sounds/MD-11-external-sound.xml</path>
+	    <path>Aircraft/MD-11/Sounds/MD11-sound.xml</path>
             <stall type="bool">0</stall>
             <click1 type="bool">0</click1>
             <click2 type="bool">0</click2>
@@ -270,7 +286,7 @@
         </engine>
     </engines>
     
-        <gear n="0">
+    <gear n="0">
         <gear n="0">
             <tyre-smoke type="bool">0</tyre-smoke>
             <sprayspeed-ms type="double">0</sprayspeed-ms>
@@ -288,16 +304,6 @@
             <spray-density type="double">0</spray-density>
         </gear>
         <gear n="3">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
-        <gear n="4">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
-        <gear n="5">
             <tyre-smoke type="bool">0</tyre-smoke>
             <sprayspeed-ms type="double">0</sprayspeed-ms>
             <spray-density type="double">0</spray-density>
@@ -513,6 +519,7 @@
                     <value type="int">1</value>
                     <value type="int">2</value>
                     <value type="int">3</value>
+	                <value type="int">4</value>
                 </binding>
 	    </key>
 		
@@ -601,7 +608,7 @@
                 </category-13>
             </configuration-module>
             <voice>
-                <file-prefix type="string">Sounds/mk-viii/</file-prefix>
+                <file-prefix type="string">Aircraft/MD-11/Sounds/mk-viii/</file-prefix>
             </voice>
             <inputs>                            <!-- Module I/O -->
                 <arinc429>
@@ -621,7 +628,7 @@
             <speaker>                           <!-- Speaker Configuration -->
                 <max-dist type="double"> 200.0 </max-dist>        <!-- Max. distance where speaker is heard -->
                 <reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
-                <volume type="double"> 0.6 </volume>          <!-- Volume at reference distance -->
+                <volume type="double"> 1.0 </volume>          <!-- Volume at reference distance -->
             </speaker>
         </mk-viii>
         <tcas>
@@ -813,8 +820,8 @@
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
             <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
-	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
-	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+			<file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
+			<file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
         </MD11>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>

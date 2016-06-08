@@ -239,7 +239,7 @@
 
 <model>
 	<name>EAD 1</name>
-	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/EAD_1.xml</path>
+	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/EAD_1_GE.xml</path>
 			<offsets>
             <x-m>-27.5138</x-m>
             <y-m>-0.15</y-m>
@@ -493,7 +493,7 @@
         <object-name>lg.right.green</object-name>
         <condition>
         <greater-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.99</value>
 		</greater-than>
        </condition>
@@ -505,11 +505,11 @@
         <condition>
         <and>
         <less-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.99</value>
 		</less-than>
     <greater-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.01</value>
 		</greater-than>
 		</and>
@@ -521,7 +521,7 @@
         <object-name>lg.ctr.green</object-name>
         <condition>
         <greater-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.99</value>
 		</greater-than>
        </condition>
@@ -533,11 +533,11 @@
         <condition>
         <and>
         <less-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.99</value>
 		</less-than>
     <greater-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.01</value>
 		</greater-than>
 		</and>
@@ -577,7 +577,7 @@
     <object-name>yoke.autodsg</object-name>
   <object-name>autopilot_disengage</object-name>
  <property>controls/flight/aileron</property>
- <factor>45</factor>
+ <factor>90</factor>
  <center>
   <x-m>-27.2846</x-m>
   <y-m>-0.524</y-m>
@@ -619,11 +619,11 @@
 				<value type="bool">false</value>
 			    </binding>
 			</mod-up>
-			<!--binding>
+			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/afds/inputs/AP</property>
-				<value>0</value>
-			</binding-->
+				<property>controls/switches/apoffsound</property>
+				<value>1</value>
+			</binding>
 			<binding>
 				<command>nasal</command>
 				<script>MD11.afds.APyokebtn(); controls.click(1);</script>
@@ -678,7 +678,7 @@
    <object-name>yoke.nosedown.right</object-name>
     <object-name>yoke.autodsg.right</object-name>
  <property>controls/flight/aileron</property>
- <factor>45</factor>
+ <factor>90</factor>
  <center>
   <x-m>-27.2846</x-m>
   <y-m>0.524</y-m>

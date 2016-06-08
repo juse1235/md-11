@@ -111,7 +111,7 @@
         measuring pitch is tricky, so let's use nose-gear WoW instead
         -->
         <input>
-            <not><property>gear/gear[1]/wow</property></not>
+            <not><property>gear/gear[0]/wow</property></not>
         </input>
         <output>autopilot/autobrake/pitch-up-1deg</output>
     </logic>

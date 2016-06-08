@@ -717,7 +717,7 @@
 		<type>rotate</type>
 		<object-name>AileronL1</object-name>
         <property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
 			<y1-m>-7.3613</y1-m>
@@ -737,7 +737,7 @@
 			</greater-than>
         </condition-->
         <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>15</factor>
+        <factor>5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>-22.7524</y1-m>
@@ -753,7 +753,7 @@
 		<type>rotate</type>
 		<object-name>AileronR1</object-name>
         <property>surface-positions/right-aileron-pos-norm</property>
-		<factor>30</factor>
+		<factor>10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
 			<y1-m>7.3613</y1-m>
@@ -774,7 +774,7 @@
 			</greater-than>
         </condition-->
         <property>surface-positions/right-aileron-pos-norm</property>
-        <factor>-15</factor>
+        <factor>-5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>22.7524</y1-m>
@@ -788,11 +788,11 @@
 				<animation>
 		<type>rotate</type>
 		<object-name>elevator.1</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
+		<property>/controls/flight/elevator</property>
 		<interpolation>
-			<entry><ind>1.0</ind><dep>25.0</dep></entry>
+			<entry><ind>1.0</ind><dep>15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>-1.0</ind><dep>-25.0</dep></entry>
+			<entry><ind>-1.0</ind><dep>-15.0</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>28.2809</x1-m>
@@ -807,11 +807,11 @@
 					<animation>
 		<type>rotate</type>
 		<object-name>elevator.2</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
+		<property>/controls/flight/elevator</property>
 		<interpolation>
-			<entry><ind>1.0</ind><dep>-25.0</dep></entry>
+			<entry><ind>1.0</ind><dep>-15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>-1.0</ind><dep>25.0</dep></entry>
+			<entry><ind>-1.0</ind><dep>15.0</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>28.2809</x1-m>
@@ -1079,7 +1079,7 @@
     <object-name>right.arm1</object-name>
  <object-name>right.arm2</object-name>
 <object-name>right.arm3</object-name>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.3</ind><dep>87</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1103,7 +1103,7 @@
 <object-name>tyres.right.back</object-name>
 <object-name>right.strut.low.2</object-name>
  <object-name>right.scissor.down</object-name>
-  <property>gear/gear[3]/compression-m</property>
+  <property>gear/gear[1]/compression-m</property>
   <factor>-1.2</factor>
         <axis>
             <x>0</x>
@@ -1115,7 +1115,7 @@
  			    	        <animation>
         <type>rotate</type>
         <object-name>right.scissor.down</object-name>
-        <property>gear/gear[4]/compression-norm</property>
+        <property>gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>-60</dep></entry>
@@ -1135,7 +1135,7 @@
     		    	        <animation>
         <type>rotate</type>
         <object-name>right.scissor.up</object-name>
-        <property>gear/gear[4]/compression-norm</property>
+        <property>gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>60</dep></entry>
@@ -1155,7 +1155,7 @@
      	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.right.front</object-name>
-		<property>gear/gear[3]/rollspeed-ms</property>
+		<property>gear/gear[2]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1172,7 +1172,7 @@
 		     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.right.back</object-name>
-		<property>gear/gear[4]/rollspeed-ms</property>
+		<property>gear/gear[2]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1191,7 +1191,7 @@
  <object-name>right.arm1</object-name>
  <object-name>right.arm2</object-name>
 <object-name>right.arm3</object-name>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.3</ind><dep>81.8</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1209,7 +1209,7 @@
 									<animation>
 		<type>rotate</type>
  <object-name>right.arm2</object-name>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.5</ind><dep>-180</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1227,7 +1227,7 @@
 										<animation>
 		<type>rotate</type>
  <object-name>right.arm3</object-name>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.5</ind><dep>-50</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1245,7 +1245,7 @@
 							<animation>
 		<type>rotate</type>
 		<object-name>main.right.door</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.15</ind><dep>75.0</dep></entry>
@@ -1371,7 +1371,7 @@
 		     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.left.back</object-name>
-		<property>gear/gear[2]/rollspeed-ms</property>
+		<property>gear/gear[1]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1390,7 +1390,7 @@
  <object-name>left.arm1</object-name>
  <object-name>left.arm2</object-name>
 <object-name>left.arm3</object-name>
-		<property>gear/gear[2]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.3</ind><dep>-81.8</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1408,7 +1408,7 @@
 									<animation>
 		<type>rotate</type>
  <object-name>left.arm2</object-name>
-		<property>gear/gear[2]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.5</ind><dep>180</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1426,7 +1426,7 @@
 										<animation>
 		<type>rotate</type>
  <object-name>left.arm3</object-name>
-		<property>gear/gear[2]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.5</ind><dep>50</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1444,7 +1444,7 @@
 						<animation>
 		<type>rotate</type>
 		<object-name>main.left.door</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.15</ind><dep>75.0</dep></entry>
@@ -1472,7 +1472,7 @@
 <object-name>central.scissor.up</object-name>
  <object-name>central.scissor.down</object-name>
   <object-name>tyres.central</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[3]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.4</ind><dep>-80</dep></entry>
 			<entry><ind>0.8</ind><dep>0</dep></entry>
@@ -1492,7 +1492,7 @@
 		<animation>
 		<type>rotate</type>
 		<object-name>central.back.left</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[3]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>50</dep></entry>
 			<entry><ind>0.3</ind><dep>50.0</dep></entry>
@@ -1513,7 +1513,7 @@
 			<animation>
 		<type>rotate</type>
 		<object-name>central.back.right</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[3]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>-50</dep></entry>
 			<entry><ind>0.15</ind><dep>-50.0</dep></entry>
@@ -1534,7 +1534,7 @@
 				<animation>
 		<type>rotate</type>
 		<object-name>central.front.right</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[3]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.15</ind><dep>75.0</dep></entry>
@@ -1556,7 +1556,7 @@
 					<animation>
 		<type>rotate</type>
 		<object-name>central.front.left</object-name>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[3]/position-norm</property>
 		<interpolation>
 		<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.15</ind><dep>-75.0</dep></entry>
@@ -1578,7 +1578,7 @@
 			     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.central</object-name>
-		<property>gear/gear[5]/rollspeed-ms</property>
+		<property>gear/gear[3]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1618,8 +1618,8 @@
  <name>tyre-smoke-2</name>
  <path>Aircraft/MD-11/Models/Effects/tyre-smoke-2.xml</path>
  <offsets>
-  <x-m>4.7549</x-m>
-  <y-m>-5.3100</y-m>
+  <x-m>3.1499</x-m>
+  <y-m>5.3100</y-m>
   <z-m>1.2231</z-m>
  </offsets>
 </model>
@@ -1629,21 +1629,10 @@
  <path>Aircraft/MD-11/Models/Effects/tyre-smoke-3.xml</path>
  <offsets>
   <x-m>3.1499</x-m>
-  <y-m>5.3100</y-m>
+  <y-m>0</y-m>
   <z-m>1.2231</z-m>
  </offsets>
 </model>
-
-		<model>
- <name>tyre-smoke-4</name>
- <path>Aircraft/MD-11/Models/Effects/tyre-smoke-4.xml</path>
- <offsets>
-  <x-m>4.7549</x-m>
-  <y-m>5.3100</y-m>
-  <z-m>1.2231</z-m>
- </offsets>
-</model>
-
 
 
   <effect>
@@ -1744,12 +1733,12 @@
                 <dep>0</dep>
             </entry>
             <entry>
-                <ind>0.6</ind>
-                <dep>0</dep>
+                <ind>0.333</ind>
+                <dep>20</dep>
             </entry>
             <entry>
-                <ind>0.8</ind>
-                <dep>30</dep>
+                <ind>0.667</ind>
+                <dep>40</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
@@ -1776,12 +1765,12 @@
                 <dep>0</dep>
             </entry>
             <entry>
-                <ind>0.6</ind>
-                <dep>0</dep>
+                <ind>0.333</ind>
+                <dep>20</dep>
             </entry>
             <entry>
-                <ind>0.8</ind>
-                <dep>30</dep>
+                <ind>0.667</ind>
+                <dep>40</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
@@ -1808,12 +1797,12 @@
                 <dep>0</dep>
             </entry>
             <entry>
-                <ind>0.6</ind>
-                <dep>0</dep>
+                <ind>0.333</ind>
+                <dep>-20</dep>
             </entry>
             <entry>
-                <ind>0.8</ind>
-                <dep>-30</dep>
+                <ind>0.667</ind>
+                <dep>-40</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
@@ -1840,12 +1829,12 @@
                 <dep>0</dep>
             </entry>
             <entry>
-                <ind>0.6</ind>
-                <dep>0</dep>
+                <ind>0.333</ind>
+                <dep>-20</dep>
             </entry>
             <entry>
-                <ind>0.8</ind>
-                <dep>-30</dep>
+                <ind>0.667</ind>
+                <dep>-40</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
@@ -1861,6 +1850,107 @@
 			<z2-m>5.2476</z2-m>
 		</axis>
 	</animation>
+	
+	<!-- Spoilerons -->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>sp.brake.left.outer</object-name>
+		<property>/controls/flight/aileron-filter</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>-1.0</ind>
+                <dep>20</dep>
+            </entry>
+        </interpolation>
+		<axis>
+			<x1-m>6.1986</x1-m>
+			<y1-m>-10.5629</y1-m>
+			<z1-m>5.5481</z1-m>
+			<x2-m>9.6825</x2-m>
+			<y2-m>-17.2143</y2-m>
+			<z2-m>5.8680</z2-m>
+		</axis>
+	</animation>
+	
+		<animation>
+		<type>rotate</type>
+		<object-name>sp.brake.left.inner</object-name>
+		<property>/controls/flight/aileron-filter</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>-1.0</ind>
+                <dep>20</dep>
+            </entry>
+        </interpolation>
+		<axis>
+			<x1-m>4.6240</x1-m>
+			<y1-m>-4.2563</y1-m>
+			<z1-m>4.7571</z1-m>
+			<x2-m>5.0040</x2-m>
+			<y2-m>-7.1055</y2-m>
+			<z2-m>5.2476</z2-m>
+		</axis>
+	</animation>
+		
+			<animation>
+		<type>rotate</type>
+		<object-name>sp.brake.right.outer</object-name>
+		<property>/controls/flight/aileron-filter</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-20</dep>
+            </entry>
+        </interpolation>
+		<axis>
+			<x1-m>6.1986</x1-m>
+			<y1-m>10.5629</y1-m>
+			<z1-m>5.5481</z1-m>
+			<x2-m>9.6825</x2-m>
+			<y2-m>17.2143</y2-m>
+			<z2-m>5.8680</z2-m>
+		</axis>
+	</animation>
+	
+			<animation>
+		<type>rotate</type>
+		<object-name>sp.brake.right.inner</object-name>
+		<property>/controls/flight/aileron-filter</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-20</dep>
+            </entry>
+        </interpolation>
+		<axis>
+			<x1-m>4.6240</x1-m>
+			<y1-m>4.2563</y1-m>
+			<z1-m>4.7571</z1-m>
+			<x2-m>5.0040</x2-m>
+			<y2-m>7.1055</y2-m>
+			<z2-m>5.2476</z2-m>
+		</axis>
+	</animation>
+	
+	
+	
 	
 	
 	

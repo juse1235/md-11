@@ -10,7 +10,7 @@
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label> Autopilot Control</label>
+            <label>MD-11 Autopilot Control</label>
         </text>
         <button>
             <halign>right</halign>
@@ -898,6 +898,11 @@
 		<command>property-assign</command>
 		<property>instrumentation/afds/inputs/AP</property>
 		<value>0</value>
+	    </binding>
+	    <binding>
+		<command>property-assign</command>
+		<property>controls/switches/apoffsound</property>
+		<value>1</value>
 	    </binding>
 	</button>
 	<button>
