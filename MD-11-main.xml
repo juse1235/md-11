@@ -40,7 +40,7 @@
 		<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 	    </config>
 	</view>
-	<view n="102">
+	<view n="100">
 	    <name>Wing View</name>
 	    <type>lookfrom</type>
 	    <enabled type="bool">true</enabled>
@@ -55,7 +55,7 @@
 		<pitch-offset-deg archive="y">-5</pitch-offset-deg>
 	    </config>
 	</view>
-	<view n="100">
+	<view n="101">
 	    <name>First Officer View</name>
 	    <type>lookfrom</type>
 	    <enabled type="bool">true</enabled>
@@ -68,7 +68,7 @@
 		<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 	    </config>
 	</view>
-	<view n="101"> 
+	<view n="102"> 
 	    <name>Overhead Panel</name>
 	    <type>lookfrom</type>
 	    <enabled type="bool">true</enabled>
@@ -96,7 +96,7 @@
                 <menu n="100">
                     <enabled type="bool">true</enabled>
                     <item>
-                        <label>QuickStartup</label>
+                        <label>Autostart</label>
                         <binding>
                             <command>nasal</command>
                             <script>controls.autostart();</script>
