@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>Viasa</name>
+				<texture>Liveries/VIASA.png</texture>
+							<property>sim/multiplay/generic/int[8]</property>
+			</livery>  	  
+		</model>
+	</sim>
+</PropertyList>
