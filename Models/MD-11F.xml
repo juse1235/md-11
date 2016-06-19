@@ -1856,7 +1856,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.outer</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>/sim/multiplay/generic/float[8]</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1880,7 +1880,7 @@
 		<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.inner</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>/sim/multiplay/generic/float[8]</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1904,7 +1904,7 @@
 			<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.outer</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>/sim/multiplay/generic/float[8]</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
@@ -1928,7 +1928,7 @@
 			<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.inner</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>/sim/multiplay/generic/float[8]</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
