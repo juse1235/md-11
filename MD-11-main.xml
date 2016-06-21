@@ -226,6 +226,9 @@
             <autopilot>
                 <path>Aircraft/MD-11/Systems/MD11-autoland.xml</path>
             </autopilot>
+	    <autopilot>
+                <path>Aircraft/MD-11/Systems/MD11-flt-ctrls.xml</path>
+            </autopilot>
             <!--autopilot>
                 <name>Autobrake system</name>
                 <path>Aircraft/MD-11/Systems/MD11-autobrake.xml</path>
