@@ -41,13 +41,33 @@
     </axis>
   </animation>
   
+	  <animation>
+    <type>rotate</type>
+		<object-name>limit1</object-name>
+    <property>engines/engine[0]/n1-limit</property>
+<interpolation>
+<entry><ind>1</ind><dep>0</dep></entry>
+<entry><ind>110</ind><dep>180</dep></entry>
+</interpolation>
+    <center>
+      <x-m></x-m>
+      <y-m>-0.0493</y-m>
+      <z-m>0.0642</z-m>
+    </center>
+    <axis>
+      <x>-1 </x> 
+      <y> 0 </y> 
+      <z> 0 </z> 
+    </axis>
+  </animation>
+  
   	  <animation>
     <type>rotate</type>
 		<object-name>throttle.position.1</object-name>
         <property>controls/engines/engine/throttle-lever</property>
 <interpolation>
-<entry><ind>0</ind><dep>55</dep></entry>
-<entry><ind>1</ind><dep>180</dep></entry>
+<entry><ind>0</ind><dep>38</dep></entry>
+<entry><ind>1</ind><dep>177</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -122,7 +142,27 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>n1.2</object-name>
-    <property>engines/engine[0]/rpm</property>
+    <property>engines/engine[1]/rpm</property>
+<interpolation>
+<entry><ind>1</ind><dep>0</dep></entry>
+<entry><ind>110</ind><dep>180</dep></entry>
+</interpolation>
+    <center>
+      <x-m></x-m>
+      <y-m>0.0019</y-m>
+      <z-m>0.0642</z-m>
+    </center>
+    <axis>
+      <x>-1 </x> 
+      <y> 0 </y> 
+      <z> 0 </z> 
+    </axis>
+  </animation>
+  
+	  <animation>
+    <type>rotate</type>
+		<object-name>limit2</object-name>
+    <property>engines/engine[1]/n1-limit</property>
 <interpolation>
 <entry><ind>1</ind><dep>0</dep></entry>
 <entry><ind>110</ind><dep>180</dep></entry>
@@ -144,8 +184,8 @@
 		<object-name>throttle.position.2</object-name>
         <property>controls/engines/engine[1]/throttle-lever</property>
 <interpolation>
-<entry><ind>0</ind><dep>55</dep></entry>
-<entry><ind>1</ind><dep>180</dep></entry>
+<entry><ind>0</ind><dep>38</dep></entry>
+<entry><ind>1</ind><dep>177</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -220,7 +260,27 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>n1.3</object-name>
-    <property>engines/engine[0]/rpm</property>
+    <property>engines/engine[2]/rpm</property>
+<interpolation>
+<entry><ind>1</ind><dep>0</dep></entry>
+<entry><ind>110</ind><dep>180</dep></entry>
+</interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.0539</y-m>
+      <z-m>0.0642</z-m>
+    </center>
+    <axis>
+      <x>-1 </x> 
+      <y> 0 </y> 
+      <z> 0 </z> 
+    </axis>
+  </animation>
+  
+	  <animation>
+    <type>rotate</type>
+		<object-name>limit3</object-name>
+    <property>engines/engine[2]/n1-limit</property>
 <interpolation>
 <entry><ind>1</ind><dep>0</dep></entry>
 <entry><ind>110</ind><dep>180</dep></entry>
@@ -242,8 +302,8 @@
 		<object-name>throttle.position.3</object-name>
         <property>controls/engines/engine[2]/throttle-lever</property>
 <interpolation>
-<entry><ind>0</ind><dep>55</dep></entry>
-<entry><ind>1</ind><dep>180</dep></entry>
+<entry><ind>0</ind><dep>38</dep></entry>
+<entry><ind>1</ind><dep>177</dep></entry>
 </interpolation>
     <center>
       <x-m>0</x-m>
@@ -348,12 +408,29 @@
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
 	</text>
 	
+			         	<text>
+		<name>FF</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>-0.0731</y-m>
+			<z-m>-0.0277</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">FF</format>
+		<property>autopilot/serviceable</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.005</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+	
 				         	<text>
 		<name>Fuel off 1</name>
 		<offsets>
 			<x-m>0.0013</x-m>
-			<y-m>-0.044</y-m>
-			<z-m>-0.0264</z-m>
+			<y-m>-0.039</y-m>
+			<z-m>-0.0277</z-m>
 		</offsets>
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -369,8 +446,8 @@
 		<name>Fuel off 2</name>
 		<offsets>
 			<x-m>0.0013</x-m>
-			<y-m>0.0083</y-m>
-			<z-m>-0.0264</z-m>
+			<y-m>0.014</y-m>
+			<z-m>-0.0277</z-m>
 		</offsets>
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -386,8 +463,8 @@
 		<name>Fuel off 3</name>
 		<offsets>
 			<x-m>0.0013</x-m>
-			<y-m>0.0605</y-m>
-			<z-m>-0.0264</z-m>
+			<y-m>0.064</y-m>
+			<z-m>-0.0277</z-m>
 		</offsets>
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -400,11 +477,32 @@
 	</text>
 	
     <text>
+        <name>togalimit</name>
+        <offsets>
+			<x-m>0.0013</x-m>
+			<y-m>0</y-m>
+            <z-m>0.0825</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">number-value</type>
+        <format type="string">%3.1f T/O LIM</format>
+        <property>engines/engine[1]/n1-limit</property>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0065</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+	
+    <text>
         <name>temperature</name>
         <offsets>
-            <x-m>0.0011</x-m>
-            <y-m>0.0539</y-m>
-            <z-m>0.0816</z-m>
+			<x-m>0.0013</x-m>
+			<y-m>0.0605</y-m>
+            <z-m>0.0825</z-m>
         </offsets>
         <alignment>center-center</alignment>
         <axis-alignment>yz-plane</axis-alignment>
@@ -412,7 +510,7 @@
         <format type="string">TAT %4.0f°C</format>
         <property>environment/temperature-degc</property>
         <font>helvetica_bold.txf</font>
-        <character-size>0.005</character-size>
+        <character-size>0.0065</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
         <font-resolution>
             <width type="int">32</width>
@@ -532,7 +630,7 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-    <format type="string">%2.2f</format>
+    <format type="string">%2.1f</format>
     <property>engines/engine[0]/rpm</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
@@ -549,7 +647,7 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-    <format type="string">%2.2f</format>
+    <format type="string">%2.1f</format>
     <property>engines/engine[0]/rpm</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
@@ -566,8 +664,59 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-    <format type="string">%2.2f</format>
+    <format type="string">%2.1f</format>
     <property>engines/engine[2]/rpm</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+	
+               	<text>
+		<name>FF_1</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>-0.0415</y-m>
+			<z-m>-0.0277</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+    <format type="string">%2.3f</format>
+    <property>engines/engine[0]/fuel-flow_pph</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+	
+               	<text>
+		<name>FF_2</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>0.0115</y-m>
+			<z-m>-0.0277</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+    <format type="string">%2.3f</format>
+    <property>engines/engine[2]/fuel-flow_pph</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+	
+               	<text>
+		<name>FF_3</name>
+		<offsets>
+			<x-m>0.0013</x-m>
+			<y-m>0.0615</y-m>
+			<z-m>-0.0277</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+    <format type="string">%2.3f</format>
+    <property>engines/engine[2]/fuel-flow_pph</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -763,9 +912,14 @@
 		<type>select</type>
 		<object-name>CONFIG</object-name>
 		<condition>
+			<and>
 			<less-than>
 				<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-				<value>120</value>
+				<value>170</value>
+			</less-than>
+			<less-than>
+				<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>50</value>
 			</less-than>
 			<or>
 				<less-than>
@@ -780,7 +934,28 @@
 					<property>controls/flight/autospeedbrakes-armed</property>
 					<value>false</value>
 				</equals>
+				<equals>
+					<property>controls/gear/brake-parking</property>
+					<value>true</value>
+				</equals>
+				<equals>
+					<property>gear/gear[0]/position-norm</property>
+					<value>false</value>
+				</equals>
+				<equals>
+					<property>gear/gear[1]/position-norm</property>
+					<value>false</value>
+				</equals>
+				<equals>
+					<property>gear/gear[2]/position-norm</property>
+					<value>false</value>
+				</equals>
+				<equals>
+					<property>autopilot/autobrake/step</property>
+					<value>0</value>
+				</equals>
 			</or>
+			</and>
 		</condition>
 	</animation>
 	
@@ -892,15 +1067,65 @@
 </condition>
 	</animation>
 	
+	  			<animation>
+		<type>select</type>
+		<object-name>FF_1</object-name>
+		<condition>
+    <not><property>controls/engines/engine[0]/cutoff</property></not>
+</condition>
+	</animation>
+	
+		  			<animation>
+		<type>select</type>
+		<object-name>FF_2</object-name>
+		<condition>
+    <not><property>controls/engines/engine[1]/cutoff</property></not>
+</condition>
+	</animation>
+	
+			  			<animation>
+		<type>select</type>
+		<object-name>FF_3</object-name>
+		<condition>
+    <not><property>controls/engines/engine[2]/cutoff</property></not>
+</condition>
+	</animation>
+	
 	        <animation>
         <type>material</type><!--yellow-->
         <object-name>D/L_1</object-name>
         <object-name>D/L_2</object-name>
         <object-name>D/L_3</object-name>
+		<object-name>CONFIG</object-name>
         <emission>
             <red>1</red>
-            <green>1</green>
+            <green>0.85</green>
             <blue>0</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+	
+	        <animation>
+        <type>material</type><!--purple-->
+        <object-name>togalimit</object-name>
+        <emission>
+            <red>1</red>
+            <green>0</green>
+            <blue>1</blue>
         </emission>
         <ambient>
             <red>0</red>
@@ -960,11 +1185,15 @@
         <object-name>N1_2</object-name>
         <object-name>N1_3</object-name>
         <object-name>N2</object-name>
+        <object-name>FF</object-name>
+        <object-name>FF_1</object-name>
+        <object-name>FF_2</object-name>
+        <object-name>FF_3</object-name>
         <object-name>temperature</object-name>
         <emission>
-            <red>0.7</red>
-            <green>0.7</green>
-            <blue>0.7</blue>
+            <red>1.0</red>
+            <green>1.0</green>
+            <blue>1.0</blue>
         </emission>
         <ambient>
             <red>0</red>
@@ -991,9 +1220,9 @@
 		<object-name>No smoking</object-name>
 		<object-name>Seatbelts</object-name>
         <emission>
-            <red>0.51</red>
-            <green>1.53</green>
-            <blue>2.04</blue>
+            <red>0.00</red>
+            <green>0.70</green>
+            <blue>2.004</blue>
         </emission>
         <ambient>
             <red>0</red>

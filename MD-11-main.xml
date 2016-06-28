@@ -277,13 +277,13 @@
 
     <engines n="0">
         <engine n="0">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
         <engine n="1">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
         <engine n="2">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
     </engines>
     
