@@ -23,8 +23,8 @@
 	    <path>Aircraft/MD-11/Models/MD-11F.xml</path>
 	    <armrest type="double">0</armrest>
 	    <livery>
-		<file type="string">UPS</file>
-      	    </livery>
+		<file type="string">FED</file>
+	    </livery>
 	</model>
 	<shutterspeed type="double">0.18</shutterspeed>
 		
