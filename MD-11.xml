@@ -60,7 +60,7 @@
      dihedral="10.6" camber="-0.1" twist="-1.0" idrag="1.1">
 	<stall aoa="15.0" width="7" peak="1.5" />
 	<flap0 start="0.0" end="1.0" lift="1.5" drag="1.3" />
-	<control-input axis="/controls/flight/elevator" control="FLAP0" />
+	<control-input axis="/controls/flight/elevator" control="FLAP0" src0="-1.0" dst0="-0.7" src1="1.0" dst1="0.7"/>
 	<control-input axis="/controls/flight/elevator-trim" control="FLAP0" />
 	<control-output control="FLAP0"  prop="/surface-positions/elevator-pos-norm" />
     </hstab>
@@ -114,7 +114,7 @@
     <gear x="20.6395" y="0.0" z="0.7" compression="0.4" spring="0.8" damp="4.0" sfric="1.2" dfric="1.0">
     <!-- up to 70 degrees max steering angle with tiller, input is limited to 7 degrees with rudder (see Nasal/ground_steering.nas) -->
 	<control-input control="STEER" axis="/controls/gear/nosegear-steering-cmd-norm" src0="-1.0" dst0="-1.2217304764" src1="1.0" dst1="1.2217304764" />
-	<control-output control="STEER" prop="/controls/gear/nosegear-steering-angle-rad" />
+	<control-output control="STEER" prop="gear/gear[0]/steering-norm" />
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 	<control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 	<control-speed control="EXTEND" transition-time="15"/>

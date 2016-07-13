@@ -1123,7 +1123,7 @@
 <object-name>nose.scissor.up</object-name>
 <object-name>front.strut.low</object-name>
     <object-name>front.strut.high.2</object-name>
-        <property>controls/gear/nosegear-steering-cmd-norm</property>
+        <property>gear/gear[0]/steering-norm</property>
 		<factor>68</factor>
 	 	<axis>
 			<x1-m>-20.4239</x1-m>

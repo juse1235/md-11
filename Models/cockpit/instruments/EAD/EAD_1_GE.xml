@@ -934,22 +934,19 @@
 					<property>controls/flight/autospeedbrakes-armed</property>
 					<value>false</value>
 				</equals>
-				<equals>
-					<property>controls/gear/brake-parking</property>
-					<value>true</value>
-				</equals>
-				<equals>
+				<property>controls/gear/brake-parking</property>
+				<less-than>
 					<property>gear/gear[0]/position-norm</property>
-					<value>false</value>
-				</equals>
-				<equals>
+					<value>1</value>
+				</less-than>
+				<less-than>
 					<property>gear/gear[1]/position-norm</property>
-					<value>false</value>
-				</equals>
-				<equals>
+					<value>1</value>
+				</less-than>
+				<less-than>
 					<property>gear/gear[2]/position-norm</property>
-					<value>false</value>
-				</equals>
+					<value>1</value>
+				</less-than>
 				<equals>
 					<property>autopilot/autobrake/step</property>
 					<value>0</value>
