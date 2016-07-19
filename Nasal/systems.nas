@@ -608,18 +608,11 @@ var Startup = func{
     setprop("controls/flight/elevator-trim",0);
     setprop("controls/flight/aileron-trim",0);
     setprop("controls/flight/rudder-trim",0);
+    setprop("controls/hydraulic/auto-mode",1);
     setprop("instrumentation/transponder/mode-switch",4); # transponder mode: TA/RA
     setprop("engines/engine[0]/run",1);
     setprop("engines/engine[1]/run",1);
-	setprop("engines/engine[2]/run",1);
-	setprop("controls/hydraulics/system[1]/C1ELEC-switch", 1);
-	setprop("controls/hydraulics/system[1]/C2ELEC-switch", 1);
-	setprop("controls/hydraulics/system/LACMP-switch", 1);
-	setprop("controls/hydraulics/system[1]/C1ADP-switch", 1);
-	setprop("controls/hydraulics/system[1]/C2ADP-switch", 1);
-	setprop("controls/hydraulics/system[2]/RACMP-switch", 1);
-#	setprop("instrumentation/afds/inputs/at-armed", 1);
-#	setprop("instrumentation/afds/inputs/at-armed[1]", 1);
+    setprop("engines/engine[2]/run",1);
 }
 
 var Shutdown = func{
@@ -664,12 +657,7 @@ var Shutdown = func{
     setprop("engines/engine[1]/fuel-flow_pph",0);
 	setprop("engines/engine[2]/fuel-flow_pph",0);
     setprop("instrumentation/weu/state/takeoff-mode",1);
-	setprop("controls/hydraulics/system[1]/C1ELEC-switch", 0);
-	setprop("controls/hydraulics/system[1]/C2ELEC-switch", 0);
-	setprop("controls/hydraulics/system/LACMP-switch", 0);
-	setprop("controls/hydraulics/system[1]/C1ADP-switch", 0);
-	setprop("controls/hydraulics/system[1]/C2ADP-switch", 0);
-	setprop("controls/hydraulics/system[2]/RACMP-switch", 0);
+    settimer(func setprop("controls/hydraulic/auto-mode",0),2);
 }
 
 var click_reset = func(propName) {

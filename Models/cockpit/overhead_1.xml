@@ -199,6 +199,8 @@
 		</center>
 	</animation>
 
+
+<!-- FUEL -->
 			<animation>
 		<type>select</type>
 		<object-name>ltank.1</object-name>
@@ -1083,6 +1085,82 @@ FSC.btn
 		    <z>0</z>
 		</axis>
 	</animation>
+
+<!-- HYDRAULICS -->
+	<!-- Hydraulic System Control Button -->
+	<animation>
+		<type>pick</type>
+		<object-name>HSC.btn</object-name>
+		<action>
+		    <button>0</button>
+		    <repeatable>false</repeatable>
+		    <binding>
+			<command>property-toggle</command>
+			<property>controls/hydraulic/auto-mode</property>
+		    </binding>
+		</action>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSC.btn</object-name>
+		<property>controls/hydraulic/auto-mode</property>
+		<factor>0.0625</factor>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Aux Pumps -->
+	<animation>
+		<type>pick</type>
+		<object-name>AUXhyd1.btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/hydraulic/aux-pump</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>AUXhyd1.btn</object-name>
+		<property>controls/hydraulic/aux-pump</property>
+		<factor>0.0625</factor>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+		
+	<animation>
+		<type>pick</type>
+		<object-name>AUXhyd2.btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/hydraulic/aux-pump[1]</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>AUXhyd2.btn</object-name>
+		<property>controls/hydraulic/aux-pump[1]</property>
+		<factor>0.0625</factor>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+		
 	
     <animation>
         <type>rotate</type>

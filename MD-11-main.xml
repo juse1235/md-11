@@ -808,7 +808,6 @@
             <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
             <file>Aircraft/MD-11/Nasal/electrical.nas</file>
             <file>Aircraft/MD-11/Nasal/engine.nas</file>
-            <file>Aircraft/MD-11/Nasal/Hydraulics.nas</file>
             <file>Aircraft/MD-11/Nasal/systems.nas</file>
             <file>Aircraft/MD-11/Nasal/tyresmoke.nas</file>
             <file>Aircraft/MD-11/Nasal/gpws.nas</file>
@@ -824,6 +823,9 @@
 			<file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
 			<file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
         </MD11>
+	<hydraulics>
+            <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
+	</hydraulics>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>
