@@ -50,6 +50,7 @@ props.globals.initNode(sys~'pressure[2]', 0, 'INT');
 props.globals.initNode(sys~'equipment/enable-brake', 1.0, 'DOUBLE');
 props.globals.initNode(sys~'equipment/enable-sfc', 1, 'BOOL');
 props.globals.initNode(sys~'equipment/enable-flap', 1, 'BOOL');
+props.globals.initNode(sys~'equipment/enable-slat', 1, 'BOOL');
 props.globals.initNode(sys~'equipment/enable-gear', 1, 'BOOL');
 props.globals.initNode(sys~'equipment/enable-spoil', 1, 'BOOL');
 props.globals.initNode(sys~'equipment/enable-threv', 1, 'BOOL');
@@ -178,6 +179,12 @@ var Hyd = {
 	setprop("systems/hydraulic/equipment/enable-flap",0);
     } else {
 	setprop("systems/hydraulic/equipment/enable-flap",1);
+    }
+	# Slats
+    if (sys_status[0] < 6 and sys_status[2] < 6) {
+	setprop("systems/hydraulic/equipment/enable-slat",0);
+    } else {
+	setprop("systems/hydraulic/equipment/enable-slat",1);
     }
 	# Gear
     if (sys_status[2] < 6) {

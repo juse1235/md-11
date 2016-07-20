@@ -716,7 +716,7 @@
 		<name>Left inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronL1</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
+	        <property>surface-positions/left-aileron-pos-norm</property>
 		<factor>-10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
@@ -736,8 +736,8 @@
 				<value>0</value>
 			</greater-than>
         </condition-->
-        <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>5</factor>
+	        <property>surface-positions/left-aileron-pos-norm</property>
+        	<factor>5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>-22.7524</y1-m>
@@ -752,7 +752,7 @@
 		<name>Right inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronR1</object-name>
-        <property>surface-positions/right-aileron-pos-norm</property>
+	        <property>surface-positions/right-aileron-pos-norm</property>
 		<factor>10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
@@ -764,8 +764,8 @@
 		</axis>
 	</animation>
 	
-	    <animation>
-        <type>rotate</type>
+	<animation>
+        	<type>rotate</type>
 		<object-name>AileronR2</object-name>
         <!--condition>
 			<greater-than>
@@ -773,8 +773,8 @@
 				<value>0</value>
 			</greater-than>
         </condition-->
-        <property>surface-positions/right-aileron-pos-norm</property>
-        <factor>-5</factor>
+	        <property>surface-positions/right-aileron-pos-norm</property>
+        	<factor>-5</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>22.7524</y1-m>
@@ -783,12 +783,12 @@
 			<y2-m>18.2087</y2-m>
 			<z2-m>5.7281</z2-m>
 		</axis>
-    </animation>
+	</animation>
 	
-				<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>elevator.1</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -807,7 +807,7 @@
 					<animation>
 		<type>rotate</type>
 		<object-name>elevator.2</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>-15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -1856,17 +1856,17 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.outer</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>-1.0</ind>
-                <dep>20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/left-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>6.1986</x1-m>
 			<y1-m>-10.5629</y1-m>
@@ -1877,20 +1877,20 @@
 		</axis>
 	</animation>
 	
-		<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.inner</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>-1.0</ind>
-                <dep>20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/left-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+        	    </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>4.6240</x1-m>
 			<y1-m>-4.2563</y1-m>
@@ -1901,20 +1901,20 @@
 		</axis>
 	</animation>
 		
-			<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.outer</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>-20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/right-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>-20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>6.1986</x1-m>
 			<y1-m>10.5629</y1-m>
@@ -1925,20 +1925,20 @@
 		</axis>
 	</animation>
 	
-			<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.inner</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>-20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/right-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>-20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>4.6240</x1-m>
 			<y1-m>4.2563</y1-m>

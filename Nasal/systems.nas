@@ -510,15 +510,44 @@ setlistener("instrumentation/tcas/outputs/traffic-alert", func(traffic_alert){
 #        setprop("controls/flight/speedbrake-lever",2*getprop("controls/flight/speedbrake"));
 #}
 
-setlistener("controls/flight/flaps", func { controls.click(6) } );
-setlistener("controls/gear/gear-down", func { controls.click(8) } );
-controls.gearDown = func(v) {
-    if (v < 0) {
-        if(!getprop("gear/gear[1]/wow"))setprop("controls/gear/gear-down", 0);
-    } elsif (v > 0) {
-      setprop("controls/gear/gear-down", 1);
+## FLAPS
+########
+controls.flapsDown = func(step) {
+    if (step > 0) {
+	if (getprop("controls/flight/slats") == 0 and getprop("systems/hydraulic/equipment/enable-slat")) {
+	    setprop("controls/flight/slats",1);
+	    return;
+	}
+    }
+    if (step < 0) {
+	if (getprop("controls/flight/flaps") == 0 and getprop("systems/hydraulic/equipment/enable-slat"))
+	    setprop("controls/flight/slats",0);
+    }
+    if (getprop("systems/hydraulic/equipment/enable-flap")) {
+        if(step == 0) return;
+        if(props.globals.getNode("/sim/flaps") != nil) {
+                globals.controls.stepProps("/controls/flight/flaps", "/sim/flaps", step);
+                return;
+        }
+        # Hard-coded flaps movement in 3 equal steps:
+        var val = 0.3333334 * step + getprop("/controls/flight/flaps");
+        setprop("/controls/flight/flaps", val > 1 ? 1 : val < 0 ? 0 : val);
     }
 }
+setlistener("controls/flight/flaps", func { controls.click(6) } );
+
+## GEAR
+#######
+controls.gearDown = func(v) {
+    var wow = getprop("gear/gear[0]/wow") or getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow");
+    if (v < 0 and getprop("systems/hydraulic/equipment/enable-gear")) {
+        if(!wow) setprop("/controls/gear/gear-down", 0);
+    } elsif (v > 0) { 
+      setprop("/controls/gear/gear-down", 1);
+    }
+}
+setlistener("controls/gear/gear-down", func { controls.click(8) } );
+
 
 controls.toggleLandingLights = func()
 {

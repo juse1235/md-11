@@ -43,13 +43,15 @@
 	<spoiler start="0.03" end="0.45" lift="0.5" drag="1.6" />
 	<control-input axis="/controls/flight/flaps" control="FLAP0"/>
 	<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-	<control-input axis="/surface-positions/flap-pos-norm" control="SLAT" src0="0" dst0="0" src1="0.1428" dst1="1.0"/>
-	<control-output control="SLAT" prop="/surface-positions/slats"/>
 	<control-speed control="FLAP0" transition-time="78"/>
+	<!--control-input axis="/surface-positions/flap-pos-norm" control="SLAT" src0="0" dst0="0" src1="0.1428" dst1="1.0"/-->
+	<control-input axis="/controls/flight/slats" control="SLAT"/>
+	<control-output control="SLAT" prop="/surface-positions/slats"/>
+	<control-speed control="SLAT" transition-time="9"/>
 	<control-input axis="/controls/flight/speedbrake" control="SPOILER"/>
 	<control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
 	<control-speed control="SPOILER" transition-time="2"/>
-	<control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+	<control-input axis="/controls/flight/aileron-pos" control="FLAP1" split="true"/>
 	<control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
 	<control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
 	<control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
@@ -60,7 +62,7 @@
      dihedral="10.6" camber="-0.1" twist="-1.0" idrag="1.1">
 	<stall aoa="15.0" width="7" peak="1.5" />
 	<flap0 start="0.0" end="1.0" lift="1.5" drag="1.3" />
-	<control-input axis="/controls/flight/elevator" control="FLAP0" src0="-1.0" dst0="-0.7" src1="1.0" dst1="0.7"/>
+	<control-input axis="/controls/flight/elevator-pos" control="FLAP0" src0="-1.0" dst0="-0.7" src1="1.0" dst1="0.7"/>
 	<control-input axis="/controls/flight/elevator-trim" control="FLAP0" />
 	<control-output control="FLAP0"  prop="/surface-positions/elevator-pos-norm" />
     </hstab>
@@ -70,7 +72,7 @@
      sweep="35.0" idrag="1.5">
 	<stall aoa="15" width="2" peak="1.5" />
 	<flap0 start="0.2" end="1.0" lift="1.6" drag="1.5" />
-	<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+	<control-input axis="/controls/flight/rudder-pos" control="FLAP0" invert="true"/>
 	<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
 	<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
                     min="1" max="-1"/>
