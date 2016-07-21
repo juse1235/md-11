@@ -511,8 +511,8 @@ setlistener("instrumentation/tcas/outputs/traffic-alert", func(traffic_alert){
 #        setprop("controls/flight/speedbrake-lever",2*getprop("controls/flight/speedbrake"));
 #}
 
-## FLAPS
-########
+## FLAPS/SLATS
+##############
 controls.flapsDown = func(step) {
     if (step > 0) {
 	if (getprop("controls/flight/slats") == 0 and getprop("systems/hydraulic/equipment/enable-slat")) {
@@ -536,6 +536,12 @@ controls.flapsDown = func(step) {
     }
 }
 setlistener("controls/flight/flaps", func { controls.click(6) } );
+
+## SPEEDBRAKES
+##############
+setlistener("controls/flight/speedbrake-lever", func (spoiler) {
+	if (spoiler.getValue() > 0 and !getprop("systems/hydraulic/equipment/enable-spoil")) setprop("controls/flight/speedbrake-lever",0);
+},0,0);
 
 ## GEAR
 #######
