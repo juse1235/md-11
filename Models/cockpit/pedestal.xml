@@ -251,7 +251,7 @@
 		<object-name>throttle.1</object-name>
 		<object-name>reverse.1</object-name>
 		<object-name>throttle.1.circle</object-name>
-        <property>controls/engines/engine/throttle-lever</property>
+        <property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -286,7 +286,7 @@
 		<object-name>reverse.1</object-name>
 		<property>engines/engine[0]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -295,9 +295,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 	
@@ -334,7 +334,7 @@
 		<object-name>throttle.2</object-name>
 		<object-name>reverse.2</object-name>
 		<object-name>throttle.2.circle</object-name>
-        <property>controls/engines/engine[1]/throttle-lever</property>
+        <property>controls/engines/engine[1]/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -369,7 +369,7 @@
 		<object-name>reverse.2</object-name>
 		<property>engines/engine[1]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -378,9 +378,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 	
@@ -417,7 +417,7 @@
 		<object-name>throttle.3</object-name>
 		<object-name>throttle.3.circle</object-name>
 		<object-name>reverse.3</object-name>
-        <property>controls/engines/engine[2]/throttle-lever</property>
+        <property>controls/engines/engine[2]/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -452,7 +452,7 @@
 		<object-name>reverse.3</object-name>
 		<property>engines/engine[2]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -461,9 +461,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 
@@ -694,8 +694,35 @@
 		</center>
 	</animation>
 	
+	<animation>
+        <type>rotate</type>
+        <object-name>flaplever</object-name>
+        <object-name>flaplever.2</object-name>
+        <object-name>flaplever.3</object-name>
+        <property>controls/flight/slats</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>-13</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-27.125</x-m>
+            <y-m>0</y-m>
+            <z-m>6.6837</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
-	    <animation>
+	<animation>
         <type>rotate</type>
         <object-name>flaplever</object-name>
         <object-name>flaplever.2</object-name>
@@ -704,23 +731,23 @@
         <interpolation>
             <entry>
                 <ind>0</ind>
-                <dep>-13.28</dep>
+                <dep>-13</dep>
             </entry>
             <entry>
-                <ind>0.44</ind>
-                <dep>8.3</dep>
+                <ind>0.31</ind>
+                <dep>13</dep>
             </entry>
             <entry>
-                <ind>0.56</ind>
-                <dep>18</dep>
+                <ind>0.58</ind>
+                <dep>24</dep>
             </entry>
             <entry>
                 <ind>0.7</ind>
-                <dep>32.50</dep>
+                <dep>35</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
-                <dep>51.69</dep>
+                <dep>51</dep>
             </entry>
         </interpolation>
         <center>

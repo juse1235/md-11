@@ -329,6 +329,7 @@ var RHeng=Engine.new(2);
 var wiper = Wiper.new("controls/electric/wipers","systems/electrical/bus-volts");
 
 setlistener("sim/signals/fdm-initialized", func {
+	setprop("/controls/flight/zero", "0");
     SndOut.setDoubleValue(0.15);
     chronometer.stop();
     props.globals.initNode("instrumentation/clock/ET-display",0,"INT");
