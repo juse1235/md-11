@@ -930,7 +930,7 @@
 				<animation>
 		<type>rotate</type>
 		<object-name>elevator.1</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -949,7 +949,7 @@
 					<animation>
 		<type>rotate</type>
 		<object-name>elevator.2</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<interpolation>
 			<entry><ind>1.0</ind><dep>-15.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -2021,17 +2021,17 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.outer</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>-1.0</ind>
-                <dep>20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/left-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>6.1986</x1-m>
 			<y1-m>-10.5629</y1-m>
@@ -2042,20 +2042,20 @@
 		</axis>
 	</animation>
 	
-		<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.left.inner</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>-1.0</ind>
-                <dep>20</dep>
-            </entry>
-        </interpolation>
+	        <property>surface-positions/left-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>20</dep>
+	            </entry>
+        	</interpolation>
 		<axis>
 			<x1-m>4.6240</x1-m>
 			<y1-m>-4.2563</y1-m>
@@ -2066,20 +2066,20 @@
 		</axis>
 	</animation>
 		
-			<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.outer</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>-20</dep>
-            </entry>
-        </interpolation>
+        	<property>surface-positions/right-aileron-pos-norm</property>
+	        <interpolation>
+	            <entry>
+	                <ind>0</ind>
+	                <dep>0</dep>
+	            </entry>
+	            <entry>
+	                <ind>-1.0</ind>
+	                <dep>-20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>6.1986</x1-m>
 			<y1-m>10.5629</y1-m>
@@ -2090,20 +2090,20 @@
 		</axis>
 	</animation>
 	
-			<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>sp.brake.right.inner</object-name>
-		<property>/sim/multiplay/generic/float[8]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>-20</dep>
-            </entry>
-        </interpolation>
+        	<property>surface-positions/right-aileron-pos-norm</property>
+        	<interpolation>
+        	    <entry>
+			<ind>0</ind>
+                	<dep>0</dep>
+	            </entry>
+	            <entry>
+                	<ind>-1.0</ind>
+                	<dep>-20</dep>
+	            </entry>
+	        </interpolation>
 		<axis>
 			<x1-m>4.6240</x1-m>
 			<y1-m>4.2563</y1-m>

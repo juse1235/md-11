@@ -181,22 +181,6 @@ setlistener("controls/lighting/cockpit", func {
 		if(getprop("controls/lighting/cockpit")) STRMST.open();
 		else STRMST.close();
 });
-setlistener("controls/hydraulics/system/LENG_switch", func {
-		if(getprop("controls/hydraulics/system/LENG_switch")) LENGST.open();
-		else LENGST.close();
-});
-setlistener("controls/hydraulics/system[2]/RENG_switch", func {
-		if(getprop("controls/hydraulics/system[2]/RENG_switch")) RENGST.open();
-		else RENGST.close();
-});
-setlistener("controls/hydraulics/system[1]/C1ELEC-switch", func {
-		if(getprop("controls/hydraulics/system[1]/C1ELEC-switch")) C1ELECST.open();
-		else C1ELECST.close();
-});
-setlistener("controls/hydraulics/system[1]/C2ELEC-switch", func {
-		if(getprop("controls/hydraulics/system[1]/C2ELEC-switch")) C2ELECST.open();
-		else C2ELECST.close();
-});
 setlistener("controls/anti-ice/window-heat-ls-switch", func {
 		if(getprop("controls/anti-ice/window-heat-ls-switch")) WHLSST.open();
 		else WHLSST.close();

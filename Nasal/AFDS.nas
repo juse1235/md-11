@@ -250,6 +250,12 @@ var AFDS = {
 		if (me.vertical_mode.getValue() == 0) me.input(1,1);
 	    } else {
 		if (me.vertical_mode.getValue() == 0) me.input(1,2);
+		if (me.vertical_mode.getValue() == 2) {
+		    var vs_set = me.vs_setting.getValue();
+		    me.vertical_mode.setValue(0);
+		    me.input(1,2);
+		    settimer(func me.vs_setting.setValue(vs_set),1);
+		}
 	    }
 	    if (me.lateral_mode.getValue() == 0) me.input(0,2);
 	}
