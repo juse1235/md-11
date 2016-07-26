@@ -1212,7 +1212,7 @@ Syd Adams
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">INHG %2.2f</format>
-        <property>instrumentation/altimeter/setting-inhg-formatted</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.006</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -1233,7 +1233,7 @@ Syd Adams
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">HPA %4.0f</format>
-        <property>instrumentation/altimeter/setting-hpa-formatted</property>
+        <property>instrumentation/altimeter/setting-hpa</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.006</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
