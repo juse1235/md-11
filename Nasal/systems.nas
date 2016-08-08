@@ -1174,14 +1174,6 @@ var update_systems = func {
     RHeng.update();
     CHeng.update();
     #wiper.active(); # not implemented yet!
-    if(getprop("controls/gear/gear-down")){
-        setprop("sim/multiplay/generic/float[0]",getprop("gear/gear[0]/compression-m"));
-        setprop("sim/multiplay/generic/float[1]",getprop("gear/gear[1]/compression-m"));
-        setprop("sim/multiplay/generic/float[2]",getprop("gear/gear[1]/compression-m"));
-        setprop("sim/multiplay/generic/float[3]",getprop("gear/gear[2]/compression-m"));
-        setprop("sim/multiplay/generic/float[4]",getprop("gear/gear[2]/compression-m"));
-        setprop("sim/multiplay/generic/float[5]",getprop("gear/gear[3]/compression-m"));
-    }
 
     var et_tmp = getprop("instrumentation/clock/ET-sec");
     var et_min = int(et_tmp * 0.0166666666667);
