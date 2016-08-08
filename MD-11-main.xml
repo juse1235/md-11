@@ -175,6 +175,8 @@
                 <float n="1" alias="/gear/gear[1]/compression-m"/>
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[3]/compression-m"/>
+                <float n="4" alias="/gear/gear[4]/compression-m"/>
+                <float n="5" alias="/gear/gear[5]/compression-m"/>
                 <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
                 <float n="7" alias="/surface-positions/reverser-norm"/>
                 <float n="8" alias="/controls/flight/aileron"/>
