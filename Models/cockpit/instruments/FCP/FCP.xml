@@ -867,6 +867,13 @@
 			<button>3</button> <!--  scroll down -->
 			<repeatable>false</repeatable>
 			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("instrumentation/afds/ap-modes/pitch-mode") != "V/S" and getprop("instrumentation/afds/ap-modes/pitch-mode") != "FPA")
+					    MD11.afds.input(1,2);
+				</script>
+			</binding>
+			<binding>
 				<condition>
 					<equals>
 						<property>instrumentation/afds/ap-modes/pitch-mode</property>
@@ -879,31 +886,6 @@
 				<min>-8000</min>
 				<max>6000</max>
 			</binding>
-		</action>
-		<action>
-			<button>4</button> <!--  scroll up -->
-			<repeatable>false</repeatable>
-			<binding>
-				<condition>
-					<equals>
-						<property>instrumentation/afds/ap-modes/pitch-mode</property>
-						<value>V/S</value>
-					</equals>
-				</condition>
-				<command>property-adjust</command>
-				<property>autopilot/settings/vertical-speed-fpm</property>
-				<step>100</step>
-				<min>-8000</min>
-				<max>6000</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>Pitch_Wheel.knob</object-name>
-		<action>
-			<button>3</button> <!--  scroll down -->
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
@@ -922,6 +904,26 @@
 			<button>4</button> <!--  scroll up -->
 			<repeatable>false</repeatable>
 			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("instrumentation/afds/ap-modes/pitch-mode") != "V/S" and getprop("instrumentation/afds/ap-modes/pitch-mode") != "FPA")
+					    MD11.afds.input(1,2);
+				</script>
+			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/afds/ap-modes/pitch-mode</property>
+						<value>V/S</value>
+					</equals>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/vertical-speed-fpm</property>
+				<step>100</step>
+				<min>-8000</min>
+				<max>6000</max>
+			</binding>
+			<binding>
 				<condition>
 					<equals>
 						<property>instrumentation/afds/ap-modes/pitch-mode</property>
@@ -936,49 +938,6 @@
 			</binding>
 		</action>
 	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>Pitch_Wheel.knob</object-name>
-		<action>
-			<button>3</button>
-			<button>4</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-					if (getprop("instrumentation/afds/ap-modes/pitch-mode") != "V/S" and getprop("instrumentation/afds/ap-modes/pitch-mode") != "FPA")
-					    MD11.afds.input(1,2);
-				</script>
-			</binding>
-		</action>
-	</animation>
-
-
- <!--  manual intervention -->
-   <!--animation>
-		<type>pick</type>
-		<object-name>SpdKnob</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<condition>
-					<equals>
-						<property>instrumentation/afds/ap-modes/pitch-mode</property>
-						<value>VNAV PTH</value>
-					</equals>
-				</condition>
-				<command>property-toggle</command>
-				<property>instrumentation/afds/settings/manual-intervention</property>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>
-					controls.click(3);
-				</script>
-			</binding>
-		</action>
-	</animation-->
 
 	<animation>
 		<type>pick</type>
@@ -1001,33 +960,6 @@
 				<min>100</min>
 				<max>390</max>
 			</binding>
-		</action>
-		<action>
-			<button>4</button> <!--  scroll down -->
-			<repeatable>true</repeatable>
-			<binding>
-				<condition>
-				    <and>
-					<property>systems/electrical/outputs/avionics</property>
-					<not>
-					    <property>instrumentation/afds/inputs/ias-mach-selected</property>
-					</not>
-				    </and>
-				</condition>
-				<command>property-adjust</command>
-				<property>autopilot/settings/target-speed-kt</property>
-				<step>-1</step>
-				<min>100</min>
-				<max>390</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>SpdKnob</object-name>
-		<action>
-			<button>3</button> <!--  scroll up -->
-			<repeatable>true</repeatable>
 			<binding>
 				<condition>
 				    <and>
@@ -1049,6 +981,21 @@
 				<condition>
 				    <and>
 					<property>systems/electrical/outputs/avionics</property>
+					<not>
+					    <property>instrumentation/afds/inputs/ias-mach-selected</property>
+					</not>
+				    </and>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/target-speed-kt</property>
+				<step>-1</step>
+				<min>100</min>
+				<max>390</max>
+			</binding>
+			<binding>
+				<condition>
+				    <and>
+					<property>systems/electrical/outputs/avionics</property>
 					<property>instrumentation/afds/inputs/ias-mach-selected</property>
 				    </and>
 				</condition>
@@ -1060,7 +1007,6 @@
 			</binding>
 		</action>
 	</animation>
-
 
 	<animation>
 		<type>pick</type>
@@ -1241,21 +1187,6 @@
 		<type>pick</type>
 		<object-name>ALT.knob</object-name>
 		<action>
-			<binding>
-				<condition>
-				    <and>
-					<property>systems/electrical/outputs/avionics</property>
-					<property>instrumentation/afds/inputs/alt-knob</property>
-				    </and>
-				</condition>
-				<command>property-adjust</command>
-				<property>autopilot/settings/alt-display-ft</property>
-				<step>-1000</step>
-				<min>0</min>
-				<max>50000</max>
-			</binding>
-		</action>
-		<action>
             		<button>0</button>
             		<repeatable>false</repeatable>
             		<binding>
@@ -1301,7 +1232,7 @@
 			<binding>
 				<condition>
 				    <and>
-						<property>systems/electrical/outputs/avionics</property>
+					<property>systems/electrical/outputs/avionics</property>
 					<not>
 					    <property>instrumentation/afds/inputs/alt-knob</property>
 					</not>
@@ -1310,6 +1241,19 @@
 				<command>property-adjust</command>
 				<property>autopilot/settings/alt-display-ft</property>
 				<step>100</step>
+				<min>0</min>
+				<max>50000</max>
+			</binding>
+			<binding>
+				<condition>
+				    <and>
+					<property>systems/electrical/outputs/avionics</property>
+					<property>instrumentation/afds/inputs/alt-knob</property>
+				    </and>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/alt-display-ft</property>
+				<step>1000</step>
 				<min>0</min>
 				<max>50000</max>
 			</binding>
@@ -1332,31 +1276,6 @@
 				<min>0</min>
 				<max>50000</max>
 			</binding>
-        	</action>
-	</animation>
-   	<animation>
-		<type>pick</type>
-		<object-name>ALT.knob</object-name>
-		<action>
-			<button>3</button> <!--  scroll up -->
-			<repeatable>true</repeatable>
-			<binding>
-				<condition>
-					<and>
-						<property>systems/electrical/outputs/avionics</property>
-						<property>instrumentation/afds/inputs/alt-knob</property>
-					</and>
-				</condition>
-				<command>property-adjust</command>
-				<property>autopilot/settings/alt-display-ft</property>
-				<step>1000</step>
-				<min>0</min>
-				<max>50000</max>
-			</binding>
-		</action>
-		<action>
-			<button>4</button> <!--  scroll down -->
-			<repeatable>true</repeatable>
 			<binding>
 				<condition>
 				    <and>
@@ -1370,9 +1289,8 @@
 				<min>0</min>
 				<max>50000</max>
 			</binding>
-		</action>
+        	</action>
 	</animation>
-
 
 			<!-- Lighting -->
 	
