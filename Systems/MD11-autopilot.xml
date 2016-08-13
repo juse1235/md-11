@@ -488,7 +488,7 @@
       <prop>/autopilot/internal/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>0.1</Kp>
+      <Kp>0.15</Kp>
       <Ki>0.0</Ki>
       <u_min>
             <prop>instrumentation/afds/settings/flch-min</prop>
@@ -601,7 +601,7 @@
     </output>
     <config>
       <!--Ts>0.05</Ts--> 
-      <Kp>0.05</Kp>
+      <Kp>0.35</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
@@ -734,114 +734,99 @@
         </u_max>
     </config>
   </pid-controller>
-
-	<!-- IAS -->
-  <pid-controller>
-    <name>Speed with pitch IAS</name>
-    <debug type="bool">false</debug>
-    <enable>
-      <condition>
-	<and>
-	  <or>
-	      <equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>
-		<value>SPD</value>
-	      </equals>
-	      <equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>
-		<value>CLB THRUST</value>
-	      </equals>
-	  </or>
-	  <not>
-	    <property>/instrumentation/afds/inputs/ias-mach-selected</property>
-	  </not>
-	</and>
-      </condition>
-    </enable>
-    <input>
-      <!--prop>/instrumentation/airspeed-indicator/indicated-speed-kt</prop-->
-      <prop>autopilot/internal/lookahead-10-sec-airspeed-kt</prop>
-    </input>
-    <reference>
-      <prop>autopilot/internal/target-ias-kt</prop>
-    </reference>
-    <output>
-      <prop>/autopilot/internal/target-pitch-deg</prop>
-    </output>
-    <config>
-	<Kp>-0.08</Kp>
-	<beta>1</beta>
-	<alpha>0.1</alpha>
-	<gamma>0</gamma>
-	<Ti>10</Ti>
-	<Td>0.00001</Td>
-        <u_min>
-            <prop>instrumentation/afds/settings/pitch-min</prop>
-        </u_min>
-        <u_max>
-            <prop>instrumentation/afds/settings/pitch-max</prop>
-        </u_max>
-    </config>
-  </pid-controller>
-
-	<!-- Mach -->
-  <predict-simple>
-    <name>15-second mach predictor</name>
-    <debug type="bool">false</debug>
-    <seconds>10</seconds>
-    <filter-gain>0</filter-gain>
-    <input>
-	<prop>instrumentation/airspeed-indicator/indicated-mach</prop>
-    </input>
-    <output>
-	<prop>autopilot/internal/lookahead-15-sec-mach</prop>
-    </output>
-  </predict-simple>
-  <pid-controller>
-    <name>Speed with Pitch Mach</name>
-    <debug type="bool">false</debug>
-    <enable>
-      <condition>
-	<and>
-	  <or>
-	      <equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>
-		<value>SPD</value>
-	      </equals>
-	      <equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>
-		<value>CLB THRUST</value>
-	      </equals>
-	  </or>
-	  <property>/instrumentation/afds/inputs/ias-mach-selected</property>
-	</and>
-      </condition>
-    </enable>
-    <input>
-      <!--prop>/instrumentation/airspeed-indicator/indicated-mach</prop-->
-      <prop>autopilot/internal/lookahead-15-sec-mach</prop>
-    </input>
-    <reference>
-      <prop>/autopilot/internal/target-mach</prop>
-    </reference>
-    <output>
-      <prop>/autopilot/internal/target-pitch-deg</prop>
-    </output>
-    <config>
-	<Kp>-0.05</Kp>
-	<beta>1</beta>
-	<alpha>0.1</alpha>
-	<gamma>0</gamma>
-	<Ti>0.005</Ti>
-	<Td>0.00001</Td>
-        <u_min>
-            <prop>instrumentation/afds/settings/pitch-min</prop>
-        </u_min>
-        <u_max>
-            <prop>instrumentation/afds/settings/pitch-max</prop>
-        </u_max>
-    </config>
-  </pid-controller>
+  
+	<pid-controller>
+		<name>FLIGHT LEVEL CHANGE</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>instrumentation/afds/ap-modes/pitch-mode</property>
+						<value>SPD</value>
+					</equals>
+					<equals>
+						<property>instrumentation/afds/ap-modes/pitch-mode</property>
+						<value>CLB THRUST</value>
+					</equals>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<condition>
+				<not><property>/instrumentation/afds/inputs/ias-mach-selected</property></not>
+			</condition>
+			<prop>/autopilot/internal/lookahead-10-sec-airspeed-kt</prop>
+		</input>
+		<input>
+			<condition>
+				<property>/instrumentation/afds/inputs/ias-mach-selected</property>
+			</condition>
+			<prop>/velocities/mach</prop>
+			<scale>500.0</scale>
+		</input>
+		<reference>
+			<condition>
+				<not><property>/instrumentation/afds/inputs/ias-mach-selected</property></not>
+			</condition>
+			<prop>/autopilot/internal/target-ias-kt</prop>
+		</reference>
+		<reference>
+			<condition>
+				<property>/instrumentation/afds/inputs/ias-mach-selected</property>
+			</condition>
+			<prop>/autopilot/internal/target-mach</prop>
+			<scale>500.0</scale>
+		</reference>
+		<output>
+			<prop>/autopilot/internal/target-pitch-deg</prop>
+		</output>
+		<config>
+			<Kp>-0.30</Kp>       
+			<beta>1.0</beta>    
+			<alpha>0.1</alpha>  
+			<gamma>0.0</gamma>  
+			
+			<Ti>10.0</Ti>        
+			<Td>0.00001</Td>    
+            <u_min>
+                <condition>
+                    <greater-than>
+                        <property>/autopilot/settings/altitude-setting-ft</property>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    </greater-than>
+                </condition>
+                <value>1.5</value>
+            </u_min>
+            <u_min>
+                <condition>
+                    <less-than>
+                        <property>/autopilot/settings/altitude-setting-ft</property>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    </less-than>
+                </condition>
+                <value>-15.0</value>
+            </u_min>
+            <u_max>
+                <condition>
+                    <greater-than>
+                        <property>/autopilot/settings/altitude-setting-ft</property>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    </greater-than>
+                </condition>
+                <value>20.0</value>
+            </u_max>
+            <u_max>
+                <condition>
+                    <less-than>
+                        <property>/autopilot/settings/altitude-setting-ft</property>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    </less-than>
+                </condition>
+                <value>0.0</value>
+            </u_max>
+		</config>
+	</pid-controller>
 
 
   <filter>
@@ -863,62 +848,225 @@
     <output>/autopilot/internal/target-pitch-deg</output>
   </filter>
 
-  <pid-controller>
-    <name>Elevator Control</name>
-    <debug>false</debug>
-    <enable>
-      <prop>autopilot/locks/pitch-engaged</prop>
-      <value>true</value>
-      <honor-passive>true</honor-passive>
-    </enable>
-    <input>
-      <prop>/orientation/pitch-deg</prop>
-    </input>
-    <reference>
-      <prop>/autopilot/internal/target-pitch-deg</prop>
-    </reference>
-    <output>
-      <prop>/controls/flight/elevator-trim-filter</prop>
-      <!--prop>/controls/flight/elevator-trim</prop-->
-    </output>
-    <config>
-      <Kp>-0.015</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>1.0</Ti>
-      <Td>0.00001</Td>
-      <u_min>
-        <value>-0.8</value>
-      </u_min>
-      <u_max>
-        <value>0.8</value>
-      </u_max>
-    </config>
-  </pid-controller>
+  
+	<pid-controller>
+		<name>Elevator Control Speed with Pitch</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<or>
+						<equals>
+							<property>instrumentation/afds/ap-modes/pitch-mode</property>
+							<value>SPD</value>
+						</equals>
+						<equals>
+							<property>instrumentation/afds/ap-modes/pitch-mode</property>
+							<value>CLB THRUST</value>
+						</equals>
+					</or>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>false</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<prop>/orientation/pitch-deg</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/internal/target-pitch-deg</prop>
+		</reference>
+		<output>
+			<prop>/controls/flight/elevator-filter</prop>
+		</output>
+		<config>
+			<Kp>-0.10</Kp>      
+			<beta>1.0</beta>    
+			<alpha>0.1</alpha>  
+			<gamma>0.0</gamma>  
+			
+			<Ti>10.0</Ti>        
+			<Td>0.00001</Td>    
+			<u_min>-0.35</u_min>
+			<u_max>0.35</u_max>
+		</config>
+	</pid-controller>
 
-    <filter>
-        <name>Elevator control filter</name>
-        <debug>false</debug>
-        <feedback-if-disabled>true</feedback-if-disabled>
-        <initialize-to>output</initialize-to>
-        <enable>
+	<pid-controller>
+		<name>Elevator Control Normal</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<and>
+						<not-equals>
+							<property>instrumentation/afds/ap-modes/pitch-mode</property>
+							<value>SPD</value>
+						</not-equals>
+						<not-equals>
+							<property>instrumentation/afds/ap-modes/pitch-mode</property>
+							<value>CLB THRUST</value>
+						</not-equals>
+					</and>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>false</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/orientation/pitch-deg</property>
+		</input>
+		<reference>
+			<property>/autopilot/internal/target-pitch-deg</property>
+		</reference>
+		<output>
+			<property>/controls/flight/elevator-filter</property>
+		</output>
+		<config>
+			<Kp>-0.09</Kp>      
+			<beta>1.0</beta>    
+			<alpha>0.1</alpha>  
+			<gamma>0.0</gamma>  
+			<Ti>10.0</Ti>       
+			<Td>0.0001</Td>    
+			<u_min>-0.35</u_min>
+			<u_max>0.35</u_max>
+		</config>
+	</pid-controller>
+	
+	<filter>
+		<name>Elevator control filter</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<enable>
             <condition>
                 <equals>
                     <property>autopilot/locks/passive-mode</property>
                     <value>false</value>
-                    <!--property>autopilot/locks/pitch-engaged</property>
-                    <value>true</value-->
                 </equals>
             </condition>
-        </enable>
-        <input>
-            <property>/controls/flight/elevator-trim-filter</property>
-        </input>
-        <output>/controls/flight/elevator-trim</output>
-        <type>noise-spike</type>
-        <max-rate-of-change>0.2</max-rate-of-change>
-    </filter>
+		</enable>
+		<input>
+			<property>/controls/flight/elevator-filter</property>
+		</input>
+		<output>/controls/flight/elevator</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.15</max-rate-of-change>
+	</filter>
+	
+	<pid-controller>
+		<name>AP PITCH HELPER PLUS</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<greater-than>
+						<property>/controls/flight/elevator-filter</property>
+						<value>0.05</value>
+					</greater-than>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>false</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<value>0</value>
+		</input>
+		<reference>
+			<value>1</value>
+		</reference>
+		<output>
+			<property>/controls/flight/elevator-trim-filter</property>
+		</output>
+		<config>
+			<Kp>0.08</Kp>
+			<beta>1.0</beta>
+			<alpha>0.1</alpha>
+			<gamma>0.0</gamma>
+			<Ti>10</Ti>
+			<Td>0.00001</Td>
+			<u_min>-0.90</u_min>
+			<u_max>0.90</u_max>
+		</config>
+	</pid-controller>
+	
+	<pid-controller>
+		<name>AP PITCH HELPER MINUS</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<less-than>
+						<property>/controls/flight/elevator-filter</property>
+						<value>-0.05</value>
+					</less-than>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>false</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<value>0</value>
+		</input>
+		<reference>
+			<value>1</value>
+		</reference>
+		<output>
+			<property>/controls/flight/elevator-trim-filter</property>
+		</output>
+		<config>
+			<Kp>-0.08</Kp>
+			<beta>1.0</beta>
+			<alpha>0.1</alpha>
+			<gamma>0.0</gamma>
+			<Ti>10</Ti>
+			<Td>0.00001</Td>
+			<u_min>-0.90</u_min>
+			<u_max>0.90</u_max>
+		</config>
+	</pid-controller>
+		
+	<filter>
+		<name>Elevator trim control filter</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<enable>
+			<condition>
+				<and>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>false</value>
+					</equals>
+					<or>
+						<greater-than>
+							<property>/controls/flight/elevator-filter</property>
+							<value>0.05</value>
+						</greater-than>
+						<less-than>
+							<property>/controls/flight/elevator-filter</property>
+							<value>-0.05</value>
+						</less-than>
+					</or>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/controls/flight/elevator-trim-filter</property>
+		</input>
+		<output>/controls/flight/elevator-trim</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.01</max-rate-of-change>
+	</filter>
 
         <filter>
                 <name>Tiller control filter nose</name>
