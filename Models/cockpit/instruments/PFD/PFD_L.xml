@@ -117,6 +117,14 @@ Syd Adams
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value></value>
 		</equals>
 		</or>
@@ -206,6 +214,14 @@ Syd Adams
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value></value>
 		</equals>
 		</or>
@@ -242,6 +258,14 @@ Syd Adams
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>PROF TO</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		

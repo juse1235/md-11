@@ -471,20 +471,10 @@
     <debug>false</debug>
     <enable>
       <condition>
-        <or>
           <equals>
             <property>instrumentation/afds/ap-modes/pitch-mode</property>
             <value>HOLD</value>
           </equals>
-          <equals>
-            <property>instrumentation/afds/ap-modes/pitch-mode</property>
-            <value>CLB THRUST</value>
-          </equals>
-          <equals>
-            <property>instrumentation/afds/ap-modes/pitch-mode</property>
-            <value>PROF TO</value>
-          </equals>
-        </or>
       </condition>
     </enable>
     <input>
@@ -501,10 +491,10 @@
       <Kp>0.1</Kp>
       <Ki>0.0</Ki>
       <u_min>
-        <value>-16.67</value>
+            <prop>instrumentation/afds/settings/flch-min</prop>
       </u_min>
       <u_max>
-        <value>33.33</value>
+            <prop>instrumentation/afds/settings/flch-max</prop>
       </u_max>
     </config>
   </pi-simple-controller>
@@ -514,20 +504,10 @@
     <debug>false</debug>
     <enable>
       <condition>
-        <or>
           <equals>
             <property>instrumentation/afds/ap-modes/pitch-mode</property>
             <value>HOLD</value>
           </equals>
-          <equals>
-            <property>instrumentation/afds/ap-modes/pitch-mode</property>
-            <value>CLB THRUST</value>
-          </equals>
-          <equals>
-            <property>instrumentation/afds/ap-modes/pitch-mode</property>
-            <value>PROF TO</value>
-          </equals>
-        </or>
       </condition>
     </enable>
     <input>
@@ -546,66 +526,6 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.0</Td>
-        <u_min>
-            <prop>instrumentation/afds/settings/pitch-min</prop>
-        </u_min>
-        <u_max>
-            <prop>instrumentation/afds/settings/pitch-max</prop>
-        </u_max>
-    </config>
-  </pid-controller>
-
-  <pi-simple-controller>
-    <name>VNAV 1</name>
-    <debug>false</debug>
-    <enable>
-      <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
-      <value>PROF</value>
-    </enable>
-    <input>
-      <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
-    </input>
-    <reference>
-      <prop>/instrumentation/afds/settings/vnav-alt</prop>
-    </reference>
-    <output>
-      <prop>/autopilot/internal/target-climb-rate-fps</prop>
-    </output>
-    <config>
-      <Kp>0.3</Kp>
-      <Ki>0.0</Ki>
-      <u_min>
-        <value>-16.67</value>
-      </u_min>
-      <u_max>
-        <value>33.33</value>
-      </u_max>
-    </config>
-  </pi-simple-controller>
-
-  <pid-controller>
-    <name>VNAV 2</name>
-    <debug>false</debug>
-    <enable>
-      <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
-      <value>PROF</value>
-    </enable>
-    <input>
-      <prop>/velocities/vertical-speed-fps</prop>
-    </input>
-    <reference>
-      <prop>/autopilot/internal/target-climb-rate-fps</prop>
-    </reference>
-    <output>
-      <prop>/autopilot/internal/target-pitch-deg</prop>
-    </output>
-    <config>
-      <Kp>1</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.00001</Td>
         <u_min>
             <prop>instrumentation/afds/settings/pitch-min</prop>
         </u_min>
@@ -814,6 +734,115 @@
         </u_max>
     </config>
   </pid-controller>
+
+	<!-- IAS -->
+  <pid-controller>
+    <name>Speed with pitch IAS</name>
+    <debug type="bool">false</debug>
+    <enable>
+      <condition>
+	<and>
+	  <or>
+	      <equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>
+		<value>SPD</value>
+	      </equals>
+	      <equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>
+		<value>CLB THRUST</value>
+	      </equals>
+	  </or>
+	  <not>
+	    <property>/instrumentation/afds/inputs/ias-mach-selected</property>
+	  </not>
+	</and>
+      </condition>
+    </enable>
+    <input>
+      <!--prop>/instrumentation/airspeed-indicator/indicated-speed-kt</prop-->
+      <prop>autopilot/internal/lookahead-10-sec-airspeed-kt</prop>
+    </input>
+    <reference>
+      <prop>autopilot/internal/target-ias-kt</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-pitch-deg</prop>
+    </output>
+    <config>
+	<Kp>-0.08</Kp>
+	<beta>1</beta>
+	<alpha>0.1</alpha>
+	<gamma>0</gamma>
+	<Ti>10</Ti>
+	<Td>0.00001</Td>
+        <u_min>
+            <prop>instrumentation/afds/settings/pitch-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/afds/settings/pitch-max</prop>
+        </u_max>
+    </config>
+  </pid-controller>
+
+	<!-- Mach -->
+  <predict-simple>
+    <name>15-second mach predictor</name>
+    <debug type="bool">false</debug>
+    <seconds>10</seconds>
+    <filter-gain>0</filter-gain>
+    <input>
+	<prop>instrumentation/airspeed-indicator/indicated-mach</prop>
+    </input>
+    <output>
+	<prop>autopilot/internal/lookahead-15-sec-mach</prop>
+    </output>
+  </predict-simple>
+  <pid-controller>
+    <name>Speed with Pitch Mach</name>
+    <debug type="bool">false</debug>
+    <enable>
+      <condition>
+	<and>
+	  <or>
+	      <equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>
+		<value>SPD</value>
+	      </equals>
+	      <equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>
+		<value>CLB THRUST</value>
+	      </equals>
+	  </or>
+	  <property>/instrumentation/afds/inputs/ias-mach-selected</property>
+	</and>
+      </condition>
+    </enable>
+    <input>
+      <!--prop>/instrumentation/airspeed-indicator/indicated-mach</prop-->
+      <prop>autopilot/internal/lookahead-15-sec-mach</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-mach</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-pitch-deg</prop>
+    </output>
+    <config>
+	<Kp>-0.05</Kp>
+	<beta>1</beta>
+	<alpha>0.1</alpha>
+	<gamma>0</gamma>
+	<Ti>0.005</Ti>
+	<Td>0.00001</Td>
+        <u_min>
+            <prop>instrumentation/afds/settings/pitch-min</prop>
+        </u_min>
+        <u_max>
+            <prop>instrumentation/afds/settings/pitch-max</prop>
+        </u_max>
+    </config>
+  </pid-controller>
+
 
   <filter>
     <name>Vert Initialization filter</name>

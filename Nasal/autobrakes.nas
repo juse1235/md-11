@@ -50,6 +50,8 @@ var autobrakes = {
 		# 85 kts, RTO autobrakes engage at full.
 		me.brake_left.setValue(1.0);
 		me.brake_right.setValue(1.0);
+		setprop("instrumentation/afds/inputs/at-armed[0]",0);
+		setprop("instrumentation/afds/inputs/at-armed[1]",0);
 		if (speed >= 20)
 		    setprop("controls/gear/brake-parking",1);
 		if (speed < 20 and speed > 10)
