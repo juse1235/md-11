@@ -17,21 +17,7 @@ var spoilers = {
     },
 
     update : func {
-	# Hydraulics needed to get into and out of position 2 and 3 and 4
-#	if (me.lev_pos == 1 and me.lever.getValue() > 1) {
-#	    if (me.hydraulic.getBoolValue()) {
-#		me.lev_pos = me.lever.getValue();
-#	    } else {
-#		me.lev_pos = 0;
-#		me.lever.setBoolValue(0);
-#	    }
-#	} elsif (me.lev_pos > 1) {
-#	    if (me.hydraulic.getBoolValue()) {
-#		me.lev_pos = me.lever.getValue();
-#	    }
-#	} else {
-		me.lev_pos = me.lever.getValue();
-#	}
+	me.lev_pos = me.lever.getValue();
 
 	# Set the status of auto and the speedbrake position
 	if (me.lev_pos == 0) {
@@ -57,31 +43,35 @@ var spoilers = {
 	    var td = setlistener("gear/gear[1]/wow", func {
 		me.autospeedbrake();
 	    },0,0);
+	    var td2 = setlistener("gear/gear[0]/wow", func {
+		me.autospeedbrake();
+	    },0,0);
 	    var asb = setlistener("controls/flight/autospeedbrakes-armed", func {
 		if (!me.auto.getBoolValue()) {
 		    removelistener(asb);
 		    removelistener(td);
+		    removelistener(td2);
 		}
 	    },0,0);
 	}
     },
 
     autospeedbrake : func {
-#	if (me.auto.getBoolValue() and getprop("gear/gear[2]/wow") and me.hydraulic.getBoolValue()) {
 	var throt = getprop("controls/engines/engine[0]/throttle-act") < 0.4 and
 		    getprop("controls/engines/engine[1]/throttle-act") < 0.4 and
 		    getprop("controls/engines/engine[2]/throttle-act") < 0.4;
 	var revrs = getprop("controls/engines/engine[0]/reverser") and
 		    getprop("controls/engines/engine[1]/reverser") and
 		    getprop("controls/engines/engine[2]/reverser");
-	if (me.auto.getBoolValue() and (getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow") or getprop("gear/gear[3]/wow") or getprop("gear/gear[4]/wow")) and throt) {
-	    me.pos_cmd.setValue(0.750);
-	    setprop("controls/flight/speedbrake-lever", 3);
-		var spdbrkpos = getprop("controls/flight/speedbrake-lever");
+	if (me.auto.getBoolValue() and getprop("systems/hydraulic/equipment/enable-spoil")) {
+	    if (me.auto.getBoolValue() and (getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow") or getprop("gear/gear[3]/wow") or getprop("gear/gear[4]/wow")) and throt) {
+		me.pos_cmd.setValue(0.750);
+		setprop("controls/flight/speedbrake-lever", 3);
 		if (getprop("gear/gear[0]/wow")) {
 			me.pos_cmd.setValue(1.0);
 			setprop("controls/flight/speedbrake-lever", 4);
 		}
+	    }
 	}
     },
 };
