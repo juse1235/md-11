@@ -27,6 +27,10 @@
 		
 	<fuel-fraction>0.5</fuel-fraction>
 
+	<hud>   
+	    <enable3d n="1">false</enable3d>
+	</hud>
+		
 	<view n="0">
 	    <name>Captain View</name>
 	    <internal type="bool" archive="y">true</internal>
