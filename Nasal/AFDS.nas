@@ -240,7 +240,6 @@ var AFDS = {
 		btn = 0;
 		me.flch_spd_arm = 1;
 		if (abs(change) > 500) {
-		    if (me.thrust_mode.getValue()>4 or me.thrust_mode.getValue()==0) {
 			if (change > 3000) {
 			    me.thrust_mode.setValue(2);
 			} elsif (change > 0 and change <= 3000) {
@@ -257,7 +256,6 @@ var AFDS = {
 			} elsif (change <= -500) {
 			    me.thrust_mode.setValue(8);
 			}
-		    }
 		}
 		settimer(func {
 		    if (me.flch_spd_arm == 1) {
@@ -447,6 +445,13 @@ var AFDS = {
             if(idx==9 and !test_fpa)idx=2;
 	    msg = "";
 
+	    if ((idx==1)or(idx==5)) {
+		if (abs(me.alt_setting.getValue() - alt) < 50) {
+		    me.flch_max.setValue(16.67);
+		    me.flch_min.setValue(-16.67);
+		}
+	    }
+
 	    if (((idx==2) or (idx==9)) and me.flch_mode.getBoolValue())
 	    {
 		# VS or FPA mode
@@ -455,11 +460,11 @@ var AFDS = {
 		if ((idx==2 and me.vs_setting.getValue()<=0) or (idx==9 and me.fpa_setting.getValue()<=0)) var climb = 0;
 		if ((climb == 1) and (me.alt_setting.getValue() > getprop("instrumentation/altimeter/indicated-altitude-ft")))
 		{
-		    if (abs(getprop("instrumentation/altimeter/indicated-altitude-ft")-me.alt_setting.getValue())<50) idx=1;
+		    if (abs(getprop("instrumentation/altimeter/indicated-altitude-ft")-me.alt_setting.getValue())<500) idx=8;
 		}
 		if ((climb == 0) and (me.alt_setting.getValue() < getprop("instrumentation/altimeter/indicated-altitude-ft"))) 
                 {
-		    if (abs(getprop("instrumentation/altimeter/indicated-altitude-ft")-me.alt_setting.getValue())<50) idx=1;
+		    if (abs(getprop("instrumentation/altimeter/indicated-altitude-ft")-me.alt_setting.getValue())<500) idx=8;
 		}
 		if (idx != 2 and idx != 9) me.flch_mode.setBoolValue(0);
 		me.vertical_mode.setValue(idx);
@@ -489,9 +494,6 @@ var AFDS = {
 			me.flch_spd_arm = 0;
 		    }
 		}
-	    } else {
-		me.flch_max.setValue(16.67);
-		me.flch_min.setValue(-16.67);
 	    }
 
             if (idx==8)
@@ -528,6 +530,10 @@ var AFDS = {
 	    if (idx == 0 and me.thrust_mode.getValue() == 1) {
 		msg = "T/O THRUST";
 		if (me.autothrottle_mode.getValue() == 4) msg = "T/O CLAMP";
+	    } elsif (idx==8 and me.thrust_mode.getValue()==8) {
+		msg = "IDLE CLAMP";
+	    } elsif (idx==12 and me.thrust_mode.getValue()==8) {
+		msg = "PROF";
 	    } else {
 		msg = me.pitch_list[idx];
 	    }

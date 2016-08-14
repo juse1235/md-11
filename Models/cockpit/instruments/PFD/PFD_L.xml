@@ -1592,10 +1592,11 @@ Syd Adams
         <type>material</type><!--white-->
         <object-name>atofft</object-name>
         <object-name>apofft</object-name>
+        <object-name>atofft1</object-name>
+        <object-name>apofft1</object-name>
         <object-name>MACH</object-name>
         <object-name>ASIdigits</object-name>
         <object-name>ALTdigits</object-name>
-        <object-name>PITCH arm</object-name>
         <object-name>ROLL arm</object-name>
         <!--object-name>VS-POS</object-name>
         <object-name>VS-NEG</object-name-->
@@ -1613,8 +1614,6 @@ Syd Adams
         <object-name>IAS-annun</object-name>
         <object-name>SPD-THRUST</object-name>
         <object-name>SPD-PITCH</object-name>
-        <object-name>PITCH</object-name>
-        <object-name>ROLL</object-name>
         <object-name>MACH-annun</object-name>
         <object-name>min-mode</object-name>
         <emission>
@@ -1717,6 +1716,144 @@ Syd Adams
         </specular>
     </animation>
 
+    <animation>
+        <type>material</type><!--magenta-->
+        <object-name>ROLL</object-name>
+	<condition>
+	    <not-equals>
+		<property>instrumentation/afds/ap-modes/roll-mode</property>
+		<value>NAV1</value>
+	    </not-equals>
+	</condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+    
+    <animation>
+        <type>material</type><!--magenta-->
+        <object-name>ROLL</object-name>
+	<condition>
+	    <equals>
+		<property>instrumentation/afds/ap-modes/roll-mode</property>
+		<value>NAV1</value>
+	    </equals>
+	</condition>
+        <emission>
+            <red>0.7</red>
+            <green>0.3</green>
+            <blue>0.5</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+    
+    <animation>
+        <type>material</type><!--magenta-->
+        <object-name>PITCH</object-name>
+        <object-name>PITCH arm</object-name>
+	<condition>
+	    <and>
+		<not-equals>
+		    <property>instrumentation/afds/inputs/vertical-index</property>
+		    <value>5</value>
+		</not-equals>
+		<not-equals>
+		    <property>instrumentation/afds/inputs/vertical-index</property>
+		    <value>12</value>
+		</not-equals>
+	    </and>
+	</condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+    
+    <animation>
+        <type>material</type><!--magenta-->
+        <object-name>PITCH</object-name>
+        <object-name>PITCH arm</object-name>
+	<condition>
+	    <or>
+		<equals>
+		    <property>instrumentation/afds/inputs/vertical-index</property>
+		    <value>5</value>
+		</equals>
+		<equals>
+		    <property>instrumentation/afds/inputs/vertical-index</property>
+		    <value>12</value>
+		</equals>
+	    </or>
+	</condition>
+        <emission>
+            <red>0.7</red>
+            <green>0.3</green>
+            <blue>0.5</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+    
 
     <!--animation>
         <type>select</type>

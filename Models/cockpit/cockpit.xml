@@ -791,7 +791,7 @@
         </condition>
     </animation>
     
-        <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>flt_dr</object-name>
         <action>
@@ -809,7 +809,7 @@
                 </script>
             </binding>
         </action>
-    </animation>
+    </animation-->
  
 
 </PropertyList>
