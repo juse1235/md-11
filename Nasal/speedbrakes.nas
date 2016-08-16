@@ -78,6 +78,8 @@ var spoilers = {
 
 var Speedbrakes = spoilers.new();
 setlistener("controls/flight/speedbrake-lever", func {
+	if (!getprop("gear/gear[0]/wow") and getprop("controls/flight/speedbrake-lever")==4)
+	    setprop("controls/flight/speedbrake-lever",0);
 	Speedbrakes.update();
 },0,0);
 setlistener("controls/flight/autospeedbrakes-armed", func {
