@@ -771,7 +771,7 @@
 				<property>/instrumentation/afds/inputs/ias-mach-selected</property>
 			</condition>
 			<prop>/velocities/mach</prop>
-			<scale>500.0</scale>
+			<scale>470.0</scale>
 		</input>
 		<reference>
 			<condition>
@@ -784,7 +784,7 @@
 				<property>/instrumentation/afds/inputs/ias-mach-selected</property>
 			</condition>
 			<prop>/autopilot/internal/target-mach</prop>
-			<scale>500.0</scale>
+			<scale>470.0</scale>
 		</reference>
 		<output>
 			<prop>/autopilot/internal/target-pitch-deg</prop>
