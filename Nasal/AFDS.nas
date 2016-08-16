@@ -226,6 +226,7 @@ var AFDS = {
                     	if (me.FMS_alt.getValue() > alt) me.FMS_alt.setValue(alt);
                     }
 		    me.alt_display.setValue(me.FMS_alt.getValue());
+		    btn = 12;
 		}
             }
             if (btn==11)
@@ -240,6 +241,7 @@ var AFDS = {
 		btn = 0;
 		me.flch_spd_arm = 1;
 		if (abs(change) > 500) {
+		    if (me.thrust_mode.getValue() > 1) {
 			if (change > 3000) {
 			    me.thrust_mode.setValue(2);
 			} elsif (change > 0 and change <= 3000) {
@@ -256,6 +258,7 @@ var AFDS = {
 			} elsif (change <= -500) {
 			    me.thrust_mode.setValue(8);
 			}
+		    }
 		}
 		settimer(func {
 		    if (me.flch_spd_arm == 1) {
