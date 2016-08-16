@@ -64,7 +64,7 @@ var spoilers = {
 		    getprop("controls/engines/engine[1]/reverser") and
 		    getprop("controls/engines/engine[2]/reverser");
 	if (me.auto.getBoolValue() and getprop("systems/hydraulic/equipment/enable-spoil")) {
-	    if (me.auto.getBoolValue() and (getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow") or getprop("gear/gear[3]/wow") or getprop("gear/gear[4]/wow")) and throt) {
+	    if ((getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow") or getprop("gear/gear[3]/wow") or getprop("gear/gear[4]/wow")) and (throt or revrs)) {
 		me.pos_cmd.setValue(0.750);
 		setprop("controls/flight/speedbrake-lever", 3);
 		if (getprop("gear/gear[0]/wow")) {
