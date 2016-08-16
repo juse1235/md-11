@@ -716,7 +716,7 @@
 		<name>Left inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronL1</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
+	        <property>surface-positions/left-aileron-pos-norm</property>
 		<factor>-10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
@@ -732,7 +732,10 @@
 		<name>Left inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronL1</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+		<condition>
+			<property>controls/flight/droop</property>
+		</condition>
+	        <property>surface-positions/flap-pos-norm</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.31</ind><dep>-15.5</dep></entry>
@@ -749,10 +752,10 @@
 	</animation>
 	
 	<animation>
-        <type>rotate</type>
+	        <type>rotate</type>
 		<object-name>AileronL2</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>10</factor>
+        	<property>surface-positions/left-aileron-pos-norm</property>
+	        <factor>10</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>-22.7524</y1-m>
@@ -761,12 +764,15 @@
 			<y2-m>-18.2087</y2-m>
 			<z2-m>5.7281</z2-m>
 		</axis>
-    </animation>
+	</animation>
 	
 	<animation>
-        <type>rotate</type>
+        	<type>rotate</type>
 		<object-name>AileronL2</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+		<condition>
+			<property>controls/flight/droop</property>
+		</condition>
+	        <property>surface-positions/flap-pos-norm</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.31</ind><dep>15.5</dep></entry>
@@ -780,13 +786,13 @@
 			<y2-m>-18.2087</y2-m>
 			<z2-m>5.7281</z2-m>
 		</axis>
-    </animation>
+	 </animation>
 	
 	<animation>
 		<name>Right inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronR1</object-name>
-        <property>surface-positions/right-aileron-pos-norm</property>
+        	<property>surface-positions/right-aileron-pos-norm</property>
 		<factor>10</factor>
 		<axis>
 			<x1-m>5.6584</x1-m>
@@ -802,7 +808,10 @@
 		<name>Right inner aileron</name>
 		<type>rotate</type>
 		<object-name>AileronR1</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+		<condition>
+			<property>controls/flight/droop</property>
+		</condition>
+	        <property>surface-positions/flap-pos-norm</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.31</ind><dep>15.5</dep></entry>
@@ -819,10 +828,10 @@
 	</animation>
 	
 	<animation>
-        <type>rotate</type>
+	        <type>rotate</type>
 		<object-name>AileronR2</object-name>
-        <property>surface-positions/right-aileron-pos-norm</property>
-        <factor>-10</factor>
+	        <property>surface-positions/right-aileron-pos-norm</property>
+	        <factor>-10</factor>
 		<axis>
 			<x1-m>13.1821</x1-m>
 			<y1-m>22.7524</y1-m>
@@ -831,12 +840,15 @@
 			<y2-m>18.2087</y2-m>
 			<z2-m>5.7281</z2-m>
 		</axis>
-    </animation>
+	</animation>
 	
 	<animation>
-        <type>rotate</type>
+        	<type>rotate</type>
 		<object-name>AileronR2</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+		<condition>
+			<property>controls/flight/droop</property>
+		</condition>
+	        <property>surface-positions/flap-pos-norm</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>0.31</ind><dep>-15.5</dep></entry>
@@ -850,7 +862,7 @@
 			<y2-m>18.2087</y2-m>
 			<z2-m>5.7281</z2-m>
 		</axis>
-    </animation>
+	</animation>
 	
 	<animation>
 		<type>rotate</type>

@@ -526,6 +526,7 @@ controls.flapsDown = func(step) {
     }
     if (getprop("systems/hydraulic/equipment/enable-flap")) {
         if(step == 0) return;
+	if(step > 0 and getprop("gear/gear[0]/wow")) setprop("controls/flight/droop",1);
         if(props.globals.getNode("/sim/flaps") != nil) {
                 globals.controls.stepProps("/controls/flight/flaps", "/sim/flaps", step);
                 return;
@@ -534,6 +535,7 @@ controls.flapsDown = func(step) {
         var val = 0.3333334 * step + getprop("/controls/flight/flaps");
         setprop("/controls/flight/flaps", val > 1 ? 1 : val < 0 ? 0 : val);
     }
+    if (getprop("controls/flight/flaps") == 0) setprop("controls/flight/droop",0);
 }
 setlistener("controls/flight/flaps", func { controls.click(6) } );
 
@@ -1181,6 +1183,7 @@ var update_systems = func {
     et_tmp = et_hr+et_min;
     setprop("instrumentation/clock/ET-display",et_tmp);
 	switch_ind();
+    if (getprop("surface-positions/flap-pos-norm")==0 and !getprop("gear/gear[0]/wow")) setprop("controls/flight/droop",0);
 
     settimer(update_systems,0);
 }

@@ -749,6 +749,9 @@
     </instrumentation>    
     
     <controls n="0">
+	<flight>
+	    <droop type="bool">0</droop>
+	</flight>
         <gear>
             <brake-parking type="bool">1</brake-parking>
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
@@ -767,9 +770,6 @@
         <ovhd-panel-norm type="double">0.5</ovhd-panel-norm>
         <pedestal-panel-norm type="double">0.5</pedestal-panel-norm>
         </lighting>
-        <!--flight>
-            <speedbrake-lever type="bool">0</speedbrake-lever>
-        </flight-->
 	<cabin>
 		<NoSmoking-knob type="int" >1 </NoSmoking-knob>
 		<SeatBelt-knob type="int" >1 </SeatBelt-knob>
@@ -829,8 +829,8 @@
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
             <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
-			<file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
-			<file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
         </MD11>
 	<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
