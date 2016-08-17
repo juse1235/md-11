@@ -117,14 +117,6 @@ Syd Adams
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O THRUST</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O CLAMP</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value></value>
 		</equals>
 		</or>
@@ -135,10 +127,20 @@ Syd Adams
         <type>select</type>
         <object-name>SPD-PITCH</object-name>
         <condition>
+		<or>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>CLB THRUST</value>
 		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
+		</equals>
+		</or>
         </condition>
     </animation>
 	
@@ -152,10 +154,20 @@ Syd Adams
 		<property>instrumentation/afds/ap-modes/mode-annunciator</property>
 		<value>A/P</value>
 	    </less-than>
+		<or>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>CLB THRUST</value>
 		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
+		</equals>
+		</or>
 		</and>
         </condition>
     </animation>
@@ -169,10 +181,20 @@ Syd Adams
 		<property>instrumentation/afds/inputs/at-armed[1]</property>
 		<value>0</value>
 	    </equals>
+		<or>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>CLB THRUST</value>
 		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O THRUST</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>T/O CLAMP</value>
+		</equals>
+		</or>
 		</and>
         </condition>
     </animation>
@@ -214,14 +236,6 @@ Syd Adams
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O THRUST</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O CLAMP</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value></value>
 		</equals>
 		</or>
@@ -258,14 +272,6 @@ Syd Adams
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>PROF TO</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O THRUST</value>
-		</equals>
-		<equals>
-		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
-		<value>T/O CLAMP</value>
 		</equals>
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		

@@ -339,6 +339,7 @@ setlistener("sim/signals/fdm-initialized", func {
     props.globals.initNode("instrumentation/clock/set-knob",0,"INT");
 #    setprop("instrumentation/groundradar/id",getprop("sim/tower/airport-id"));
     setprop("sim/flaps/current-setting", 0);
+    setprop("/controls/sd/mode", "CONFIG");   # Initial SD Display Mode
 
 	balance_fuel();
 #    setprop("controls/fuel/tank[0]/boost-pump-switch[0]",1);
