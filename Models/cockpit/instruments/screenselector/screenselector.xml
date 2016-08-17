@@ -8,6 +8,7 @@
 		<object-name>config.text</object-name>
 		<object-name>status.text</object-name>
 		<object-name>misc.text</object-name>
+        <object-name>conseq.text</object-name>
 		<object-name>nd.text</object-name>
 		<emission>
 			<red>1.5</red>
