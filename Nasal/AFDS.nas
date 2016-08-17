@@ -184,6 +184,7 @@ var AFDS = {
 		me.hdg_setting.setValue(hdg_now);
 	    }
             me.lateral_mode.setValue(btn);
+	    me.loc_armed.setBoolValue(0);
         }elsif(mode==1){
             # vertical AP controls
             if(me.vertical_mode.getValue() ==btn) btn=0;
@@ -276,28 +277,29 @@ var AFDS = {
 	    }
 	    if (btn != 2) me.flch_mode.setBoolValue(0);
             me.vertical_mode.setValue(btn);
+	    me.gs_armed.setBoolValue(0);
 #        }elsif(mode==2){
 #            # throttle AP controls
 #            if(me.autothrottle_mode.getValue() ==btn) btn=0;
 #            if(getprop("position/altitude-agl-ft")<200) btn=0;
 #            me.autothrottle_mode.setValue(btn);
         }elsif(mode==3){
-            var arm = 1-((me.loc_armed.getBoolValue() or (4==me.lateral_mode.getValue())));
+	    var arm = 1-((me.loc_armed.getBoolValue() or (4==me.lateral_mode.getValue())));
 	    if (arm==0) btn = 1;
-            if (btn==1){
-                # toggle G/S and LOC arm
+	    if (btn==1){
+		# toggle G/S and LOC arm
 		if (me.vertical_mode.getValue() == 8 or me.vertical_mode.getValue() == 12) {
 		    me.input(1,2);
 		    me.flch_mode.setBoolValue(0);
 		} elsif (me.vertical_mode.getValue() == 5)
 		    me.vertical_mode.setValue(1);
-                arm = arm or (1-(me.gs_armed.getBoolValue() or (6==me.vertical_mode.getValue())));
-                me.gs_armed.setBoolValue(arm);
-                if ((arm==0)and(6==me.vertical_mode.getValue())) me.vertical_mode.setValue(0);
-            }
-            me.loc_armed.setBoolValue(arm);
-            if((arm==0)and(4==me.lateral_mode.getValue())) me.lateral_mode.setValue(0);
-        }
+		arm = arm or (1-(me.gs_armed.getBoolValue() or (6==me.vertical_mode.getValue())));
+		me.gs_armed.setBoolValue(1);
+#		if ((arm==0)and(6==me.vertical_mode.getValue())) me.vertical_mode.setValue(0);
+	    }
+	    me.loc_armed.setBoolValue(1);
+#	    if((arm==0)and(4==me.lateral_mode.getValue())) me.lateral_mode.setValue(0);
+	}
     },
 ###################
     setAP : func{
@@ -423,6 +425,12 @@ var AFDS = {
                 if(hddefl< 8 and hddefl>-8){
                     me.lateral_mode.setValue(4);
                     me.loc_armed.setBoolValue(0);
+		    if (me.vertical_mode.getValue() == 8 or me.vertical_mode.getValue() == 12) {
+			me.input(1,2);
+			me.flch_mode.setBoolValue(0);
+		    } elsif (me.vertical_mode.getValue() == 5)
+			me.vertical_mode.setValue(1);
+                    me.gs_armed.setBoolValue(1);
                 }
             }
 
@@ -771,25 +779,21 @@ var AFDS = {
 	}elsif(me.step==6){
 			ma_spd=getprop("/velocities/mach");
 			banklimit=getprop("/instrumentation/afds/inputs/bank-limit-switch");
-			if (banklimit==0 and ma_spd>0.85) {
+			if (banklimit==0 and ma_spd>0.93) {
 			    lim=0;
 			    me.heading_change_rate = 0.0;
 			}
-			if (banklimit==0 and ma_spd<=0.86 and ma_spd>0.6666) {
+			if (banklimit==0 and ma_spd<=0.93 and ma_spd>0.87) {
 			    lim=10;
 			    me.heading_change_rate = 2.45 * 0.7;
 			}
-			if (banklimit==0 and ma_spd<=0.6666 and ma_spd>0.5) {
+			if (banklimit==0 and ma_spd<=0.87 and ma_spd>0.80) {
 			    lim=20;	
 			    me.heading_change_rate = 1.125 * 0.7;
 			}
-			if (banklimit==0 and ma_spd<=0.5 and ma_spd>0.3333) {
+			if (banklimit==0 and ma_spd<=0.80) {
 			    lim=25;
 			    me.heading_change_rate = 0.625 * 0.7;
-			}
-			if (banklimit==0 and ma_spd<=0.333) {
-			    lim=30;
-			    me.heading_change_rate = 0.55 * 0.7;
 			}
 			if (banklimit==0){
 	        props.globals.getNode("/instrumentation/afds/settings/bank-max").setValue(lim);
