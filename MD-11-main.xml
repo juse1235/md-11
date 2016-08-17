@@ -725,11 +725,14 @@
                 <source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
             </frequencies>
         </dme>
-        <transponder>
-            <serviceable>true</serviceable>
-            <id-code>1200</id-code>
-            <mode-switch>4</mode-switch>
-        </transponder>
+	<transponder>
+	    <inputs>
+		<knob-pos type="int">0</knob-pos>
+		<knob-mode type="int">0</knob-mode>
+	    </inputs>
+	    <id-code type="string">1200</id-code>
+            <serviceable type="bool">true</serviceable>
+	</transponder>
         <encoder>
             <serviceable>true</serviceable>
         </encoder>
@@ -831,6 +834,7 @@
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
 	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
 	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/transponder.nas</file>
         </MD11>
 	<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
@@ -839,7 +843,6 @@
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>
         <cdu>
-            <!--file>Aircraft/MD-11/Models/cockpit/instruments/cdu/boeing.nas</file-->
             <file>Aircraft/MD-11/Nasal/boeing_cdu.nas</file>
         </cdu>
         <walk><file>Aircraft/MD-11/Nasal/walk.nas</file></walk>
