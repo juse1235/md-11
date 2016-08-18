@@ -660,7 +660,8 @@ var AFDS = {
 			me.autothrottle_mode.setValue(1);
 		    } elsif (ias_now > 80) {
 			if (getprop("gear/gear[0]/wow") or me.vertical_mode.getValue() == 0) {
-			    me.autothrottle_mode.setValue(4);
+		#	    me.autothrottle_mode.setValue(4);	# Set the AT mode to 4 to
+			    me.autothrottle_mode.setValue(1);	# enable T/O CLAMP mode
 			} else {
 			    me.autothrottle_mode.setValue(1);
 			}
