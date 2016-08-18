@@ -72,7 +72,7 @@
     
     <nasal n="0">
         <MD11>
-            <file>Aircraft/MD-11/Nasal/liveries.nas</file>
+            <file n="50">Aircraft/MD-11/Nasal/liveries.nas</file>
         </MD11>
     </nasal>
 
