@@ -174,7 +174,7 @@ var AFDS = {
 #        var fms = 0;
         if(mode==0){
             # horizontal AP controls
-            if(me.lateral_mode.getValue() ==btn) btn=0;
+#	    if(me.lateral_mode.getValue() ==btn) btn=0;
 	    if (btn == 2) {
 		if (getprop("instrumentation/efis/mfd/true-north")) {
 		    var hdg_now = int(getprop("orientation/heading-deg")+0.5);
@@ -187,7 +187,7 @@ var AFDS = {
 	    me.loc_armed.setBoolValue(0);
         }elsif(mode==1){
             # vertical AP controls
-            if(me.vertical_mode.getValue() ==btn) btn=0;
+#	    if(me.vertical_mode.getValue() ==btn) btn=0;
             var vs_now = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
             var alt = int((getprop("instrumentation/altimeter/indicated-altitude-ft")+50)/100)*100;
             if (btn==1){
