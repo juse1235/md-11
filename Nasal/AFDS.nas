@@ -568,13 +568,17 @@ var AFDS = {
 	    if (idx==1) {
 		# TO mode
 		# V2/2 + ALT/1000 + 20
-		if (getprop("gear/gear[0]/wow"))
-		    me.thrust_setting.setValue((getprop("instrumentation/fmc/vspeeds/V2") / 2) + (getprop("instrumentation/altimeter/pressure-alt-ft") / 1000) + 20);
+		if (getprop("gear/gear[0]/wow")) {
+		    var targ_thr = (getprop("instrumentation/fmc/vspeeds/V2") / 2) + (getprop("instrumentation/altimeter/pressure-alt-ft") / 1000) + 20;
+		    if (targ_thr < 82.5) targ_thr = 82.5;
+		    me.thrust_setting.setValue(targ_thr);
+		}
 		msg = "TO";
 		if (getprop("position/altitude-agl-ft")>400) idx = 2;
 	    }
 	    if (idx==2) {
 		var targ_thr = (getprop("instrumentation/fmc/vspeeds/V2") / 2) + (getprop("instrumentation/altimeter/pressure-alt-ft") / 1000) + 12;
+		if (targ_thr < 82.5) targ_thr = 82.5;
 		if (me.vertical_mode.getValue()==8 or me.vertical_mode.getValue()==12) {
 		    if (getprop("instrumentation/altimeter/indicated-altitude-ft") > 18000)
 			targ_thr = 110.0;
