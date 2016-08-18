@@ -816,8 +816,8 @@
 
     <nasal n="0">
         <MD11>
-            <file>Aircraft/MD-11/Nasal/Air.nas</file>
-            <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
+            <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
+            <file>Aircraft/MD-11/Nasal/warnsystem.nas</file>
             <file>Aircraft/MD-11/Nasal/electrical.nas</file>
             <file>Aircraft/MD-11/Nasal/engine.nas</file>
             <file>Aircraft/MD-11/Nasal/systems.nas</file>
@@ -827,14 +827,14 @@
             <file>Aircraft/MD-11/Nasal/ground_steering.nas</file>
             <file>Aircraft/MD-11/Models/cockpit/instruments/ND/ND.nas</file>
             <file>Aircraft/Generic/limits.nas</file>
-            <file>Aircraft/MD-11/Nasal/warnsystem.nas</file>
             <file>Aircraft/MD-11/Nasal/doors.nas</file>
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
-            <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
+            <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
 	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
 	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
 	    <file>Aircraft/MD-11/Nasal/transponder.nas</file>
+            <file>Aircraft/MD-11/Nasal/pneumatic.nas</file>
         </MD11>
 	<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>

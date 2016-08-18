@@ -617,7 +617,7 @@ controls.toggleLandingLights = func()
 var Startup = func{
     setprop("sim/model/armrest",1);
     balance_fuel();
-	setprop("controls/switches/emgpwr", 1);
+    setprop("controls/switches/emgpwr", 1);
     setprop("controls/fuel/auto-manage",1);
     setprop("consumables/fuel/tank[0]/selected",1);
     setprop("consumables/fuel/tank[1]/selected",1);
@@ -648,6 +648,7 @@ var Startup = func{
     setprop("controls/flight/aileron-trim",0);
     setprop("controls/flight/rudder-trim",0);
     setprop("controls/hydraulic/auto-mode",1);
+    setprop("controls/pneumatic/auto-mode",1);
     setprop("instrumentation/transponder/mode-switch",4); # transponder mode: TA/RA
     setprop("engines/engine[0]/run",1);
     setprop("engines/engine[1]/run",1);
@@ -657,7 +658,7 @@ var Startup = func{
 var Shutdown = func{
     setprop("controls/electric/APU-generator",0);
     setprop("systems/electrical/outputs/avionics",0);
-	setprop("controls/switches/emgpwr", 0);
+    setprop("controls/switches/emgpwr", 0);
     setprop("controls/electric/battery-switch",0);
     setprop("controls/electric/inverter-switch",0);
     setprop("controls/lighting/instruments-norm",0);
@@ -673,7 +674,7 @@ var Shutdown = func{
     setprop("controls/lighting/landing-light[2]",0);
     setprop("controls/engines/engine[0]/cutoff",1);
     setprop("controls/engines/engine[1]/cutoff",1);
-	setprop("controls/engines/engine[2]/cutoff",1);
+    setprop("controls/engines/engine[2]/cutoff",1);
     setprop("controls/flight/elevator-trim",0);
     setprop("controls/flight/aileron-trim",0);
     setprop("controls/flight/rudder-trim",0);
@@ -685,17 +686,18 @@ var Shutdown = func{
     setprop("controls/engines/StartIgnition-knob[2]",0);
     setprop("engines/engine[0]/run",0);
     setprop("engines/engine[1]/run",0);
-	setprop("engines/engine[2]/run",0);
+    setprop("engines/engine[2]/run",0);
     setprop("engines/engine[0]/rpm",0);
     setprop("engines/engine[1]/rpm",0);
-	setprop("engines/engine[2]/rpm",0);
+    setprop("engines/engine[2]/rpm",0);
     setprop("engines/engine[0]/n2rpm",0);
     setprop("engines/engine[1]/n2rpm",0);
-	setprop("engines/engine[2]/n2rpm",0);
+    setprop("engines/engine[2]/n2rpm",0);
     setprop("engines/engine[0]/fuel-flow_pph",0);
     setprop("engines/engine[1]/fuel-flow_pph",0);
-	setprop("engines/engine[2]/fuel-flow_pph",0);
+    setprop("engines/engine[2]/fuel-flow_pph",0);
     setprop("instrumentation/weu/state/takeoff-mode",1);
+    setprop("controls/pneumatic/auto-mode",0);
     settimer(func setprop("controls/hydraulic/auto-mode",0),2);
 }
 

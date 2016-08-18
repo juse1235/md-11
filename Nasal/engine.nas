@@ -142,20 +142,20 @@ var Engine = {
             {
                 if(me.starterSwitch.getValue() == -1)
                 {
-                    if(getprop("controls/electric/APU-generator")
-                            or getprop("engines/engine/run")
-                            or getprop("engines/engine[1]/run")
-                            or getprop("engines/engine[2]/run")
-                            or getprop("controls/electric/external-power")
-                            or getprop("controls/electric/external-power[1]")
-                    )
-                    {
+#                    if(getprop("controls/electric/APU-generator")
+#                            or getprop("engines/engine/run")
+#                            or getprop("engines/engine[1]/run")
+#                            or getprop("engines/engine[2]/run")
+#                            or getprop("controls/electric/external-power")
+#                            or getprop("controls/electric/external-power[1]")
+#                    )
+#                    {
                         me.spool_up();
-                    }
-                    else
-                    {
-                        settimer(func { me.starterSwitch.setValue(0);}, 0.3);
-                    }
+#                    }
+#                    else
+#                    {
+#                        settimer(func { me.starterSwitch.setValue(0);}, 0.3);
+#                    }
                 }else{
                     var tmprpm = me.rpm.getValue();
                     tmprpm -= getprop("sim/time/delta-realtime-sec") * 1.2;
