@@ -140,6 +140,10 @@ Syd Adams
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>T/O CLAMP</value>
 		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>IDLE CLAMP</value>
+		</equals>
 		</or>
         </condition>
     </animation>
@@ -167,6 +171,10 @@ Syd Adams
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>T/O CLAMP</value>
 		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>IDLE CLAMP</value>
+		</equals>
 		</or>
 		</and>
         </condition>
@@ -193,6 +201,10 @@ Syd Adams
 		<equals>
 		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
 		<value>T/O CLAMP</value>
+		</equals>
+		<equals>
+		<property>instrumentation/afds/ap-modes/pitch-mode</property>		
+		<value>IDLE CLAMP</value>
 		</equals>
 		</or>
 		</and>
