@@ -235,6 +235,9 @@
 	    <autopilot>
 		<path>Aircraft/MD-11/Systems/MD11-flt-ctrls.xml</path>
 	    </autopilot>
+	    <autopilot>
+		<path>Aircraft/MD-11/Systems/pressurization.xml</path>
+	    </autopilot>
             <!--autopilot>
                 <name>Autobrake system</name>
                 <path>Aircraft/MD-11/Systems/MD11-autobrake.xml</path>
@@ -839,6 +842,9 @@
 	<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
 	</hydraulics>
+	<pressurization>
+	    <file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
+	</pressurization>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>

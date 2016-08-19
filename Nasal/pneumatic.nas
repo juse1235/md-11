@@ -216,6 +216,8 @@ var pneumatic = {
 		    }
 		}
 	    }
+	    if (getprop("systems/pressurization/cabin-altitude-ft") > 9500)
+		packs_hi.setBoolValue(1);
 	}
     },
 
@@ -228,12 +230,12 @@ var pneumatic = {
 	    if (me.pack_knob[i].getBoolValue()) {
 		if (!me.pack_fault.getBoolValue()) {
 		    status = 1;
-#		    if (i == 1) {
-#			if (getprop("systems/pressurization/relief-valve") or getprop("controls/pressurization/outflow-valve-pos[0]") == 0 or getprop("controls/pressurization/outflow-valve-pos[1]") == 0)
-#			    status = 0;
-#			if (getprop("gear/on-ground") and !getprop("controls/gear/brake-parking"))
-#			    status = 0;
-#		    }
+		    if (i == 2) {
+			if (getprop("systems/pressurization/relief-valve") or getprop("controls/pressurization/outflow-valve-pos[0]") == 0 or getprop("controls/pressurization/outflow-valve-pos[1]") == 0)
+			    status = 0;
+			if (getprop("gear/gear[0]/wow") and !getprop("controls/gear/brake-parking"))
+			    status = 0;
+		    }
 #		    me.pack_status[i].setValue(1);
 		}
 	    } else {
