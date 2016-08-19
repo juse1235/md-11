@@ -15,7 +15,7 @@ var pneumatic = {
 			m.controls.initNode("engine-bleed[2]",0,"BOOL") ];
 	m.isln_l = m.controls.initNode("isolation-valve[0]",1,"BOOL");	# 1-2 ISOL
 	m.isln_r = m.controls.initNode("isolation-valve[1]",1,"BOOL");	# 1-3 ISOL
-	m.auto_mode = m.controls.initNode("auto-mode",1,"BOOL");
+	m.auto_mode = m.controls.initNode("auto-mode",0,"BOOL");
 
 	# Supplies
 	m.APU = m.system.initNode("APU-bleed",0,"BOOL");
@@ -32,7 +32,7 @@ var pneumatic = {
 			  m.system.initNode("pack[1]",0,"INT"),
 			  m.system.initNode("pack[2]",0,"INT") ];
 	m.packs_hi = m.controls.initNode("pack-high-flow",0,"BOOL");
-	m.pack_fault = m.system.initNode("pack-sys-fault",0,"BOOL");
+#	m.pack_fault = m.system.initNode("pack-sys-fault",0,"BOOL");
 
 	# Demands
 	m.starter = [ props.globals.getNode("controls/engines/StartIgnition-knob[0]",1),
@@ -223,31 +223,6 @@ var pneumatic = {
 
     update : func {
 	me.update_auto();
-	# Packs
-	var packs_off = 0;
-	var status = 0;
-	for (var i=0; i<3; i+=1) {
-	    if (me.pack_knob[i].getBoolValue()) {
-		if (!me.pack_fault.getBoolValue()) {
-		    status = 1;
-		    if (i == 2) {
-			if (getprop("systems/pressurization/relief-valve") or getprop("controls/pressurization/outflow-valve-pos[0]") == 0 or getprop("controls/pressurization/outflow-valve-pos[1]") == 0)
-			    status = 0;
-			if (getprop("gear/gear[0]/wow") and !getprop("controls/gear/brake-parking"))
-			    status = 0;
-		    }
-#		    me.pack_status[i].setValue(1);
-		}
-	    } else {
-#		me.pack_status[i].setValue(0);
-		status = 0;
-		packs_off += 1;
-	    }
-	    me.pack_status[i].setValue(status);
-	}
-	if (packs_off == 3)
-		me.pack_fault.setBoolValue(0);
-
 	# No ground air if parking brake off or aircraft in the air.
 	if (!getprop("controls/gear/brake-parking") or !getprop("gear/gear[1]/wow"))
 	    me.service.setBoolValue(0);
@@ -267,7 +242,7 @@ var pneumatic = {
 	if (me.bleed_air[0].getBoolValue() and me.isln_l.getBoolValue()) {
 	    middle = 1;
 	} elsif (!me.isln_l.getBoolValue()) {
-	    if ((me.APU.getBoolValue() and me.apu_valve.getBoolValue()) or me.service.getBoolValue())
+	    if ((me.APU.getBoolValue() and me.apu_valve.getBoolValue()) or me.service.getBoolValue() or (me.eng[1].getValue() > 21 and me.eng_bleed[1].getBoolValue()))
 		middle = 1;
 	} else {
 	    middle = 0;
@@ -276,6 +251,35 @@ var pneumatic = {
 		cutout_l = 1;
 	if (!me.bleed_air[1].getBoolValue())
 		cutout_r = 1;
+
+	# Packs
+	var packs_off = 0;
+	for (var i=0; i<3; i+=1) {
+	    var status = me.pack_status[i].getValue();
+	    if (me.pack_knob[i].getBoolValue()) {
+#		if (!me.pack_fault.getBoolValue()) {
+		    if (i == 0) {
+			if (cutout_l == 0) status = 1;
+		    }
+		    if (i == 1) {
+			if (middle == 1) status = 1;
+		    }
+		    if (i == 2) {
+			if (cutout_r == 0) status = 1;
+			if (getprop("systems/pressurization/relief-valve") or getprop("controls/pressurization/outflow-valve-pos[0]") == 0 or getprop("controls/pressurization/outflow-valve-pos[1]") == 0)
+			    status = 0;
+			if (getprop("gear/gear[0]/wow") and !getprop("controls/gear/brake-parking"))
+			    status = 0;
+		    }
+#		}
+	    } else {
+		status = 0;
+		packs_off += 1;
+	    }
+	    me.pack_status[i].setValue(status);
+	}
+#	if (packs_off == 3)
+#	    me.pack_fault.setBoolValue(0);
 
 	# Low pressure cutouts
 	if (getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 180) {
@@ -300,9 +304,9 @@ var pneumatic = {
 		cutout_l = 0;
 		cutout_r = 0;
 	}
-	if (middle == 0 and me.pack_status[1].getBoolValue()) {
-		me.pack_status[1].setValue(0);
-		me.pack_fault.setBoolValue(1);
+	if (middle == 0 and me.pack_status[1].getValue() == 1) {
+		me.pack_status[1].setValue(-1);
+#		me.pack_fault.setBoolValue(1);
 	}
 	if (cutout_l == 1 and me.pack_status[0].getValue() == 1) {
 		me.pack_status[0].setValue(-1);
