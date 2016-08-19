@@ -266,6 +266,33 @@ var valve_adjust = func (dir) {
 	}
 }
 
+# Manual Landing Altitude Adjustment
+var turn_count = 0;
+var tmark = 0.0;
+var land_alt = land_alt_set.getValue();
+var man_alt = func (dir) {
+	var cancelit = func {
+	    if (tmark + 30 < getprop("sim/time/elapsed-sec")) {
+		turn_count = 0;
+	    }
+	}
+	if (!landing_alt_man.getBoolValue()) {
+	    turn_count += 1;
+	    tmark = getprop("sim/time/elapsed-sec");
+	    if (turn_count >= 5) landing_alt_man.setBoolValue(1);
+	    settimer(cancelit,30);
+	} else {
+	    land_alt = land_alt_set.getValue() + dir;
+	    if (land_alt > 14000) land_alt = 14000;
+	    if (land_alt < -1000) land_alt = -1000;
+	    land_alt_set.setValue(land_alt);
+	}
+}
+setlistener("autopilot/route-manager/active", func {
+	if (getprop("autopilot/route-manager/active"))
+	    landing_alt_man.setBoolValue(0);
+},0,0);
+
 # Run
 var fast_update = func {
 	update_alt();
