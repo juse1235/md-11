@@ -58,9 +58,9 @@
     </autopilot>
     
     <nasal n="0">
-        <MD11>
-            <file n="50">Aircraft/MD-11/Nasal/liveriesF.nas</file>
-        </MD11>
+        <livery>
+            <file>Aircraft/MD-11/Nasal/liveriesF.nas</file>
+        </livery>
     </nasal>
 
 	<limits>
