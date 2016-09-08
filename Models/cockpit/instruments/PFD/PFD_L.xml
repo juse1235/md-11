@@ -1634,6 +1634,8 @@ Syd Adams
         <object-name>SPD-PITCH</object-name>
         <object-name>MACH-annun</object-name>
         <object-name>min-mode</object-name>
+        <object-name>ALT-annunFL</object-name>
+        <object-name>ALT-annun100</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
@@ -1658,8 +1660,6 @@ Syd Adams
 
     <animation>
         <type>material</type><!--magenta-->
-        <object-name>ALT-annunFL</object-name>
-        <object-name>ALT-annun100</object-name>
         <object-name>TRK-annun</object-name>
         <emission>
             <red>0.7</red>
