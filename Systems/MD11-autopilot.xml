@@ -204,7 +204,7 @@
       <prop>/autopilot/internal/target-roll-deg</prop>
     </output>
     <config>
-      <Kp>-0.5</Kp>
+      <Kp>-0.6</Kp>
       <Ki>0.0</Ki>
         <u_min>
             <prop>instrumentation/afds/settings/bank-min</prop>

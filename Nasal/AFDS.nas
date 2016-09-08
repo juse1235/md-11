@@ -398,7 +398,7 @@ var AFDS = {
 	}
 	var apmodespdauto = getprop("instrumentation/afds/ap-modes/speed-mode");
 	var flapsett = getprop("surface-positions/flap-pos-norm");
-	if (radaralt < 100 and flapsett > 0.68 and apmodespdauto == "THRUST") {
+	if (radaralt < 40 and flapsett > 0.68 and apmodespdauto == "THRUST") {
 	    setprop("autopilot/settings/target-speed-kt", 0);
 	}
 
