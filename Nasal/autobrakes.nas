@@ -57,7 +57,7 @@ var autobrakes = {
 		if (speed < 20 and speed > 10)
 		    setprop("controls/gear/brake-parking",0);
 		if (getprop("controls/flight/autospeedbrakes-armed"))
-		    setprop("controls/flight/speedbrake-lever",3);
+		    setprop("controls/flight/speedbrake-lever",4);
 	    }
 	}
 	if (me.mode.getValue() == -1) {
