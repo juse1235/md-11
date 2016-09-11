@@ -1337,7 +1337,7 @@
 <object-name>right.strut.low.2</object-name>
  <object-name>right.scissor.down</object-name>
   <property>gear/gear[2]/compression-m</property>
-  <factor>-1.2</factor>
+  <factor>-2.0</factor>
         <axis>
             <x>0</x>
             <y>0</y>
@@ -1536,7 +1536,7 @@
 <object-name>left.strut.low.2</object-name>
  <object-name>left.scissor.down</object-name>
   <property>gear/gear[1]/compression-m</property>
-  <factor>-1.2</factor>
+  <factor>-2.0</factor>
         <axis>
             <x>0</x>
             <y>0</y>
@@ -1704,7 +1704,7 @@
   <object-name>tyres.central</object-name>
  <object-name>center.scissor.down</object-name>
   <property>gear/gear[3]/compression-m</property>
-  <factor>-1.2</factor>
+  <factor>-2.0</factor>
         <axis>
             <x>0</x>
             <y>0</y>
