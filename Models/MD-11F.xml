@@ -1170,8 +1170,8 @@
 <object-name>tyres.right.back</object-name>
 <object-name>right.strut.low.2</object-name>
  <object-name>right.scissor.down</object-name>
-  <property>gear/gear[1]/compression-m</property>
-  <factor>-2.5</factor>
+  <property>gear/gear[2]/compression-m</property>
+  <factor>-1.2</factor>
         <axis>
             <x>0</x>
             <y>0</y>
@@ -1370,7 +1370,7 @@
 <object-name>left.strut.low.2</object-name>
  <object-name>left.scissor.down</object-name>
   <property>gear/gear[1]/compression-m</property>
-  <factor>-2.5</factor>
+  <factor>-1.2</factor>
         <axis>
             <x>0</x>
             <y>0</y>
@@ -1531,6 +1531,60 @@
 	</animation>
 	
 		    	<!-- Central main gear -->
+				
+    	           <animation>
+  <type>translate</type>
+ <object-name>central.strut.low</object-name>
+  <object-name>tyres.central</object-name>
+ <object-name>center.scissor.down</object-name>
+  <property>gear/gear[3]/compression-m</property>
+  <factor>-1.2</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+ </animation>
+ 
+ 			    	        <animation>
+        <type>rotate</type>
+        <object-name>central.scissor.down</object-name>
+        <property>gear/gear[3]/compression-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>0.5</ind><dep>-60</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>4.87</x-m>
+            <y-m>0</y-m>
+            <z-m>1.65</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    		    	        <animation>
+        <type>rotate</type>
+        <object-name>central.scissor.up</object-name>
+        <property>gear/gear[3]/compression-norm</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>0.5</ind><dep>60</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>5.235</x-m>
+            <y-m>0</y-m>
+            <z-m>2.26</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
     	
     								<animation>
 		<type>rotate</type>

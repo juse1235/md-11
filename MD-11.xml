@@ -138,7 +138,7 @@
 	<control-speed control="EXTEND" transition-time="19" />
     </gear>
     <!-- Center gear -->
-    <gear x="-4.7637" y="0" z="0.68" compression="0.7" spring="0.6" damp="1.0">
+    <gear x="-4.7637" y="0" z="0.72" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
