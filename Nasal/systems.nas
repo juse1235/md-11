@@ -1173,6 +1173,7 @@ setlistener("controls/APU/apu_status", func (status) {
 },0,0);
 
 var update_systems = func {
+	update_tilt();
     Efis.calc_kpa();
     Efis.update_temp();
     LHeng.update();

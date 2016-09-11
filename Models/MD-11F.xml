@@ -1024,7 +1024,7 @@
 <object-name>nose.scissor.up</object-name>
 <object-name>front.strut.low</object-name>
     <object-name>front.strut.high.2</object-name>
-        <property>gear/gear[0]/steering-norm</property>
+        <property>/sim/multiplay/generic/float[10]</property>
 		<factor>68</factor>
 	 	<axis>
 			<x1-m>-20.4239</x1-m>
@@ -1057,7 +1057,7 @@
  	    	<animation>
 		<type>spin</type>
 		<object-name>tyres</object-name>
-		<property>gear/gear[0]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[11]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1133,6 +1133,25 @@
     </animation>
     
     	<!-- Right main gear -->
+		
+	 <animation>
+		<type>rotate</type>
+		<object-name>tyres.right.back</object-name>
+		<object-name>tyres.right.front</object-name>
+		<object-name>right.strut.low2</object-name>
+		<property>/sim/multiplay/generic/float[5]</property>
+		<factor>-1</factor>
+		<center>
+		    <x-m>3.95</x-m>
+		    <y-m>0</y-m>
+		    <z-m>1.24</z-m>
+		</center>
+		<axis>
+		    <x>0</x>
+		    <y>1</y>
+		    <z>0</z>
+		</axis>
+	</animation>
     	
     								<animation>
 		<type>rotate</type>
@@ -1140,6 +1159,7 @@
 <object-name>tyres.right.back</object-name>
 <object-name>tyres.right.front</object-name>
  <object-name>right.strut.low</object-name>
+ <object-name>right.strut.low2</object-name>
   <object-name>right.main.door</object-name>
   <object-name>right.scissor.down</object-name>
    <object-name>right.scissor.up</object-name>
@@ -1166,9 +1186,9 @@
     	           <animation>
   <type>translate</type>
  <object-name>right.strut.low</object-name>
+ <object-name>right.strut.low2</object-name>
   <object-name>tyres.right.front</object-name>
 <object-name>tyres.right.back</object-name>
-<object-name>right.strut.low.2</object-name>
  <object-name>right.scissor.down</object-name>
   <property>gear/gear[2]/compression-m</property>
   <factor>-2.0</factor>
@@ -1222,7 +1242,7 @@
      	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.right.front</object-name>
-		<property>gear/gear[2]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[13]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1239,7 +1259,7 @@
 		     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.right.back</object-name>
-		<property>gear/gear[2]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[13]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1332,6 +1352,25 @@
 	</animation>
 	
 	    	<!-- Left main gear -->
+			
+	 <animation>
+		<type>rotate</type>
+		<object-name>tyres.left.back</object-name>
+		<object-name>tyres.left.front</object-name>
+		<object-name>left.strut.low2</object-name>
+		<property>/sim/multiplay/generic/float[4]</property>
+		<factor>-1</factor>
+		<center>
+		    <x-m>3.95</x-m>
+		    <y-m>0</y-m>
+		    <z-m>1.24</z-m>
+		</center>
+		<axis>
+		    <x>0</x>
+		    <y>1</y>
+		    <z>0</z>
+		</axis>
+	</animation>
     	
     								<animation>
 		<type>rotate</type>
@@ -1339,6 +1378,7 @@
 <object-name>tyres.left.back</object-name>
 <object-name>tyres.left.front</object-name>
  <object-name>left.strut.low</object-name>
+<object-name>left.strut.low2</object-name>
   <object-name>left.main.door</object-name>
   <object-name>left.scissor.down</object-name>
    <object-name>left.scissor.up</object-name>
@@ -1367,7 +1407,7 @@
  <object-name>left.strut.low</object-name>
   <object-name>tyres.left.front</object-name>
 <object-name>tyres.left.back</object-name>
-<object-name>left.strut.low.2</object-name>
+<object-name>left.strut.low2</object-name>
  <object-name>left.scissor.down</object-name>
   <property>gear/gear[1]/compression-m</property>
   <factor>-2.0</factor>
@@ -1421,7 +1461,7 @@
      	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.left.front</object-name>
-		<property>gear/gear[1]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[12]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1438,7 +1478,7 @@
 		     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.left.back</object-name>
-		<property>gear/gear[1]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[12]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1699,7 +1739,7 @@
 			     	    	<animation>
 		<type>spin</type>
 		<object-name>tyres.central</object-name>
-		<property>gear/gear[3]/rollspeed-ms</property>
+		<property>/sim/multiplay/generic/float[14]</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>

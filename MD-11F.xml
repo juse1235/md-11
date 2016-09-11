@@ -112,8 +112,8 @@
 	<control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
     </thruster>
 
- <!-- Nosegear -->
-    <gear x="20.6395" y="0.0" z="0.7" compression="0.4" spring="0.8" damp="4.0" sfric="1.2" dfric="1.0">
+	<!-- Nosegear -->
+    <gear x="20.6395" y="0.0" z="0.65" compression="0.4" spring="0.8" damp="4.0" sfric="1.2" dfric="1.0">
     <!-- up to 70 degrees max steering angle with tiller, input is limited to 7 degrees with rudder (see Nasal/ground_steering.nas) -->
 	<control-input control="STEER" axis="/controls/gear/nosegear-steering-cmd-norm" src0="-1.0" dst0="-1.2217304764" src1="1.0" dst1="1.2217304764" />
 	<control-output control="STEER" prop="gear/gear[0]/steering-norm" />
@@ -121,16 +121,16 @@
 	<control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 	<control-speed control="EXTEND" transition-time="15"/>
     </gear>
-    <!-- Left main gears (aft wheels) -->
-    <gear x="-4.7637" y="-5.3128" z="0.65" compression="0.7" spring="0.6" damp="1.0">
+    <!-- Left main gears (aft wheels)-->
+    <gear x="-3.9525" y="-5.3128" z="0.55" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 	<control-output control="EXTEND" prop="/gear/gear[1]/position-norm" />
 	<control-speed control="EXTEND" transition-time="19" />
     </gear>
-    <!-- Right main gear (aft wheels) -->
-    <gear x="-4.7637" y="5.3128" z="0.65" compression="0.7" spring="0.6" damp="1.0">
+    <!-- Right main gears (aft wheels)-->
+    <gear x="-3.9525" y="5.3128" z="0.55" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-right" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -138,7 +138,7 @@
 	<control-speed control="EXTEND" transition-time="19" />
     </gear>
     <!-- Center gear -->
-    <gear x="-4.7637" y="0" z="0.72" compression="0.7" spring="0.6" damp="1.0">
+    <gear x="-4.7637" y="0" z="0.62" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -146,7 +146,7 @@
 	<control-speed control="EXTEND" transition-time="15" />
     </gear>
     <!-- Left main gear (forward wheels) -->
-    <gear x="-3.1584" y="-5.3128" z="0.65" compression="0.7" spring="0.6" damp="1.0">
+    <gear x="-3.1584" y="-5.3128" z="0.55" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -154,7 +154,7 @@
 	<control-speed control="EXTEND" transition-time="19" />
     </gear>
     <!-- Right main gear (forward wheels) -->
-    <gear x="-3.1584" y="5.3128" z="0.65" compression="0.7" spring="0.6" damp="1.0">
+    <gear x="-3.1584" y="5.3128" z="0.55" compression="0.7" spring="0.6" damp="1.0">
 	<control-input axis="/controls/gear/brake-right" control="BRAKE"/>
 	<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>

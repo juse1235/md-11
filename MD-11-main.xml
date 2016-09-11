@@ -179,12 +179,17 @@
                 <float n="1" alias="/gear/gear[1]/compression-m"/>
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[3]/compression-m"/>
-                <float n="4" alias="/gear/gear[4]/compression-m"/>
-                <float n="5" alias="/gear/gear[5]/compression-m"/>
+                <float n="4" alias="/gear/gear[1]/angle-deg"/>
+                <float n="5" alias="/gear/gear[2]/angle-deg"/>/>
                 <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
                 <float n="7" alias="/engines/engine[0]/reverser-pos-norm"/>
                 <float n="8" alias="/engines/engine[1]/reverser-pos-norm"/>
                 <float n="9" alias="/engines/engine[2]/reverser-pos-norm"/>
+                <float n="10" alias="/gear/gear[0]/steering-norm"/>
+                <float n="11" alias="/gear/gear[0]/rollspeed-ms"/>
+                <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
+                <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
+                <float n="14" alias="/gear/gear[3]/rollspeed-ms"/>
                 <string  alias="/sim/multiplay/callsign"/>
             </generic>
         </multiplay>
@@ -834,25 +839,28 @@
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
             <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
-	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
-	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
-	    <file>Aircraft/MD-11/Nasal/transponder.nas</file>
+			<file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
+			<file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+			<file>Aircraft/MD-11/Nasal/transponder.nas</file>
             <file>Aircraft/MD-11/Nasal/pneumatic.nas</file>
             <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
+            <file>Aircraft/MD-11/Nasal/gear-tilt.nas</file>
         </MD11>
-	<hydraulics>
+		<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
-	</hydraulics>
-	<pressurization>
-	    <file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
-	</pressurization>
+		</hydraulics>
+		<pressurization>
+			<file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
+		</pressurization>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>
         <cdu>
             <file>Aircraft/MD-11/Nasal/boeing_cdu.nas</file>
         </cdu>
-        <walk><file>Aircraft/MD-11/Nasal/walk.nas</file></walk>
+        <walk>
+			<file>Aircraft/MD-11/Nasal/walk.nas</file>
+		</walk>
     </nasal>
     
     <limits n="0">

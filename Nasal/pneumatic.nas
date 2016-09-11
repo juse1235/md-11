@@ -331,4 +331,4 @@ setlistener("/sim/signals/fdm-initialized", func (init) {
 	}
 },0,0);
 
-print('MD-11 pneumatic system: so far so good');
+print('Pneumatic System... Check');

@@ -246,4 +246,4 @@ var hyd_sys = [Hyd.new(0), Hyd.new(1), Hyd.new(2)];
 
 resched_update();
 
-print('MD-11 hydraulic system: so far so good');
+print('Hydraulic System ... Check');
