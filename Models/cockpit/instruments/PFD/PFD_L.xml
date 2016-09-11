@@ -2426,4 +2426,36 @@ Syd Adams
 			</greater-than>
 		</condition>
     </animation>
+
+    <animation>
+	<type>pick</type>
+        <object-name>Asitext.100</object-name>
+        <object-name>Asitext.010</object-name>
+        <object-name>Asitext.001</object-name>
+	<hovered>
+	    <binding>
+		<command>set-tooltip</command>
+		<tooltip-id>IASnow</tooltip-id>
+		<label>IAS: %.0f kts</label>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+	    </binding>
+	</hovered>
+    </animation>
+
+    <animation>
+	<type>pick</type>
+	<object-name>Alttext10000</object-name>
+	<object-name>Alttext1000</object-name>
+	<object-name>Alttext100</object-name>
+	<object-name>Alttext10</object-name>
+	<hovered>
+	    <binding>
+		<command>set-tooltip</command>
+		<tooltip-id>ALTnow</tooltip-id>
+		<label>Altitude: %.0f ft</label>
+                <property>instrumentation/altimeter/indicated-altitude-ft</property>
+	    </binding>
+	</hovered>
+    </animation>
+
 </PropertyList>

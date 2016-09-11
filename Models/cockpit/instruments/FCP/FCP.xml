@@ -864,6 +864,7 @@
 		<type>pick</type>
 		<object-name>Pitch_Wheel.knob</object-name>
 		<action>
+			<button>0</button>
 			<button>3</button> <!--  scroll down -->
 			<repeatable>false</repeatable>
 			<binding>
@@ -901,6 +902,7 @@
 			</binding>
 		</action>
 		<action>
+			<button>1</button>
 			<button>4</button> <!--  scroll up -->
 			<repeatable>false</repeatable>
 			<binding>
@@ -937,6 +939,32 @@
 				<max>9.9</max>
 			</binding>
 		</action>
+		<hovered>
+	    		<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/afds/ap-modes/pitch-mode</property>
+						<value>V/S</value>
+					</equals>
+				</condition>
+				<command>set-tooltip</command>
+				<tooltip-id>VS-set</tooltip-id>
+				<label>VS Setting: %d fpm</label>
+				<property>autopilot/settings/vertical-speed-fpm</property>
+	    		</binding>
+	    		<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/afds/ap-modes/pitch-mode</property>
+						<value>FPA</value>
+					</equals>
+				</condition>
+				<command>set-tooltip</command>
+				<tooltip-id>VS-set</tooltip-id>
+				<label>FPA Setting: %.1f deg</label>
+				<property>autopilot/settings/flight-path-angle</property>
+	    		</binding>
+		</hovered>
 	</animation>
 
 	<animation>
@@ -1006,6 +1034,28 @@
 				<max>0.95</max>
 			</binding>
 		</action>
+		<hovered>
+	    		<binding>
+				<condition>
+				    <not>
+					<property>instrumentation/afds/inputs/ias-mach-selected</property>
+				    </not>
+				</condition>
+				<command>set-tooltip</command>
+				<tooltip-id>IAS-set</tooltip-id>
+				<label>IAS Setting: %d kts</label>
+				<property>autopilot/settings/target-speed-kt</property>
+	    		</binding>
+	    		<binding>
+				<condition>
+					<property>instrumentation/afds/inputs/ias-mach-selected</property>
+				</condition>
+				<command>set-tooltip</command>
+				<tooltip-id>IAS-set</tooltip-id>
+				<label>Mach Setting: %.3f</label>
+				<property>autopilot/settings/target-speed-mach</property>
+	    		</binding>
+		</hovered>
 	</animation>
 
 	<animation>
@@ -1081,6 +1131,14 @@
 				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
+		<hovered>
+	    		<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>HDG-set</tooltip-id>
+				<label>Heading Bug: %d deg</label>
+				<property>autopilot/settings/heading-bug-deg</property>
+	    		</binding>
+		</hovered>
 	</animation>
 
 	<animation>
@@ -1102,12 +1160,6 @@
 				<wrap>false</wrap>
 			</binding>
 		</action>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>BLimit.knob</object-name>
-		<object-name>BLimit.knob.indicator</object-name>
 		<action>
 			<button>1</button>
 			<repeatable>true</repeatable>
@@ -1124,50 +1176,6 @@
 			</binding>
 		</action>
 	</animation>
-
-	<!--animation>
-		<type>pick</type>
-		<object-name>BLimit.knob</object-name>
-		<object-name>BLimit.knob.indicator</object-name>
-		<action>
-			<button>4</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/afds/inputs/bank-limit-switch</property>
-				<step>-1</step>
-				<min>0</min>
-				<max>5</max>
-				<wrap>false</wrap>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>controls.click(2);</script>
-			</binding>
-		</action>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>BLimit.knob</object-name>
-		<object-name>BLimit.knob.indicator</object-name>
-		<action>
-			<button>3</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/afds/inputs/bank-limit-switch</property>
-				<step>1</step>
-				<min>0</min>
-				<max>5</max>
-				<wrap>false</wrap>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>controls.click(2);</script>
-			</binding>
-		</action>
-	</animation-->
 
     <animation>
         <type>pick</type>
@@ -1290,6 +1298,14 @@
 				<max>50000</max>
 			</binding>
         	</action>
+		<hovered>
+	    		<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>Alt-set</tooltip-id>
+				<label>Alt Setting: %d ft</label>
+				<property>autopilot/settings/alt-display-ft</property>
+	    		</binding>
+		</hovered>
 	</animation>
 
 			<!-- Lighting -->
@@ -2268,6 +2284,28 @@
 		<step>-0.01</step>
 	    </binding>
 	</action>
+	<hovered>
+	    <binding>
+		<condition>
+		    <not>
+			<property>instrumentation/efis/inputs/kpa-mode</property>
+		    </not>
+		</condition>
+		<command>set-tooltip</command>
+		<tooltip-id>Baro-set-inhg</tooltip-id>
+		<label>Baro Setting: %.2f inHg</label>
+		<property>instrumentation/altimeter/setting-inhg</property>
+	    </binding>
+	    <binding>
+		<condition>
+			<property>instrumentation/efis/inputs/kpa-mode</property>
+		</condition>
+		<command>set-tooltip</command>
+		<tooltip-id>Baro-set-HPa</tooltip-id>
+		<label>Baro Setting: %4.0f HPa</label>
+		<property>instrumentation/altimeter/setting-hpa</property>
+	    </binding>
+	</hovered>
     </animation>
 
     <animation>
@@ -2320,6 +2358,14 @@
                 <script>MD11.Efis.ctl_func("dh",0);</script>
 	    </binding>
 	</action>	
+	<hovered>
+	    <binding>
+		<command>set-tooltip</command>
+		<tooltip-id>Mins-set</tooltip-id>
+		<label>Minimums: %d ft</label>
+		<property>instrumentation/efis/minimums</property>
+	    </binding>
+	</hovered>
     </animation>
 
 </PropertyList>
