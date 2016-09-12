@@ -839,19 +839,19 @@
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
             <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
-			<file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
-			<file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
-			<file>Aircraft/MD-11/Nasal/transponder.nas</file>
+	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/transponder.nas</file>
             <file>Aircraft/MD-11/Nasal/pneumatic.nas</file>
             <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
             <file>Aircraft/MD-11/Nasal/gear-tilt.nas</file>
         </MD11>
-		<hydraulics>
+	<hydraulics>
             <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
-		</hydraulics>
-		<pressurization>
-			<file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
-		</pressurization>
+	</hydraulics>
+	<pressurization>
+	    <file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
+	</pressurization>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>
@@ -859,8 +859,8 @@
             <file>Aircraft/MD-11/Nasal/boeing_cdu.nas</file>
         </cdu>
         <walk>
-			<file>Aircraft/MD-11/Nasal/walk.nas</file>
-		</walk>
+	    <file>Aircraft/MD-11/Nasal/walk.nas</file>
+	</walk>
     </nasal>
     
     <limits n="0">
