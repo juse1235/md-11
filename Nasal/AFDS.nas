@@ -108,8 +108,9 @@ var AFDS = {
 		m.at1.setBoolValue(0);
 		m.at2.setBoolValue(0);
 		m.thrust_mode.setValue(0);
+		settimer(func{setprop("controls/switches/apoffsound",0)},3);
+		m.setAP();
 	    }
-	    m.setAP();
 	},0,0);
 	m.Lreset = setlistener(m.reset, func m.afds_reset(),0,0);
 	m.Lrefsw = setlistener("instrumentation/efis/mfd/true-north", func m.hdg_ref_sw(),0,0);
@@ -136,6 +137,8 @@ var AFDS = {
     APyokebtn : func {
 	if (me.AP.getBoolValue()) {
 	    me.AP.setBoolValue(0);
+	} elsif (getprop("controls/switches/apoffsound")) {
+	    setprop("controls/switches/apoffsound",0);
 	} else {
 	    me.at1.setBoolValue(0);
 	    me.at2.setBoolValue(0);
@@ -303,6 +306,9 @@ var AFDS = {
     },
 ###################
     setAP : func{
+	    if (!me.AP.getBoolValue()) {
+		setprop("controls/switches/apoffsound", 1);
+	    }
         var output=1-me.AP.getValue();
         var disabled = me.AP_disengaged.getValue();
         if(getprop("position/altitude-agl-ft")<100)disabled = 1;
@@ -828,15 +834,6 @@ var afds = AFDS.new();
 
 setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_afds, 6);
-    var APlisten = func {
-	setlistener("instrumentation/afds/inputs/AP", func {
-	    if (!getprop("instrumentation/afds/inputs/AP")) {
-		setprop("controls/switches/apoffsound", 1);
-		settimer(func{setprop("controls/switches/apoffsound",0)},3);
-	    }
-	},0,0);
-    }
-    settimer(APlisten,3);
     print("AUTOFLIGHT ... Check!");
 });
 

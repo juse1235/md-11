@@ -5,6 +5,7 @@
 	
   <apoff>
    <name>apoff</name>
+   <mode>looped</mode>
    <path>/Aircraft/MD-11/Sounds/apoff.wav</path>
    <condition>
      <property>/controls/switches/apoffsound</property>
