@@ -2911,7 +2911,8 @@
 	<type>rotate</type>
 	<object-name>ldglight.right.glass</object-name>
 	<object-name>ldglight.right</object-name>
-	<property>controls/lighting/landing-light[2]</property>
+	<!--property>controls/lighting/landing-light</property-->
+	<property>sim/multiplay/generic/int[4]</property>
 	<factor>90</factor>
 	<axis>
 	    <x>0</x>
@@ -2929,7 +2930,8 @@
 	<type>rotate</type>
 	<object-name>ldglight.left.glass</object-name>
 	<object-name>ldglight.left</object-name>
-	<property>controls/lighting/landing-light</property>
+	<!--property>controls/lighting/landing-light</property-->
+	<property>sim/multiplay/generic/int[4]</property>
 	<factor>-90</factor>
 	<axis>
 	    <x>0</x>

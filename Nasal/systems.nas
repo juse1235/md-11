@@ -558,13 +558,60 @@ controls.gearDown = func(v) {
 }
 setlistener("controls/gear/gear-down", func { controls.click(8) } );
 
-
+## LIGHTS
+#########
 controls.toggleLandingLights = func()
 {
     var state = getprop("controls/lighting/landing-light[1]");
     setprop("controls/lighting/landing-light[0]",!state);
     setprop("controls/lighting/landing-light[1]",!state);
     setprop("controls/lighting/landing-light[2]",!state);
+}
+
+props.globals.initNode("systems/electrical/lighting/strobe",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/beacon",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/landing-light[0]",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/landing-light[1]",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/landing-light[2]",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/nav-lights",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/logo-lights",0,"BOOL");
+
+var update_lights = func {
+	if (getprop("/systems/electrical/outputs/strobe") > 18) {
+	    setprop("systems/electrical/lighting/strobe",1);
+	} else {
+	    setprop("systems/electrical/lighting/strobe",0);
+	}
+	if (getprop("/systems/electrical/outputs/beacon") > 18) {
+	    setprop("systems/electrical/lighting/beacon",1);
+	} else {
+	    setprop("systems/electrical/lighting/beacon",0);
+	}
+	if (getprop("/systems/electrical/outputs/nav-lights") > 18) {
+	    setprop("systems/electrical/lighting/nav-lights",1);
+	} else {
+	    setprop("systems/electrical/lighting/nav-lights",0);
+	}
+	if (getprop("/systems/electrical/outputs/logo-lights") > 18) {
+	    setprop("systems/electrical/lighting/logo-lights",1);
+	} else {
+	    setprop("systems/electrical/lighting/logo-lights",0);
+	}
+	if (getprop("/systems/electrical/outputs/landing-light[0]") > 18) {
+	    setprop("systems/electrical/lighting/landing-light[0]",1);
+	} else {
+	    setprop("systems/electrical/lighting/landing-light[0]",0);
+	}
+	if (getprop("/systems/electrical/outputs/landing-light[1]") > 18) {
+	    setprop("systems/electrical/lighting/landing-light[1]",1);
+	} else {
+	    setprop("systems/electrical/lighting/landing-light[1]",0);
+	}
+	if (getprop("/systems/electrical/outputs/landing-light[2]") > 18) {
+	    setprop("systems/electrical/lighting/landing-light[2]",1);
+	} else {
+	    setprop("systems/electrical/lighting/landing-light[2]",0);
+	}
 }
 
 #var balance_fuel = func{
@@ -1180,6 +1227,7 @@ var update_systems = func {
     RHeng.update();
     CHeng.update();
     #wiper.active(); # not implemented yet!
+    update_lights();
 
     var et_tmp = getprop("instrumentation/clock/ET-sec");
     var et_min = int(et_tmp * 0.0166666666667);

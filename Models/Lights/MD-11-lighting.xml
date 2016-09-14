@@ -9,9 +9,6 @@
 <model>
 <path>Aircraft/MD-11/Models/Lights/greennav.xml</path>
 <name>GreenLight</name>     
-   <condition>
-		<property>controls/lighting/nav-lights</property>
-   </condition>
 <offsets>
 <x-m>12.8220</x-m>
 <y-m>24.9827</y-m>
@@ -22,9 +19,6 @@
 <model>
  <path>Aircraft/MD-11/Models/Lights/light-green.xml</path>
  <name>GreenLight</name>
-    <condition>
-		<property>controls/lighting/nav-lights</property>
-   </condition>
  <offsets>
 <x-m>12.8220</x-m>
 <y-m>24.9827</y-m>
@@ -38,9 +32,6 @@
 <model>
 <path>Aircraft/MD-11/Models/Lights/rednav.xml</path>
 <name>RedLight</name>     
-   <condition>
-		<property>controls/lighting/nav-lights</property>
-   </condition>
 <offsets>
 <x-m>12.8220</x-m>
 <y-m>-24.9827</y-m>
@@ -51,9 +42,6 @@
 <model>
  <path>Aircraft/MD-11/Models/Lights/light-red.xml</path>
  <name>RedLight</name>
-    <condition>
-		<property>controls/lighting/nav-lights</property>
-   </condition>
  <offsets>
 <x-m>12.8220</x-m>
 <y-m>-24.9827</y-m>
@@ -61,14 +49,20 @@
  </offsets>
 </model>
 
+<animation>
+	<type>select</type>
+	<object-name>RedLight</object-name>
+	<object-name>GreenLight</object-name>
+	<condition>
+	    <property>sim/multiplay/generic/int[7]</property>
+	</condition>
+</animation>
+
 	<!-- Strobe right-->
 
 <model>
  <path>Aircraft/MD-11/Models/Lights/light-white.xml</path>
  <name>Strobelight.1</name>
-	<condition>
-		<property>controls/lighting/strobe</property>
-	</condition>
  <offsets>
   <x-m>15.4808</x-m>
   <y-m>-25.0777</y-m>
@@ -79,12 +73,31 @@
 <model>
  <path>Aircraft/MD-11/Models/Lights/whitelight.xml</path>
  <name>Strobelight.1</name>
-    <condition>
-		<property>controls/lighting/strobe</property>
-   </condition>
  <offsets>
   <x-m>15.4808</x-m>
   <y-m>-25.0777</y-m>
+  <z-m>6.0813</z-m>
+ </offsets>
+</model>
+
+	<!-- Strobe left-->
+
+<model>
+ <path>Aircraft/MD-11/Models/Lights/light-white.xml</path>
+ <name>Strobelight.2</name>
+ <offsets>
+  <x-m>15.4808</x-m>
+  <y-m>25.0777</y-m>
+  <z-m>6.0813</z-m>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/MD-11/Models/Lights/whitelight.xml</path>
+ <name>Strobelight.2</name>
+ <offsets>
+  <x-m>15.4808</x-m>
+  <y-m>25.0777</y-m>
   <z-m>6.0813</z-m>
  </offsets>
 </model>
@@ -92,44 +105,9 @@
     <animation>
         <type>select</type>
         <object-name>Strobelight.1</object-name>
-	<condition>
-		<property>controls/lighting/strobe-state/state</property>
-	</condition>
-    </animation>
-
-	<!-- Strobe left-->
-
-<model>
- <path>Aircraft/MD-11/Models/Lights/light-white.xml</path>
- <name>Strobelight.2</name>
-	<condition>
-		<property>controls/lighting/strobe</property>
-	</condition>
- <offsets>
-  <x-m>15.4808</x-m>
-  <y-m>25.0777</y-m>
-  <z-m>6.0813</z-m>
- </offsets>
-</model>
-
-<model>
- <path>Aircraft/MD-11/Models/Lights/whitelight.xml</path>
- <name>Strobelight.2</name>
-    <condition>
-		<property>controls/lighting/strobe</property>
-   </condition>
- <offsets>
-  <x-m>15.4808</x-m>
-  <y-m>25.0777</y-m>
-  <z-m>6.0813</z-m>
- </offsets>
-</model>
-
-    <animation>
-        <type>select</type>
         <object-name>Strobelight.2</object-name>
 	<condition>
-		<property>controls/lighting/strobe-state/state</property>
+	    <property>sim/multiplay/generic/int[0]</property>
 	</condition>
     </animation>
 
@@ -138,9 +116,6 @@
 <model>
 	<path>Aircraft/MD-11/Models/Lights/beacon.xml</path>
 	<name>Beacon.Lower</name>
-	    <condition>
-		<property>controls/lighting/beacon</property>
-   </condition>
 	<offsets>
 		<x-m>14.2979</x-m>
 		<y-m>0</y-m>
@@ -152,9 +127,6 @@
 <model>
 <path>Aircraft/MD-11/Models/Lights/beacon_light.xml</path>
 	<name>Beacon.Lower.Light</name>
-		    <condition>
-		<property>controls/lighting/beacon</property>
-   </condition>
 	<offsets>
 		<x-m>14.2979</x-m>
 		<y-m>0</y-m>
@@ -166,9 +138,6 @@
 <model>
 <path>Aircraft/MD-11/Models/Lights/beacon.xml</path>
 	<name>Beacon.Upper</name>
-		    <condition>
-		<property>controls/lighting/beacon</property>
-   </condition>
 	<offsets>
 		<x-m>-4.1455</x-m>
 		<y-m>0</y-m>
@@ -179,15 +148,23 @@
 <model>
 <path>Aircraft/MD-11/Models/Lights/beacon_light.xml</path>
 	<name>Beacon.Upper.Light</name>
-		    <condition>
-		<property>controls/lighting/beacon</property>
-   </condition>
 	<offsets>
 		<x-m>-4.1455</x-m>
 		<y-m>0</y-m>
 		<z-m>9.2512</z-m>
 	</offsets>
 </model>
+<animation>
+	<type>select</type>
+	<object-name>Beacon.Lower</object-name>
+	<object-name>Beacon.Upper</object-name>
+	<object-name>Beacon.Lower.Light</object-name>
+	<object-name>Beacon.Upper.Light</object-name>
+	<condition>
+	    <property>sim/multiplay/generic/int[1]</property>
+	</condition>
+</animation>
+
 
 <!-- Landing lights -->
  
@@ -258,7 +235,7 @@
 	<type>select</type>
 	<object-name>landing_left</object-name>
 	<condition>
-		<property>controls/lighting/landing-light</property>
+	    <property>sim/multiplay/generic/int[4]</property>
 	</condition>
 </animation>
 
@@ -286,7 +263,7 @@
 	<type>select</type>
 	<object-name>landing_right</object-name>
 	<condition>
-		<property>controls/lighting/landing-light[2]</property>
+	    <property>sim/multiplay/generic/int[4]</property>
 	</condition>
 </animation>
 
@@ -358,14 +335,7 @@
 	<object-name>landing.nose.2</object-name>
 	<condition>
 	  <and>
-	    <equals>
-		<property>controls/lighting/landing-light[1]</property>
-		<value>1</value>
-	    </equals>
-	    <equals>
-		<property>systems/electrical/outputs/avionics</property>
-		<value>1</value>
-	    </equals>
+	    <property>sim/multiplay/generic/int[5]</property>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
 		<value>1</value>

@@ -2747,7 +2747,7 @@
 	<type>rotate</type>
 	<object-name>ldglight.right.glass</object-name>
 	<object-name>ldglight.right</object-name>
-	<property>controls/lighting/landing-light[2]</property>
+	<property>controls/lighting/landing-light</property>
 	<factor>90</factor>
 	<axis>
 	    <x>0</x>
