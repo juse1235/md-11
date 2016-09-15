@@ -183,7 +183,7 @@
 <name>landing.nose.1</name>
 <path>Aircraft/MD-11/Models/Lights/transparentlight.xml</path>
 	<offsets>
-		<x-m>-20.3912</x-m>
+		<x-m>-20.5912</x-m>
 		<y-m>-0.1901</y-m>
 		<z-m>3.2395</z-m>
 	</offsets>
@@ -204,7 +204,7 @@
 <name>landing.nose.2</name>
 <path>Aircraft/MD-11/Models/Lights/transparentlight.xml</path>
 	<offsets>
-		<x-m>-20.3912</x-m>
+		<x-m>-20.5912</x-m>
 		<y-m>0.1901</y-m>
 		<z-m>3.2395</z-m>
 	</offsets>
