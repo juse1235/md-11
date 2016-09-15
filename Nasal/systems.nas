@@ -612,6 +612,28 @@ var update_lights = func {
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[2]",0);
 	}
+
+	# ALS landing lights
+	if (getprop("sim/current-view/internal")) {
+	    if (getprop("systems/electrical/lighting/landing-light[0]")) {
+		setprop("sim/rendering/als-secondary-lights/use-landing-light",1);
+		setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",1);
+		setprop("sim/rendering/als-secondary-lights/landing-light1-offset-deg",-5);
+		setprop("sim/rendering/als-secondary-lights/landing-light2-offset-deg",5);
+		setprop("sim/rendering/als-secondary-lights/landing-light3-offset-deg",-10);
+	    } elsif (getprop("systems/electrical/lighting/landing-light[1]")) {
+		setprop("sim/rendering/als-secondary-lights/use-landing-light",1);
+		setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",0);
+		setprop("sim/rendering/als-secondary-lights/landing-light1-offset-deg",0);
+		setprop("sim/rendering/als-secondary-lights/landing-light3-offset-deg",-5);
+	    } else {
+		setprop("sim/rendering/als-secondary-lights/use-landing-light",0);
+		setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",0);
+	    }
+	} else {
+	    setprop("sim/rendering/als-secondary-lights/use-landing-light",0);
+	    setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",0);
+	}
 }
 
 #var balance_fuel = func{
