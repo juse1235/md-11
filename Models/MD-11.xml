@@ -789,22 +789,14 @@
 		</axis>
 	</animation>
 	
-		<effect>
-		<inherits-from>Aircraft/MD-11/Models/Effects/engine</inherits-from>
-    <object-name>engines.chrome</object-name>
-<object-name>slat.1.part3</object-name>
-<object-name>slat.1.part2</object-name>
-<object-name>slat.1.part1</object-name>
-<object-name>slat.4.part3</object-name>
-<object-name>slat.4.part2</object-name>
-<object-name>slat.4.part1</object-name>
-<object-name>slat.2</object-name>
-<object-name>slat.3</object-name>
-<object-name>wiper.left</object-name>
-<object-name>wiper.right</object-name>
+	<effect>
+	    <inherits-from>Aircraft/MD-11/Models/Effects/engine</inherits-from>
+	    <object-name>engines.chrome</object-name>
+	    <object-name>wiper.left</object-name>
+	    <object-name>wiper.right</object-name>
 	</effect>
 	
-		<animation>
+	<animation>
 		<name>Engine reverser 2</name>
 		<type>translate</type>
 		<object-name>center.reverser</object-name>
@@ -1985,8 +1977,6 @@
 <object-name>cargo1</object-name>
 <object-name>cargo2</object-name>
 <object-name>cargo3</object-name>
-<object-name>flap.3.part2</object-name>
-<object-name>flap.5.part2</object-name>
 <object-name>cabin_windows.klm.paint</object-name>
 <object-name>cabin_windows.finnair.paint</object-name>
 <object-name>cabin_windows.klm.finnair.paint</object-name>
@@ -1999,6 +1989,12 @@
 <object-name>ldoor.3</object-name>
 <object-name>rdoor.4</object-name>
 <object-name>ldoor.4</object-name>
+<object-name>engines</object-name>
+<object-name>left.reverser</object-name>
+<object-name>right.reverser</object-name>
+<object-name>Cube.001</object-name>
+<object-name>Cube.002</object-name>
+<object-name>Cube.007</object-name>
 <object-name>windshield.frames</object-name>
  </effect>
  
@@ -2039,13 +2035,30 @@
 <object-name>AileronR1</object-name>
 <object-name>AileronR2</object-name>
 <object-name>sp.brake.right.outer</object-name>
-<object-name>sp.brake.left.inner</object-name>
+<object-name>sp.brake.right.inner</object-name>
 <object-name>flap.5</object-name>
 <object-name>flap.6</object-name>
 <object-name>flap.7</object-name>
 <object-name>flap.8</object-name>
+<object-name>flap.9</object-name>
+<object-name>flap.9.part2</object-name>
+<object-name>flap.10</object-name>
+<object-name>flap.10.part2</object-name>
+<object-name>flap.11</object-name>
+<object-name>flap.000</object-name>
+<object-name>flap.12</object-name>
+<object-name>flap.015</object-name>
+<object-name>flap.13</object-name>
+<object-name>flap.13.part2</object-name>
+<object-name>flap.14</object-name>
+<object-name>flap.14.part2</object-name>
+<object-name>HorzStab1</object-name>
+<object-name>HorzStab2</object-name>
+<object-name>elevator.1</object-name>
+<object-name>elevator.2</object-name>
 <object-name>left.main.door</object-name>
 <object-name>right.main.door</object-name>
+<object-name>Cylinder.006</object-name>
  </effect>
 
 
@@ -2790,6 +2803,9 @@
 <object-name>ldoor.3</object-name>
 <object-name>rdoor.4</object-name>
 <object-name>ldoor.4</object-name>
+<object-name>Cube.001</object-name>
+<object-name>Cube.002</object-name>
+<object-name>Cube.007</object-name>
 <property-base>sim/model/livery</property-base>
 <texture-prop>texture</texture-prop>
 <texture>md11.png</texture>
