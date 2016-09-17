@@ -1828,9 +1828,9 @@
 <object-name>left.reverser</object-name>
 <object-name>right.reverser</object-name>
 <object-name>SatCom</object-name>
-<object-name>Cube.001</object-name>
-<object-name>Cube.002</object-name>
-<object-name>Cube.007</object-name>
+<object-name>VHF.lowerF</object-name>
+<object-name>VHF.lowerA</object-name>
+<object-name>VHF.upper</object-name>
 <object-name>windshield.frames</object-name>
  </effect>
  
@@ -2641,9 +2641,9 @@
 <object-name>ldoor.4</object-name>
 <object-name>cargo.door</object-name>
 <object-name>SatCom</object-name>
-<object-name>Cube.001</object-name>
-<object-name>Cube.002</object-name>
-<object-name>Cube.007</object-name>
+<object-name>VHF.lowerF</object-name>
+<object-name>VHF.lowerA</object-name>
+<object-name>VHF.upper</object-name>
 <property-base>sim/model/livery</property-base>
 <texture-prop>texture</texture-prop>
 <texture>UPS.png</texture>
