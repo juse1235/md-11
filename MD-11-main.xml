@@ -174,6 +174,7 @@
                 <int n="6" alias="/systems/electrical/lighting/landing-light[2]"/>
                 <int n="7" alias="/systems/electrical/lighting/nav-lights"/>
                 <int n="8" alias="/systems/electrical/outputs/cabin-lights"/>
+                <int n="9" alias="/systems/electrical/lighting/wing-lights"/>
 
                 <float n="0" alias="/gear/gear[0]/compression-m"/>
                 <float n="1" alias="/gear/gear[1]/compression-m"/>

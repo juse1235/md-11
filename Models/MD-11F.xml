@@ -1824,15 +1824,19 @@
 <object-name>rdoor.4</object-name>
 <object-name>ldoor.4</object-name>
 <object-name>cargo.door</object-name>
-<object-name>engines</object-name>
-<object-name>left.reverser</object-name>
-<object-name>right.reverser</object-name>
 <object-name>SatCom</object-name>
 <object-name>VHF.lowerF</object-name>
 <object-name>VHF.lowerA</object-name>
 <object-name>VHF.upper</object-name>
 <object-name>windshield.frames</object-name>
  </effect>
+ 
+    <effect>
+	<inherits-from>Aircraft/MD-11/Models/Effects/bumpspec-eng</inherits-from>
+	<object-name>engines</object-name>
+	<object-name>left.reverser</object-name>
+	<object-name>right.reverser</object-name>
+    </effect>
  
    <effect>
 <inherits-from>Aircraft/MD-11/Models/Effects/bumpspec-wing</inherits-from>
@@ -1894,7 +1898,7 @@
 <object-name>elevator.2</object-name>
 <object-name>left.main.door</object-name>
 <object-name>right.main.door</object-name>
-<object-name>Cylinder.006</object-name>
+<object-name>Pylons</object-name>
  </effect>
 
 

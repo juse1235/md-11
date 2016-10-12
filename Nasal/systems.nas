@@ -574,40 +574,46 @@ props.globals.initNode("systems/electrical/lighting/landing-light[0]",0,"BOOL");
 props.globals.initNode("systems/electrical/lighting/landing-light[1]",0,"BOOL");
 props.globals.initNode("systems/electrical/lighting/landing-light[2]",0,"BOOL");
 props.globals.initNode("systems/electrical/lighting/nav-lights",0,"BOOL");
-props.globals.initNode("systems/electrical/lighting/logo-lights",0,"BOOL");
+props.globals.initNode("systems/electrical/lighting/wing-lights",0,"BOOL");
 
 var update_lights = func {
-	if (getprop("/systems/electrical/outputs/strobe") > 18) {
+	var ac_pwr = (getprop("systems/electrical/AC_TIE_BUS") > 98);
+	if (getprop("/systems/electrical/outputs/strobe") > 18 and ac_pwr) {
 	    setprop("systems/electrical/lighting/strobe",1);
 	} else {
 	    setprop("systems/electrical/lighting/strobe",0);
 	}
-	if (getprop("/systems/electrical/outputs/beacon") > 18) {
+	if (getprop("/systems/electrical/outputs/beacon") > 18 and ac_pwr) {
 	    setprop("systems/electrical/lighting/beacon",1);
 	} else {
 	    setprop("systems/electrical/lighting/beacon",0);
 	}
-	if (getprop("/systems/electrical/outputs/nav-lights") > 18) {
+	if (getprop("controls/lighting/nav-lights") and getprop("systems/electrical/CPT-FLT-INST") > 24) {
 	    setprop("systems/electrical/lighting/nav-lights",1);
 	} else {
 	    setprop("systems/electrical/lighting/nav-lights",0);
 	}
-	if (getprop("/systems/electrical/outputs/logo-lights") > 18) {
+	if (getprop("/systems/electrical/outputs/logo-lights") > 18 and ac_pwr) {
 	    setprop("systems/electrical/lighting/logo-lights",1);
 	} else {
 	    setprop("systems/electrical/lighting/logo-lights",0);
 	}
-	if (getprop("/systems/electrical/outputs/landing-light[0]") > 18) {
+	if (getprop("/systems/electrical/outputs/wing-lights") > 18 and ac_pwr) {
+	    setprop("systems/electrical/lighting/wing-lights",1);
+	} else {
+	    setprop("systems/electrical/lighting/wing-lights",0);
+	}
+	if (getprop("/systems/electrical/outputs/landing-light[0]") > 18 and ac_pwr) {
 	    setprop("systems/electrical/lighting/landing-light[0]",1);
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[0]",0);
 	}
-	if (getprop("/systems/electrical/outputs/landing-light[1]") > 18 and getprop("gear/gear[0]/position-norm") > 0.98) {
+	if (getprop("/systems/electrical/outputs/landing-light[1]") > 18 and getprop("gear/gear[0]/position-norm") > 0.98 and ac_pwr) {
 	    setprop("systems/electrical/lighting/landing-light[1]",1);
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[1]",0);
 	}
-	if (getprop("/systems/electrical/outputs/landing-light[2]") > 18) {
+	if (getprop("/systems/electrical/outputs/landing-light[2]") > 18 and ac_pwr) {
 	    setprop("systems/electrical/lighting/landing-light[2]",1);
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[2]",0);

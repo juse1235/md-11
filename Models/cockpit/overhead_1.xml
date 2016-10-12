@@ -2187,8 +2187,8 @@ FSC.btn
    </axis>
  </animation>
  
-         <animation>
-        <type>pick</type>
+    <animation>
+	<type>pick</type>
         <object-name>turnoff.left</object-name>
         <object-name>turnoff.right</object-name>
         <action>
@@ -2196,7 +2196,7 @@ FSC.btn
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/turn-off-lights</property>
+                <property>controls/lighting/wing-lights</property>
             </binding>
             <binding>
                 <command>nasal</command>
@@ -2204,17 +2204,16 @@ FSC.btn
             </binding>
         </action>
     </animation>
-    
-     <animation>
-   <type>textranslate</type>
+    <animation>
+	<type>textranslate</type>
         <object-name>turnoff.left</object-name>
         <object-name>turnoff.right</object-name>
-                <property>controls/lighting/turn-off-lights</property>
+        <property>controls/lighting/wing-lights</property>
         <condition>
-        <equals>
-        <property>systems/electrical/outputs/avionics</property>
-        <value>1</value>
-        </equals>
+	    <equals>
+		<property>systems/electrical/outputs/avionics</property>
+		<value>1</value>
+	    </equals>
         </condition>
         <interpolation>
             <entry>
@@ -2226,12 +2225,12 @@ FSC.btn
                 <dep>0</dep>
             </entry>
         </interpolation>
-   <axis>
-     <x>0</x>
-     <y>1</y>
-     <z>0</z>
-   </axis>
- </animation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	    <z>0</z>
+	</axis>
+    </animation>
 
     
         <animation>

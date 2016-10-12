@@ -16,7 +16,10 @@
     </texture>
     <lightmap-enabled type="int"> 1 </lightmap-enabled>
     <lightmap-multi>1</lightmap-multi>
-    <lightmap-factor n="0">0</lightmap-factor>
+    <lightmap-factor n="0">
+	<use>systems/electrical/lighting/wing-lights</use>
+    </lightmap-factor>
+    <lightmap-color n="0">1.0 1.0 1.0</lightmap-color>
     <lightmap-factor n="1">0</lightmap-factor>
     <lightmap-factor n="2">0</lightmap-factor>
     <lightmap-factor n="3">
