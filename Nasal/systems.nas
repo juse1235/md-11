@@ -602,7 +602,7 @@ var update_lights = func {
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[0]",0);
 	}
-	if (getprop("/systems/electrical/outputs/landing-light[1]") > 18) {
+	if (getprop("/systems/electrical/outputs/landing-light[1]") > 18 and getprop("gear/gear[0]/position-norm") > 0.98) {
 	    setprop("systems/electrical/lighting/landing-light[1]",1);
 	} else {
 	    setprop("systems/electrical/lighting/landing-light[1]",0);
