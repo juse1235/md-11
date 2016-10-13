@@ -1834,6 +1834,7 @@
     <effect>
 	<inherits-from>Aircraft/MD-11/Models/Effects/bumpspec-eng</inherits-from>
 	<object-name>engines</object-name>
+	<object-name>Intakes</object-name>
 	<object-name>left.reverser</object-name>
 	<object-name>right.reverser</object-name>
     </effect>
