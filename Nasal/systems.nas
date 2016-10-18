@@ -560,6 +560,9 @@ setlistener("controls/gear/gear-down", func { controls.click(8) } );
 
 ## LIGHTS
 #########
+aircraft.light.new("sim/model/lights/strobe", [0.05, 1.3], "controls/lighting/strobe");
+aircraft.light.new("sim/model/lights/beacon", [0.05, 2], "controls/lighting/beacon");
+
 controls.toggleLandingLights = func()
 {
     var state = getprop("controls/lighting/landing-light[1]");
@@ -578,12 +581,12 @@ props.globals.initNode("systems/electrical/lighting/wing-lights",0,"BOOL");
 
 var update_lights = func {
 	var ac_pwr = (getprop("systems/electrical/AC_TIE_BUS") > 98);
-	if (getprop("/systems/electrical/outputs/strobe") > 18 and ac_pwr) {
+	if (getprop("sim/model/lights/strobe/state") and getprop("controls/lighting/strobe") and ac_pwr) {
 	    setprop("systems/electrical/lighting/strobe",1);
 	} else {
 	    setprop("systems/electrical/lighting/strobe",0);
 	}
-	if (getprop("/systems/electrical/outputs/beacon") > 18 and ac_pwr) {
+	if (getprop("sim/model/lights/beacon/state") and getprop("controls/lighting/beacon") and ac_pwr) {
 	    setprop("systems/electrical/lighting/beacon",1);
 	} else {
 	    setprop("systems/electrical/lighting/beacon",0);
