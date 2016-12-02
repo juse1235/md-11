@@ -381,6 +381,7 @@ var start_updates = func {
     if (getprop("position/gear-agl-ft")>30)
     {
         # airborne startup
+      settimer(func {
         Startup();
         setprop("controls/gear/brake-parking",0);
         controls.gearDown(-1);
@@ -392,9 +393,6 @@ var start_updates = func {
     	setprop("instrumentation/afds/inputs/at-armed[1]", 1);
 	setprop("instrumentation/afds/inputs/AP", 1);
         setprop("autopilot/internal/airport-height", 0);
-        setprop("engines/engine[0]/run",1);
-        setprop("engines/engine[1]/run",1);
-	setprop("engines/engine[2]/run",1);
     	setprop("sim/flaps/current-setting", 0);
 	setprop("autopilot/settings/target-speed-kt", getprop("sim/presets/airspeed-kt"));
 	MD11.afds.input(1,1);
@@ -408,6 +406,7 @@ var start_updates = func {
 	if(var vbaro = getprop("environment/metar/pressure-inhg")) {
 		setprop("instrumentation/altimeter/setting-inhg", vbaro);
 	}
+      },3);
     }
 
     # start update_systems loop - but start it once only
@@ -692,14 +691,11 @@ var update_lights = func {
 #    }
 #}
 
+props.globals.initNode("sim/model/start-idling",0,"BOOL");
 var Startup = func{
+    setprop("sim/model/start-idling",1);
     setprop("sim/model/armrest",1);
-    balance_fuel();
     setprop("controls/switches/emgpwr", 1);
-    setprop("controls/fuel/auto-manage",1);
-    setprop("consumables/fuel/tank[0]/selected",1);
-    setprop("consumables/fuel/tank[1]/selected",1);
-    setprop("consumables/fuel/tank[2]/selected",1);
     setprop("controls/electric/engine[0]/generator",1);
     setprop("controls/electric/engine[1]/generator",1);
     setprop("controls/electric/engine[2]/generator",1);
@@ -716,21 +712,29 @@ var Startup = func{
     setprop("controls/lighting/logo-lights",1);
     setprop("controls/lighting/cabin-lights",1);
     setprop("controls/lighting/strobe",1);
-    setprop("controls/engines/engine[0]/cutoff",0);
-    setprop("controls/engines/engine[1]/cutoff",0);
-    setprop("controls/engines/engine[2]/cutoff",0);
-    setprop("engines/engine[0]/out-of-fuel",0);
-    setprop("engines/engine[1]/out-of-fuel",0);
-    setprop("engines/engine[2]/out-of-fuel",0);
     setprop("controls/flight/elevator-trim",0);
     setprop("controls/flight/aileron-trim",0);
     setprop("controls/flight/rudder-trim",0);
     setprop("controls/hydraulic/auto-mode",1);
     setprop("controls/pneumatic/auto-mode",1);
     setprop("instrumentation/transponder/mode-switch",4); # transponder mode: TA/RA
+    balance_fuel();
+    setprop("controls/fuel/auto-manage",0);
+    setprop("consumables/fuel/tank[0]/pump-eng",1);
+    setprop("consumables/fuel/tank[1]/pump-eng",1);
+    setprop("consumables/fuel/tank[2]/pump-eng",1);
+    MD11fuel.update();
+    setprop("controls/fuel/auto-manage",1);
+    setprop("controls/engines/engine[0]/cutoff",0);
+    setprop("controls/engines/engine[1]/cutoff",0);
+    setprop("controls/engines/engine[2]/cutoff",0);
+    setprop("engines/engine[0]/out-of-fuel",0);
+    setprop("engines/engine[1]/out-of-fuel",0);
+    setprop("engines/engine[2]/out-of-fuel",0);
     setprop("engines/engine[0]/run",1);
     setprop("engines/engine[1]/run",1);
     setprop("engines/engine[2]/run",1);
+    settimer(func setprop("sim/model/start-idling",0),1);
 }
 
 var Shutdown = func{

@@ -85,7 +85,7 @@ var fuelsys = {
     update : func {
 	var select = [ 0, 0, 0, 0, 0 ];
 	var thru_flow = [ 0, 0, 0 ];
-	var electric = getprop("systems/electrical/AC_TIE_BUS") >= 98;
+	var electric = getprop("systems/electrical/AC_TIE_BUS") >= 98 or getprop("sim/model/start-idling");
 
 	me.fill_arm[3].setBoolValue(1);
 	me.fill_arm[4].setBoolValue(1);
@@ -134,7 +134,7 @@ var fuelsys = {
 	}
 
 	# Cut the pumps when there's no power:
-	if (getprop("systems/electrical/AC_TIE_BUS") < 98) {
+	if (!electric) {
 	    me.auto_manage.setBoolValue(0);
 	    for (var i=0; i<5; i+=1) {
 		me.xfer[i].setBoolValue(0);
@@ -250,7 +250,7 @@ var fuelsys = {
 	# Do any transfers:
 	if (manifold_o and manifold_p) me.transfers();
 	
-	settimer(func { me.update();},0.5);
+#	settimer(func { me.update();},0.5);
     },
 
     transfers : func {
@@ -569,9 +569,13 @@ var fuelsys = {
     }
 };
 var MD11fuel = fuelsys.new();
+var MD11fuel_update = func {
+	MD11fuel.update();
+	settimer(MD11fuel_update,0.5);
+}
 setlistener("/sim/signals/fdm-initialized", func {
 	MD11fuel.tail_mng();
-	MD11fuel.update();
+	MD11fuel_update();
 	MD11fuel.idle_fuelcon();
 },0,0);
 
