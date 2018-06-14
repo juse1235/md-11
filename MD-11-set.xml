@@ -5,6 +5,19 @@
 
     <sim>
 	<description>Boeing/McDonnell Douglas MD-11</description>
+
+	<tags>
+		<tag>transport</tag>
+		<tag>douglas</tag>
+		<tag>jet</tag>
+		<tag>retractable-gear</tag>
+		<tag>glass-cockpit</tag>
+		<tag>ifr</tag>
+		<tag>2010s</tag>
+		<tag>2000s</tag>
+		<tag>1990s</tag>
+	</tags>
+
 	<flight-model>yasim</flight-model>
 	<aero>MD-11</aero>
 	<startup>
