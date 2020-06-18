@@ -111,7 +111,7 @@ var warning_messages = func {
 		append(msgs_warning,">CABIN ALTITUDE");
 	if ((((radio_alt<800) and (throttle<0.1)) or (flaps>0.6)) and !gear_down)
 		append(msgs_warning,">CONFIG GEAR");
-	if (getprop("/gear/gear/wow") and (getprop("/controls/engines/engine[1]/throttle")>0.5 or getprop("/controls/engines/engine[2]/throttle")>0.5) and (getprop("/gear/gear[2]/steering-norm") != 0 or getprop("/gear/gear[3]/steering-norm") != 0))
+	if (getprop("/gear/gear/wow") and (getprop("/controls/engines/engine[1]/throttle")>0.5 or getprop("/controls/engines/engine[2]/throttle")>0.5) and (getprop("/gear/gear[1]/steering-norm") != 0 or getprop("/gear/gear[2]/steering-norm") != 0))
 		append(msgs_warning,">CONFIG GEAR CTR");
 	if (getprop("controls/flight/speedbrake") != 0 and getprop("/gear/gear/wow") and (getprop("/controls/engines/engine[1]/throttle")>0.5 or getprop("/controls/engines/engine[2]/throttle")>0.5))
 		append(msgs_warning,">CONFIG SPOILERS");	

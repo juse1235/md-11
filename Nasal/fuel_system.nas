@@ -85,7 +85,7 @@ var fuelsys = {
     update : func {
 	var select = [ 0, 0, 0, 0, 0 ];
 	var thru_flow = [ 0, 0, 0 ];
-	var electric = getprop("systems/electrical/AC_TIE_BUS") >= 98;
+	var electric = getprop("systems/electrical/AC_TIE_BUS") >= 98 or getprop("sim/model/start-idling");
 
 	me.fill_arm[3].setBoolValue(1);
 	me.fill_arm[4].setBoolValue(1);
@@ -134,7 +134,7 @@ var fuelsys = {
 	}
 
 	# Cut the pumps when there's no power:
-	if (getprop("systems/electrical/AC_TIE_BUS") < 98) {
+	if (!electric) {
 	    me.auto_manage.setBoolValue(0);
 	    for (var i=0; i<5; i+=1) {
 		me.xfer[i].setBoolValue(0);
@@ -250,7 +250,7 @@ var fuelsys = {
 	# Do any transfers:
 	if (manifold_o and manifold_p) me.transfers();
 	
-	settimer(func { me.update();},0.5);
+#	settimer(func { me.update();},0.5);
     },
 
     transfers : func {
@@ -373,8 +373,8 @@ var fuelsys = {
 	    # Tail tank is full
 	    if (me.lev[4].getValue() / me.density.getValue() >= me.cap[4].getValue() - 2.5)
 		me.tail_filled = 1;
-	    # Max 6.5% total fuel in tail tank
-	    if (me.lev[4].getValue() > me.total.getValue() * 0.065) {
+	    # Max 9.5% total fuel in tail tank
+	    if (me.lev[4].getValue() > me.total.getValue() * 0.095) {
 		me.tail_filled = 1;
 	    }
 	
@@ -397,11 +397,11 @@ var fuelsys = {
 			}
 		    }
 		} else {
-		# Every 30 minutes, transfer fuel fwd for 2.5 minutes
+		# Every 30 minutes, transfer fuel fwd for 1 minute
 		    me.ticks+= 1;
-		    if (me.ticks >= 3600) {
+		    if ((me.ticks * getprop("sim/speed-up")) >= 3600) {
 			xfer_fwd();
-			if (me.ticks >= 3900 and me.lev[4].getValue() < me.total.getValue() * 0.065)
+			if ((me.ticks * getprop("sim/speed-up")) >= 3720 and me.lev[4].getValue() < me.total.getValue() * 0.095)
 			    me.ticks = 0;
 		    }
 		    if (me.empty[4].getBoolValue()) me.tail_mgm_enable = 0;
@@ -569,9 +569,13 @@ var fuelsys = {
     }
 };
 var MD11fuel = fuelsys.new();
+var MD11fuel_update = func {
+	MD11fuel.update();
+	settimer(MD11fuel_update,0.5);
+}
 setlistener("/sim/signals/fdm-initialized", func {
 	MD11fuel.tail_mng();
-	MD11fuel.update();
+	MD11fuel_update();
 	MD11fuel.idle_fuelcon();
 },0,0);
 

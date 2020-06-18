@@ -33,10 +33,10 @@ var Engine = {
         m.fuel_pph=m.eng.getNode("fuel-flow_pph",1);
         m.fuel_pph.setDoubleValue(0);
         m.fuel_gph=m.eng.getNode("fuel-flow-gph",1);
-        m.hpump=props.globals.getNode("systems/hydraulics/pump-psi["~eng_num~"]",1);
+#       m.hpump=props.globals.getNode("systems/hydraulics/pump-psi["~eng_num~"]",1);
         m.running = props.globals.getNode("engines/engine["~eng_num~"]/run",1);
         m.running.setBoolValue(0);
-        m.hpump.setDoubleValue(0);
+#       m.hpump.setDoubleValue(0);
         m.apu = props.globals.getNode("controls/APU", 1);
         m.apu_knob = m.apu.getNode("off-start-run", 1);
         m.apu_status = m.apu.getNode("apu_status", 1);
@@ -142,20 +142,20 @@ var Engine = {
             {
                 if(me.starterSwitch.getValue() == -1)
                 {
-                    if(getprop("controls/electric/APU-generator")
-                            or getprop("engines/engine/run")
-                            or getprop("engines/engine[1]/run")
-                            or getprop("engines/engine[2]/run")
-                            or getprop("controls/electric/external-power")
-                            or getprop("controls/electric/external-power[1]")
-                    )
-                    {
+#                    if(getprop("controls/electric/APU-generator")
+#                            or getprop("engines/engine/run")
+#                            or getprop("engines/engine[1]/run")
+#                            or getprop("engines/engine[2]/run")
+#                            or getprop("controls/electric/external-power")
+#                            or getprop("controls/electric/external-power[1]")
+#                    )
+#                    {
                         me.spool_up();
-                    }
-                    else
-                    {
-                        settimer(func { me.starterSwitch.setValue(0);}, 0.3);
-                    }
+#                    }
+#                    else
+#                    {
+#                        settimer(func { me.starterSwitch.setValue(0);}, 0.3);
+#                    }
                 }else{
                     var tmprpm = me.rpm.getValue();
                     tmprpm -= getprop("sim/time/delta-realtime-sec") * 1.2;
@@ -167,7 +167,7 @@ var Engine = {
             var hpsi =me.rpm.getValue();
             if(hpsi>60)
                 hpsi = 60;
-            me.hpump.setValue(hpsi);
+#           me.hpump.setValue(hpsi);
         }
         if(getprop("sim/flight-model") == "jsb")
         {
@@ -316,7 +316,6 @@ var Engine = {
                 me.starterSwitch.setValue(0);
                 me.running.setBoolValue(1);
                 setprop("controls/lighting/cabin-lights",1);
-                setprop("controls/lighting/strobe",1);
             }
             if(tmprpm > 0)
             {

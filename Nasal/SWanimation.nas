@@ -137,8 +137,8 @@ setlistener("controls/fuel/xfeedaft-switch", func {
 		if(getprop("controls/fuel/xfeedaft-switch")) XFDAFTST.open();
 		else XFDAFTST.close();
 });
-setlistener("controls/fuel/jitteson-arm-switch", func {
-		if(getprop("controls/fuel/jitteson-arm-switch")) JTSNARMST.open();
+setlistener("controls/fuel/jetteson-arm-switch", func {
+		if(getprop("controls/fuel/jetteson-arm-switch")) JTSNARMST.open();
 		else JTSNARMST.close();
 });
 setlistener("controls/fuel/tank[0]/nozzle-switch", func {
@@ -180,22 +180,6 @@ setlistener("controls/lighting/wing-lights", func {
 setlistener("controls/lighting/cockpit", func {
 		if(getprop("controls/lighting/cockpit")) STRMST.open();
 		else STRMST.close();
-});
-setlistener("controls/hydraulics/system/LENG_switch", func {
-		if(getprop("controls/hydraulics/system/LENG_switch")) LENGST.open();
-		else LENGST.close();
-});
-setlistener("controls/hydraulics/system[2]/RENG_switch", func {
-		if(getprop("controls/hydraulics/system[2]/RENG_switch")) RENGST.open();
-		else RENGST.close();
-});
-setlistener("controls/hydraulics/system[1]/C1ELEC-switch", func {
-		if(getprop("controls/hydraulics/system[1]/C1ELEC-switch")) C1ELECST.open();
-		else C1ELECST.close();
-});
-setlistener("controls/hydraulics/system[1]/C2ELEC-switch", func {
-		if(getprop("controls/hydraulics/system[1]/C2ELEC-switch")) C2ELECST.open();
-		else C2ELECST.close();
 });
 setlistener("controls/anti-ice/window-heat-ls-switch", func {
 		if(getprop("controls/anti-ice/window-heat-ls-switch")) WHLSST.open();

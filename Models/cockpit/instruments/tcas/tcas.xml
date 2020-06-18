@@ -32,9 +32,9 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit0</object-name>
-        <property>instrumentation/transponder/id-code</property>
-        <factor>0.0001</factor>
-        <step>1000</step>
+        <property>instrumentation/transponder/inputs/display[0]</property>
+        <factor>0.1</factor>
+        <step>1</step>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -45,9 +45,9 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit1</object-name>
-        <property>instrumentation/transponder/id-code</property>
-        <factor>0.001</factor>
-        <step>100</step>
+        <property>instrumentation/transponder/inputs/display[1]</property>
+        <factor>0.1</factor>
+        <step>1</step>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -58,9 +58,9 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit2</object-name>
-        <property>instrumentation/transponder/id-code</property>
-        <factor>0.01</factor>
-        <step>10</step>
+        <property>instrumentation/transponder/inputs/display[2]</property>
+        <factor>0.1</factor>
+        <step>1</step>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -71,7 +71,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit3</object-name>
-        <property>instrumentation/transponder/id-code</property>
+        <property>instrumentation/transponder/inputs/display[3]</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
@@ -84,8 +84,7 @@
     <animation>
         <type>rotate</type>
         <object-name>TCAS.knob</object-name>
-        <object-name>IDT.btn</object-name>
-        <property>instrumentation/transponder/mode-switch</property>
+        <property>instrumentation/transponder/inputs/knob-pos</property>
         <factor>30</factor>
         <center>
             <x-m>0.0102</x-m>
@@ -101,10 +100,6 @@
 
     <animation>
         <type>select</type>
-        <object-name>digit0</object-name>
-        <object-name>digit1</object-name>
-        <object-name>digit2</object-name>
-        <object-name>digit3</object-name>
         <object-name>digit4</object-name>
         <condition>
             <greater-than>
@@ -114,6 +109,111 @@
         </condition>
     </animation>
 
+    <animation>
+	<type>select</type>
+	<object-name>digit0</object-name>
+	<condition>
+	    <and>
+		<not><property>instrumentation/transponder/inputs/clr[0]</property></not>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>digit1</object-name>
+	<condition>
+	    <and>
+		<not><property>instrumentation/transponder/inputs/clr[1]</property></not>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>digit2</object-name>
+	<condition>
+	    <and>
+		<not><property>instrumentation/transponder/inputs/clr[2]</property></not>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>digit3</object-name>
+	<condition>
+	    <and>
+		<not><property>instrumentation/transponder/inputs/clr[3]</property></not>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>clr0</object-name>
+	<condition>
+	    <and>
+		<property>instrumentation/transponder/inputs/clr[0]</property>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>clr1</object-name>
+	<condition>
+	    <and>
+		<property>instrumentation/transponder/inputs/clr[1]</property>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>clr2</object-name>
+	<condition>
+	    <and>
+		<property>instrumentation/transponder/inputs/clr[2]</property>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>clr3</object-name>
+	<condition>
+	    <and>
+		<property>instrumentation/transponder/inputs/clr[3]</property>
+		<greater-than>
+		    <property>systems/electrical/outputs/transponder</property>
+		    <value>15</value>
+		</greater-than>
+	    </and>
+	</condition>
+    </animation>
 
 
 <!--ATC/transponder configuration-->
@@ -160,62 +260,152 @@
         <object-name>TCAS.knob</object-name>
         <action>
             <button>0</button>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/transponder/mode-switch</property>
-                <step>1</step>
-                <min>0</min>
-                <max>4</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-    <animation>
-        <type>pick</type>
-        <object-name>TCAS.knob</object-name>
-        <action>
             <button>3</button>
             <binding>
                 <command>property-adjust</command>
-                <property>instrumentation/transponder/mode-switch</property>
+                <property>instrumentation/transponder/inputs/knob-pos</property>
                 <step>1</step>
                 <min>0</min>
-                <max>4</max>
+                <max>3</max>
                 <wrap>false</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>TCAS.knob</object-name>
         <action>
             <button>1</button>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/transponder/mode-switch</property>
-                <step>-1</step>
-                <min>0</min>
-                <max>4</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-    <animation>
-        <type>pick</type>
-        <object-name>TCAS.knob</object-name>
-        <action>
             <button>4</button>
             <binding>
                 <command>property-adjust</command>
-                <property>instrumentation/transponder/mode-switch</property>
+                <property>instrumentation/transponder/inputs/knob-pos</property>
                 <step>-1</step>
                 <min>0</min>
-                <max>4</max>
+                <max>3</max>
                 <wrap>false</wrap>
             </binding>
         </action>
     </animation>
 
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.1</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(1);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.2</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(2);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.3</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(3);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.4</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(4);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.5</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(5);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.6</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(6);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.7</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(7);</script>
+	    </binding>
+	</action>
+    </animation>
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.0</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_btns(0);</script>
+	    </binding>
+	</action>
+    </animation>
+
+    <animation>
+	<type>pick</type>
+	<object-name>tcas.clr</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_clr();</script>
+	    </binding>
+	</action>
+    </animation>
+
+    <animation>
+	<type>pick</type>
+	<object-name>IDENT.btn</object-name>
+	<action>
+	    <button>0</button>
+	    <repeatable>false</repeatable>
+	    <binding>
+		<command>nasal</command>
+		<script>MD11.xpnd_ident();</script>
+	    </binding>
+	</action>
+    </animation>
 
 </PropertyList>
+

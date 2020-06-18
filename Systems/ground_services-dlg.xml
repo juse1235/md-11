@@ -12,6 +12,7 @@
 	<hrule />
 		
 	<checkbox>
+		<halign>left</halign>
 		<label>Enable Primary External Power</label>
 		<property>controls/electric/external-power</property>
 		<binding>
@@ -20,6 +21,7 @@
 		<live>true</live>
 	</checkbox>
 	<checkbox>
+		<halign>left</halign>
 		<label>Enable Secondary External Power</label>
 		<property>controls/electric/external-power[1]</property>
 		<binding>
@@ -27,54 +29,74 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
+	<checkbox>
+		<halign>left</halign>
+		<label>Enable External Compressed Air</label>
+		<property>systems/pneumatic/air-service</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	<hrule />
+		
+	<group>
+	    <layout>hbox</layout>
+	    <group>
+		<layout>vbox</layout>
 		<checkbox>
-		<label>L1 Stairs</label>
-		<property>services/stairs/l1</property>
-		<binding>
+		    <label>L1 Stairs</label>
+		    <property>services/stairs/l1</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
-			<checkbox>
-		<label>L2 Stairs</label>
-		<property>services/stairs/l2</property>
-		<binding>
+		    </binding>
+		    <live>true</live>
+		</checkbox>
+		<checkbox>
+		    <label>L2 Stairs</label>
+		    <property>services/stairs/l2</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
-			<checkbox>
-		<label>L3 Stairs</label>
-		<property>services/stairs/l4</property>
-		<binding>
+		    </binding>
+		    <live>true</live>
+		</checkbox>
+		<checkbox>
+		    <label>L3 Stairs</label>
+		    <property>services/stairs/l4</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
-			<checkbox>
-		<label>R1 Stairs</label>
-		<property>services/stairs/l1_2</property>
-		<binding>
+		    </binding>
+		    <live>true</live>
+		</checkbox>
+	    </group>
+	    <group>
+		<layout>vbox</layout>
+		<checkbox>
+		    <label>R1 Stairs</label>
+		    <property>services/stairs/l1_2</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
-			<checkbox>
-		<label>R2 Stairs</label>
-		<property>services/stairs/l2_2</property>
-		<binding>
+		    </binding>
+		    <live>true</live>
+		</checkbox>
+		<checkbox>
+		    <label>R2 Stairs</label>
+		    <property>services/stairs/l2_2</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
-			<checkbox>
-		<label>R3 Stairs</label>
-		<property>services/stairs/l4_2</property>
-		<binding>
+	 	    </binding>
+		    <live>true</live>
+		</checkbox>
+		<checkbox>
+		    <label>R3 Stairs</label>
+		    <property>services/stairs/l4_2</property>
+		    <binding>
 			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
+		    </binding>
+		    <live>true</live>
+		</checkbox>
+	    </group>
+	</group>
 	
 	<hrule />
 	

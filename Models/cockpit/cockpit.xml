@@ -181,65 +181,9 @@
 		</offsets>
 </model>
 
-         <animation>
-		<type>material</type>
-		<object-name>PFD</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-1-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	         <animation>
-		<type>material</type>
-		<object-name>ND.screenL</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-2-norm</factor-prop>
-		</emission>
-	</animation>
-	
-		         <animation>
-		<type>material</type>
-		<object-name>ND.screenR</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-5-norm</factor-prop>
-		</emission>
-	</animation>
-	
-		         <animation>
-		<type>material</type>
-		<object-name>EAD 1</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-3-norm</factor-prop>
-		</emission>
-	</animation>
-	
-		<animation>
-		<type>material</type>
-		<object-name>EAD 2</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-4-norm</factor-prop>
-		</emission>
-	</animation>
-	
-
 <model>
 	<name>EAD 1</name>
-	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/EAD_1.xml</path>
+	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/EAD_1_GE.xml</path>
 			<offsets>
             <x-m>-27.5138</x-m>
             <y-m>-0.15</y-m>
@@ -250,7 +194,7 @@
 
 <model>
 	<name>EAD 2</name>
-	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/EAD_2.xml</path>
+	<path>Aircraft/MD-11/Models/cockpit/instruments/EAD/SD.xml</path>
 			<offsets>
             <x-m>-27.5138</x-m>
             <y-m>0.15</y-m>
@@ -269,18 +213,6 @@
 			<pitch-deg>-11.51</pitch-deg>
 		</offsets>
 </model>
-
-         <animation>
-		<type>material</type>
-		<object-name>PFD2</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/screen-6-norm</factor-prop>
-		</emission>
-	</animation>
-
 
 	<animation>
  <type>translate</type>
@@ -493,7 +425,7 @@
         <object-name>lg.right.green</object-name>
         <condition>
         <greater-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.99</value>
 		</greater-than>
        </condition>
@@ -505,11 +437,11 @@
         <condition>
         <and>
         <less-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.99</value>
 		</less-than>
     <greater-than>
-		<property>gear/gear[3]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<value>0.01</value>
 		</greater-than>
 		</and>
@@ -521,7 +453,7 @@
         <object-name>lg.ctr.green</object-name>
         <condition>
         <greater-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.99</value>
 		</greater-than>
        </condition>
@@ -533,11 +465,11 @@
         <condition>
         <and>
         <less-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.99</value>
 		</less-than>
     <greater-than>
-		<property>gear/gear[5]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<value>0.01</value>
 		</greater-than>
 		</and>
@@ -577,7 +509,7 @@
     <object-name>yoke.autodsg</object-name>
   <object-name>autopilot_disengage</object-name>
  <property>controls/flight/aileron</property>
- <factor>45</factor>
+ <factor>90</factor>
  <center>
   <x-m>-27.2846</x-m>
   <y-m>-0.524</y-m>
@@ -619,11 +551,6 @@
 				<value type="bool">false</value>
 			    </binding>
 			</mod-up>
-			<!--binding>
-				<command>property-assign</command>
-				<property>instrumentation/afds/inputs/AP</property>
-				<value>0</value>
-			</binding-->
 			<binding>
 				<command>nasal</command>
 				<script>MD11.afds.APyokebtn(); controls.click(1);</script>
@@ -678,7 +605,7 @@
    <object-name>yoke.nosedown.right</object-name>
     <object-name>yoke.autodsg.right</object-name>
  <property>controls/flight/aileron</property>
- <factor>45</factor>
+ <factor>90</factor>
  <center>
   <x-m>-27.2846</x-m>
   <y-m>0.524</y-m>
@@ -864,7 +791,7 @@
         </condition>
     </animation>
     
-        <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>flt_dr</object-name>
         <action>
@@ -882,7 +809,7 @@
                 </script>
             </binding>
         </action>
-    </animation>
+    </animation-->
  
 
 </PropertyList>

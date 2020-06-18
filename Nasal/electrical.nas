@@ -57,11 +57,6 @@ var lights_input=[];
 var lights_output=[];
 var lights_load=[];
 
-var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
-var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-aircraft.light.new("controls/lighting/beacon-state", [0.05, 2.0], beacon_switch);
-
 var APU = {
 	new : func(generator)
 	{
@@ -281,7 +276,7 @@ var init_switches = func{
     setprop("controls/electric/engine/bus-tie",1);
     setprop("controls/electric/engine[1]/bus-tie",1);
     setprop("controls/electric/engine[2]/bus-tie",1);
-    setprop("controls/APU/apu-gen-switch",1);
+    setprop("controls/APU/apu-gen-switch",0);
     setprop("controls/electric/engine/gen-bu-switch",1);
     setprop("controls/electric/engine[1]/gen-bu-switch",1);
     setprop("controls/electric/engine[2]/gen-bu-switch",1);
@@ -318,10 +313,10 @@ var init_switches = func{
     append(lights_input,props.globals.initNode("controls/lighting/taxi-lights",0,"BOOL"));
     append(lights_output,props.globals.initNode("systems/electrical/outputs/taxi-lights",0,"DOUBLE"));
     append(lights_load,1);
-    append(lights_input,props.globals.initNode("controls/lighting/beacon-state/state",0,"BOOL"));
+    append(lights_input,props.globals.initNode("sim/model/lights/beacon/state",0,"BOOL"));
     append(lights_output,props.globals.initNode("systems/electrical/outputs/beacon",0,"DOUBLE"));
     append(lights_load,1);
-    append(lights_input,props.globals.initNode("controls/lighting/strobe-state/state",0,"BOOL"));
+    append(lights_input,props.globals.initNode("sim/model/lights/strobe/state",0,"BOOL"));
     append(lights_output,props.globals.initNode("systems/electrical/outputs/strobe",0,"DOUBLE"));
     append(lights_load,1);
 

@@ -24,17 +24,17 @@
             <count type="int">2</count>
         </signals>
         <signals include="Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
-            <count type="int">3</count>
+            <count type="int">6</count>
         </signals>
         <signals include="Aircraft/Generic/flightrecorder/components/tanks.xml">
-            <count type="int">3</count>
+            <count type="int">5</count>
         </signals>
 
         <signals>  <!-- now the custom properties -->
 
             <signals>
                 <!--  engine related signals -->
-                <count type="int">2</count>
+                <count type="int">3</count>
                 <signal>
                     <type>bool</type><property type="string">controls/engines/engine[%i]/cutoff</property>
                 </signal>
@@ -101,6 +101,9 @@
                 <type>bool</type><property type="string">instrumentation/afds/inputs/AP</property>
             </signal>
             <signal>
+                <type>bool</type><property type="string">controls/switches/apoffsound</property>
+            </signal>
+            <signal>
                 <type>bool</type><property type="string">instrumentation/afds/inputs/loc-armed</property>
             </signal>
             <signal>
@@ -162,13 +165,14 @@
                 <type>float</type>
                 <property type="string">gear/gear[3]/compression-m</property>
             </signal>
+			
             <signal>
                 <type>float</type>
-                <property type="string">gear/gear[4]/compression-m</property>
+                <property type="string">gear/gear[1]/angle-deg</property>
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">gear/gear[5]/compression-m</property>
+                <property type="string">gear/gear[2]/angle-deg</property>
             </signal>
 
             <signal>
@@ -187,19 +191,19 @@
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">surface-positions/speedbrake-pos-norm</property>
+		<property type="string">engines/engine[0]/reverser-pos-norm</property>
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">surface-positions/reverser-norm[0]</property>
+		<property type="string">engines/engine[1]/reverser-pos-norm</property>
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">surface-positions/reverser-norm[1]</property>
+		<property type="string">engines/engine[2]/reverser-pos-norm</property>
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">surface-positions/reverser-norm[2]</property>
+                <property type="string">surface-positions/slats</property>
             </signal>
 
         </signals>

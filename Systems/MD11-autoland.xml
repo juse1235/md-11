@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- McDonnell Douglas DC-10 -->
+<!-- McDonnell Douglas MD-11 -->
 <!-- Autoland system -->
 
 <!-- The autoland is a separate system to save complexity -->
@@ -67,10 +67,10 @@
 					<value>50</value>
 				</less-than>
 				<not>
-					<property>gear/gear[2]/wow</property>
+					<property>gear/gear[1]/wow</property>
 				<not>
 				</not>
-					<property>gear/gear[3]/wow</property>
+					<property>gear/gear[2]/wow</property>
 				</not>
 				<not>
 					<property>autopilot/autoland/rollout-phase</property>
@@ -84,8 +84,8 @@
 		<input>
 			<and>
 				<property>autopilot/autoland/engaged</property>
+				<property>gear/gear[1]/wow</property>
 				<property>gear/gear[2]/wow</property>
-				<property>gear/gear[3]/wow</property>
 				<not>
 					<property>gear/gear[0]/wow</property>
 				</not>

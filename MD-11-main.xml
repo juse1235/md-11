@@ -5,55 +5,88 @@
 <PropertyList>
 
     <sim>
-	<author>Juuso Tapaninen</author>
-	<status>alpha</status>
+	<author>jormapaappa1235, tikibar, and Joshua Davidson (it0uchpods/411)</author>
+	<status>beta</status>
         <rating>
             <FDM type="int">4</FDM>
-            <systems type="int">3</systems>
+            <systems type="int">4</systems>
             <cockpit type="int">3</cockpit>
             <model type="int">5</model>
         </rating>
-    <shutterspeed type="double">0.18</shutterspeed>
-		<instrument-options>
-			<canvas-popup-enable type="bool">true</canvas-popup-enable>
-		</instrument-options>
+	<shutterspeed type="double">0.18</shutterspeed>
+	<instrument-options>
+	    <canvas-popup-enable type="bool">true</canvas-popup-enable>
+	</instrument-options>
 		
-				<navdb>
-			<!-- exclude any airports with runways shorter than this from
-			searches, NavDisplay, etc. Note this is a lower-limit - real (safe)
-			value is much higher depending on load, fuel, OAT -->
-			<min-runway-length-ft>4500</min-runway-length-ft>
-		</navdb>
+	<navdb>
+	<!-- exclude any airports with runways shorter than this from
+	searches, NavDisplay, etc. Note this is a lower-limit - real (safe)
+	value is much higher depending on load, fuel, OAT -->
+	    <min-runway-length-ft>4500</min-runway-length-ft>
+	</navdb>
 		
-     <fuel-fraction>0.5</fuel-fraction>
+	<fuel-fraction>0.5</fuel-fraction>
 
+	<hud>   
+	    <enable3d n="1">false</enable3d>
+	</hud>
+		
 	<view n="0">
 	    <name>Captain View</name>
 	    <internal type="bool" archive="y">true</internal>
 	    <config>
-	    	         <limits>
-        <enabled archive="y" type="bool">false</enabled>
-     </limits>
+		<limits>
+		    <enabled archive="y" type="bool">false</enabled>
+		</limits>
 		<x-offset-m archive="y">-0.5238</x-offset-m>
 		<y-offset-m archive="y">7.2709</y-offset-m>
 		<z-offset-m archive="y">-26.8</z-offset-m>
-    <default-field-of-view-deg type="double">80</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 	    </config>
 	</view>
 	<view n="100">
+	    <name>Wing View</name>
+	    <type>lookfrom</type>
+	    <enabled type="bool">true</enabled>
+	    <internal type="bool" archive="y">true</internal>
+	    <config>
+		<from-model type="bool">true</from-model>
+		<x-offset-m archive="y">3.53</x-offset-m>
+		<y-offset-m archive="y">6.96</y-offset-m>
+		<z-offset-m archive="y">7.11</z-offset-m>
+		<default-field-of-view-deg type="double">97.4</default-field-of-view-deg>
+		<heading-offset-deg archive="y">250</heading-offset-deg>
+		<pitch-offset-deg archive="y">-5</pitch-offset-deg>
+	    </config>
+	</view>
+	<view n="101">
 	    <name>First Officer View</name>
 	    <type>lookfrom</type>
+	    <enabled type="bool">true</enabled>
 	    <internal type="bool" archive="y">true</internal>
 	    <config>
 		<from-model type="bool">true</from-model>
 		<x-offset-m archive="y">0.5238</x-offset-m>
 		<y-offset-m archive="y">7.2709</y-offset-m>
-		<z-offset-m archive="y">-26.5961</z-offset-m>
-      <default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
+		<z-offset-m archive="y">-26.8</z-offset-m>
+		<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
+	    </config>
+	</view>
+	<view n="102"> 
+	    <name>Overhead Panel</name>
+	    <type>lookfrom</type>
+	    <enabled type="bool">true</enabled>
+	    <internal type="bool" archive="y">true</internal>
+	    <config>
+		<from-model type="bool">true</from-model>
+		<x-offset-m archive="y">0.0</x-offset-m>
+		<y-offset-m archive="y">7.2709</y-offset-m>
+		<z-offset-m archive="y">-26.4</z-offset-m>
+		<pitch-offset-deg archive="y">30.0</pitch-offset-deg>
+		<default-field-of-view-deg type="double">65.5</default-field-of-view-deg>
 	    </config>
 	</view>
 	<chase-distance-m type="double">-100</chase-distance-m>
-
 
 	<weight n="0">
 	    <name>Crew</name>
@@ -61,13 +94,6 @@
 	    <max-lb>600</max-lb>
 	    <min-lb>120</min-lb>
 	</weight>
-	<weight n="1">
-	    <weight-lb>100000</weight-lb>
-	    <max-lb>142700</max-lb>
-	    <min-lb>0</min-lb>
-	</weight>
-	
-
 
         <menubar n="0">
             <default n="0">
@@ -81,13 +107,13 @@
                         </binding>
                     </item>
                     <item >
-						<label>Handy Viewer</label>
-						<name>handyviewer</name>
-						<binding>
-							<command>dialog-show</command>
-							<dialog-name>handyviewer</dialog-name>
-						</binding>
-					</item>
+			<label>Handy Viewer</label>
+			<name>handyviewer</name>
+			<binding>
+			    <command>dialog-show</command>
+			    <dialog-name>handyviewer</dialog-name>
+			</binding>
+		    </item>
 		    <item>
 			<label>Doors</label>
 			<binding>
@@ -139,24 +165,32 @@
         
         	        <multiplay>
             <generic>
-                <int n="0" alias="/systems/electrical/outputs/strobe"/>
-                <int n="1" alias="/systems/electrical/outputs/beacon"/>
+                <int n="0" alias="/systems/electrical/lighting/strobe"/>
+                <int n="1" alias="/systems/electrical/lighting/beacon"/>
                 <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-                <int n="3" alias="/systems/electrical/outputs/logo-lights"/>
-                <int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
-                <int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
-                <int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
-                <int n="7" alias="/systems/electrical/outputs/nav-lights"/>
+                <int n="3" alias="/systems/electrical/lighting/logo-lights"/>
+                <int n="4" alias="/systems/electrical/lighting/landing-light[0]"/>
+                <int n="5" alias="/systems/electrical/lighting/landing-light[1]"/>
+                <int n="6" alias="/systems/electrical/lighting/landing-light[2]"/>
+                <int n="7" alias="/systems/electrical/lighting/nav-lights"/>
                 <int n="8" alias="/systems/electrical/outputs/cabin-lights"/>
+                <int n="9" alias="/systems/electrical/lighting/wing-lights"/>
 
                 <float n="0" alias="/gear/gear[0]/compression-m"/>
                 <float n="1" alias="/gear/gear[1]/compression-m"/>
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[3]/compression-m"/>
-                <float n="4" alias="/gear/gear[4]/compression-m"/>
-                <float n="5" alias="/gear/gear[5]/compression-m"/>
+                <float n="4" alias="/gear/gear[1]/angle-deg"/>
+                <float n="5" alias="/gear/gear[2]/angle-deg"/>
                 <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
-                <float n="7" alias="/surface-positions/reverser-norm"/>
+                <float n="7" alias="/engines/engine[0]/reverser-pos-norm"/>
+                <float n="8" alias="/engines/engine[1]/reverser-pos-norm"/>
+                <float n="9" alias="/engines/engine[2]/reverser-pos-norm"/>
+                <float n="10" alias="/gear/gear[0]/steering-norm"/>
+                <float n="11" alias="/gear/gear[0]/rollspeed-ms"/>
+                <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
+                <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
+                <float n="14" alias="/gear/gear[3]/rollspeed-ms"/>
                 <string  alias="/sim/multiplay/callsign"/>
             </generic>
         </multiplay>
@@ -166,7 +200,7 @@
             <parkpos-offset-m type="double">0.0</parkpos-offset-m>
         </dimensions>
         <aircraft-class type="string">gate</aircraft-class>
-        <aircraft-operator>FIN</aircraft-operator>
+        <aircraft-operator>KLM</aircraft-operator>
         <aircraft-data>
             <path>sim/dimensions/radius-m</path>
             <path>sim/dimensions/parkpos-offset-m</path>
@@ -183,13 +217,13 @@
         
 	<flaps>
 	    <setting>0.00</setting>	<!-- 0 -->
-	    <setting>0.44</setting>	<!-- 22 -->
-	    <setting>0.56</setting>	<!-- 28-->
+	    <setting>0.31</setting>	<!-- 15 -->
+	    <setting>0.58</setting>	<!-- 28-->
 	    <setting>0.70</setting>	<!-- 35 -->
 	    <setting>1.00</setting>	<!-- 50 -->
 	</flaps>
         
-                <systems>
+	<systems>
             <path>Aircraft/MD-11/Systems/systems.xml</path>
 
             <!--  fast running autopilot rules (running at FDM frequency / 120Hz) -->
@@ -205,6 +239,12 @@
             <autopilot>
                 <path>Aircraft/MD-11/Systems/MD11-autoland.xml</path>
             </autopilot>
+	    <autopilot>
+		<path>Aircraft/MD-11/Systems/MD11-flt-ctrls.xml</path>
+	    </autopilot>
+	    <autopilot>
+		<path>Aircraft/MD-11/Systems/pressurization.xml</path>
+	    </autopilot>
             <!--autopilot>
                 <name>Autobrake system</name>
                 <path>Aircraft/MD-11/Systems/MD11-autobrake.xml</path>
@@ -217,15 +257,18 @@
             <property-rule n="101">
                 <path>Aircraft/MD-11/Systems/MD11-PFD.xml</path>
             </property-rule>
+			<property-rule n="102">
+                <path>Sounds/MD11-sound-variables.xml</path>
+            </property-rule>
         </systems>
         
-          <instrumentation>
+        <instrumentation>
             <path>Aircraft/MD-11/Systems/instrumentation.xml</path>
         </instrumentation>
 
 	
         <sound>
-	    <path>Aircraft/MD-11/Sounds/MD-11-external-sound.xml</path>
+	    <path>Aircraft/MD-11/Sounds/MD11-sound.xml</path>
             <stall type="bool">0</stall>
             <click1 type="bool">0</click1>
             <click2 type="bool">0</click2>
@@ -239,12 +282,13 @@
             <cabinalert type="bool">0</cabinalert>
         </sound>	
 	
-	        <hud>
+	<hud>
             <enable3d>false</enable3d>
         </hud>
         
         <virtual-cockpit>true</virtual-cockpit>
         <allow-toggle-cockpit>true</allow-toggle-cockpit>
+       	<flight-recorder include="Systems/flight-recorder.xml"/>
         
     </sim>
     
@@ -252,17 +296,17 @@
 
     <engines n="0">
         <engine n="0">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
         <engine n="1">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
         <engine n="2">
-        <n1-limit type="double">98.5</n1-limit>
+        <n1-limit type="double">107.4</n1-limit>
         </engine>
     </engines>
     
-        <gear n="0">
+    <gear n="0">
         <gear n="0">
             <tyre-smoke type="bool">0</tyre-smoke>
             <sprayspeed-ms type="double">0</sprayspeed-ms>
@@ -284,19 +328,9 @@
             <sprayspeed-ms type="double">0</sprayspeed-ms>
             <spray-density type="double">0</spray-density>
         </gear>
-        <gear n="4">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
-        <gear n="5">
-            <tyre-smoke type="bool">0</tyre-smoke>
-            <sprayspeed-ms type="double">0</sprayspeed-ms>
-            <spray-density type="double">0</spray-density>
-        </gear>
     </gear>
     
-        <consumables n="0">
+    <consumables n="0">
         <fuel>
             <tank n="0"><name>LH Main</name></tank>
             <tank n="1"><name>Center</name></tank>
@@ -338,7 +372,7 @@
                 <desc>Radio Stack</desc>
                 <binding>
                     <command>nasal</command>
-                    <script>dialogs.Radio.open()</script>
+                    <script>dialogs.Radio.toggle()</script>
                 </binding>
             </key>
             <key n="1">
@@ -353,8 +387,8 @@
                 <name>Ctrl-G</name>
                 <desc>APP mode arm</desc>
                 <binding>
-					<command>nasal</command>
-					<script>MD11.afds.input(3,1);</script>
+		    <command>nasal</command>
+		    <script>MD11.afds.input(3,1);</script>
                 </binding>
             </key>
             <key n="8">
@@ -505,6 +539,7 @@
                     <value type="int">1</value>
                     <value type="int">2</value>
                     <value type="int">3</value>
+	            <value type="int">4</value>
                 </binding>
 	    </key>
 		
@@ -593,7 +628,7 @@
                 </category-13>
             </configuration-module>
             <voice>
-                <file-prefix type="string">Sounds/mk-viii/</file-prefix>
+                <file-prefix type="string">Aircraft/MD-11/Sounds/mk-viii/</file-prefix>
             </voice>
             <inputs>                            <!-- Module I/O -->
                 <arinc429>
@@ -613,7 +648,7 @@
             <speaker>                           <!-- Speaker Configuration -->
                 <max-dist type="double"> 200.0 </max-dist>        <!-- Max. distance where speaker is heard -->
                 <reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
-                <volume type="double"> 0.6 </volume>          <!-- Volume at reference distance -->
+                <volume type="double"> 1.0 </volume>          <!-- Volume at reference distance -->
             </speaker>
         </mk-viii>
         <tcas>
@@ -700,11 +735,14 @@
                 <source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
             </frequencies>
         </dme>
-        <transponder>
-            <serviceable>true</serviceable>
-            <id-code>1200</id-code>
-            <mode-switch>4</mode-switch>
-        </transponder>
+	<transponder>
+	    <inputs>
+		<knob-pos type="int">0</knob-pos>
+		<knob-mode type="int">0</knob-mode>
+	    </inputs>
+	    <id-code type="string">1200</id-code>
+            <serviceable type="bool">true</serviceable>
+	</transponder>
         <encoder>
             <serviceable>true</serviceable>
         </encoder>
@@ -724,6 +762,9 @@
     </instrumentation>    
     
     <controls n="0">
+	<flight>
+	    <droop type="bool">0</droop>
+	</flight>
         <gear>
             <brake-parking type="bool">1</brake-parking>
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
@@ -742,9 +783,6 @@
         <ovhd-panel-norm type="double">0.5</ovhd-panel-norm>
         <pedestal-panel-norm type="double">0.5</pedestal-panel-norm>
         </lighting>
-        <!--flight>
-            <speedbrake-lever type="bool">0</speedbrake-lever>
-        </flight-->
 	<cabin>
 		<NoSmoking-knob type="int" >1 </NoSmoking-knob>
 		<SeatBelt-knob type="int" >1 </SeatBelt-knob>
@@ -776,7 +814,6 @@
 		</settings>
     </autopilot>
 
-
     <systems>
 	<autobrakes>
 	    <serviceable type="bool">true</serviceable>
@@ -786,42 +823,48 @@
 	    <deceleration-fps_sec type="double">0.0</deceleration-fps_sec>
 	</autobrakes>
     </systems>
-    
-
-
 
     <nasal n="0">
         <MD11>
-            <file>Aircraft/MD-11/Nasal/Air.nas</file>
-            <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
-            <file>Aircraft/MD-11/Nasal/electrical.nas</file>
-            <file>Aircraft/MD-11/Nasal/engine.nas</file>
-            <file>Aircraft/MD-11/Nasal/Hydraulics.nas</file>
-            <file>Aircraft/MD-11/Nasal/systems.nas</file>
-            <file>Aircraft/MD-11/Nasal/tyresmoke.nas</file>
-            <file>Aircraft/MD-11/Nasal/gpws.nas</file>
             <file>Aircraft/MD-11/Nasal/brakesystem.nas</file>
             <file>Aircraft/MD-11/Nasal/ground_steering.nas</file>
+            <file>Aircraft/MD-11/Nasal/electrical.nas</file>
+            <file>Aircraft/MD-11/Nasal/engine.nas</file>
+            <file>Aircraft/MD-11/Nasal/systems.nas</file>
+            <file>Aircraft/MD-11/Nasal/warnsystem.nas</file>
+            <file>Aircraft/MD-11/Nasal/gpws.nas</file>
+            <file>Aircraft/MD-11/Nasal/tyresmoke.nas</file>
             <file>Aircraft/MD-11/Models/cockpit/instruments/ND/ND.nas</file>
             <file>Aircraft/Generic/limits.nas</file>
-            <file>Aircraft/MD-11/Nasal/warnsystem.nas</file>
             <file>Aircraft/MD-11/Nasal/doors.nas</file>
             <file>Aircraft/MD-11/Nasal/fuel_system.nas</file>
-            <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
             <file>Aircraft/MD-11/Nasal/wipers.nas</file>
+            <file>Aircraft/MD-11/Nasal/AFDS.nas</file>
 	    <file>Aircraft/MD-11/Nasal/speedbrakes.nas</file>
 	    <file>Aircraft/MD-11/Nasal/autobrakes.nas</file>
+	    <file>Aircraft/MD-11/Nasal/transponder.nas</file>
+            <file>Aircraft/MD-11/Nasal/pneumatic.nas</file>
+            <file>Aircraft/MD-11/Nasal/SWanimation.nas</file>
+            <file>Aircraft/MD-11/Nasal/gear-tilt.nas</file>
         </MD11>
+	<hydraulics>
+            <file>Aircraft/MD-11/Nasal/hydraulic.nas</file>
+	</hydraulics>
+	<pressurization>
+	    <file>Aircraft/MD-11/Nasal/cabin-pressure.nas</file>
+	</pressurization>
         <dialogs>
             <file>Aircraft/MD-11/Nasal/dialogs.nas</file>
         </dialogs>
         <cdu>
-            <file>Aircraft/MD-11/Models/cockpit/instruments/cdu/boeing.nas</file>
+            <file>Aircraft/MD-11/Nasal/boeing_cdu.nas</file>
         </cdu>
-        <walk><file>Aircraft/MD-11/Nasal/walk.nas</file></walk>
+        <walk>
+	    <file>Aircraft/MD-11/Nasal/walk.nas</file>
+	</walk>
     </nasal>
     
-        <limits n="0">
+    <limits n="0">
         <max-flap-extension-speed>
             <flaps>0.44</flaps>
             <speed>220</speed>
@@ -843,6 +886,5 @@
         <max-positive-g>2.5</max-positive-g>
         <max-negative-g>-1.76</max-negative-g>
     </limits>
-    
 
 </PropertyList>

@@ -5,18 +5,6 @@
 	<path>rednav.ac</path>
 
 	<!-- ANIMATIONS -->
-	<!-- On/off -->
-<animation>
-	<type>select</type>
-	<object-name>Light</object-name>
-	<condition>
-		<equals>
-			<property>controls/lighting/beacon-state/state</property>
-			<value>1</value>
-		</equals>
-	</condition>
-</animation>
-
 	<!-- Billboard animation -->
 	<animation>
 		<name>Billboard</name>

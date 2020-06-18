@@ -49,6 +49,17 @@
 </model>
 
 <model>
+	<name>stby-alt</name>
+	<path>Aircraft/MD-11/Models/cockpit/instruments/stby-alt/stby-alt.xml</path>
+			<offsets>
+      <x-m>-27.473</x-m>
+      <y-m>-0.047</y-m>
+      <z-m>6.7501</z-m>
+			<pitch-deg>-20.12</pitch-deg>
+		</offsets>
+</model>
+
+<model>
 	<name>brakes</name>
 	<path>Aircraft/MD-11/Models/cockpit/instruments/brakes/brakes.xml</path>
 			<offsets>
@@ -240,7 +251,7 @@
 		<object-name>throttle.1</object-name>
 		<object-name>reverse.1</object-name>
 		<object-name>throttle.1.circle</object-name>
-        <property>controls/engines/engine/throttle-lever</property>
+        <property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -275,7 +286,7 @@
 		<object-name>reverse.1</object-name>
 		<property>engines/engine[0]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -284,9 +295,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 	
@@ -323,7 +334,7 @@
 		<object-name>throttle.2</object-name>
 		<object-name>reverse.2</object-name>
 		<object-name>throttle.2.circle</object-name>
-        <property>controls/engines/engine[1]/throttle-lever</property>
+        <property>controls/engines/engine[1]/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -358,7 +369,7 @@
 		<object-name>reverse.2</object-name>
 		<property>engines/engine[1]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -367,9 +378,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 	
@@ -406,7 +417,7 @@
 		<object-name>throttle.3</object-name>
 		<object-name>throttle.3.circle</object-name>
 		<object-name>reverse.3</object-name>
-        <property>controls/engines/engine[2]/throttle-lever</property>
+        <property>controls/engines/engine[2]/throttle</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-20</dep></entry>
 			<entry><ind>1.0</ind><dep>20</dep></entry>
@@ -441,7 +452,7 @@
 		<object-name>reverse.3</object-name>
 		<property>engines/engine[2]/reverser-pos-norm</property>
 		<interpolation>
-			<entry><ind>0.6</ind><dep>70.0</dep></entry>
+			<entry><ind>0.6</ind><dep>85.0</dep></entry>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 		</interpolation>
 		<axis>
@@ -450,9 +461,9 @@
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-27.0868</x-m>
+			<x-m>-27.14</x-m>
 			<y-m>0</y-m>
-			<z-m>6.8224</z-m>
+			<z-m>6.83</z-m>
 		</center>
 	</animation>
 
@@ -683,8 +694,35 @@
 		</center>
 	</animation>
 	
+	<animation>
+        <type>rotate</type>
+        <object-name>flaplever</object-name>
+        <object-name>flaplever.2</object-name>
+        <object-name>flaplever.3</object-name>
+        <property>controls/flight/slats</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>-13</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-27.125</x-m>
+            <y-m>0</y-m>
+            <z-m>6.6837</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
-	    <animation>
+	<animation>
         <type>rotate</type>
         <object-name>flaplever</object-name>
         <object-name>flaplever.2</object-name>
@@ -693,23 +731,23 @@
         <interpolation>
             <entry>
                 <ind>0</ind>
-                <dep>-13.28</dep>
+                <dep>-13</dep>
             </entry>
             <entry>
-                <ind>0.44</ind>
-                <dep>8.3</dep>
+                <ind>0.31</ind>
+                <dep>13</dep>
             </entry>
             <entry>
-                <ind>0.56</ind>
-                <dep>18</dep>
+                <ind>0.58</ind>
+                <dep>24</dep>
             </entry>
             <entry>
                 <ind>0.7</ind>
-                <dep>32.50</dep>
+                <dep>35</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
-                <dep>51.69</dep>
+                <dep>51</dep>
             </entry>
         </interpolation>
         <center>
@@ -781,6 +819,28 @@
         </action>
     </animation>
   
+ 	<animation>
+		<type>select</type>
+        <object-name>spdbrklever</object-name>
+		<condition>
+			<equals>
+    	    	<property>controls/flight/autospeedbrakes-armed</property>
+				<value>false</value>
+			</equals>
+		</condition>
+	</animation>
+	
+ 	<animation>
+		<type>select</type>
+        <object-name>spdbrklever2</object-name>
+		<condition>
+			<equals>
+    	    	<property>controls/flight/autospeedbrakes-armed</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+  
       <animation>
         <type>rotate</type>
         <object-name>spdbrklever</object-name>
@@ -791,6 +851,31 @@
             <entry><ind>1</ind><dep>10</dep></entry>
             <entry><ind>2</ind><dep>25</dep></entry>
             <entry><ind>3</ind><dep>35</dep></entry>
+            <entry><ind>4</ind><dep>60</dep></entry>
+        </interpolation>
+		<center>
+			<x-m>-27.1287</x-m>
+			<y-m>0.1535</y-m>
+			<z-m>6.6702</z-m>
+		</center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+      <animation>
+        <type>rotate</type>
+        <object-name>spdbrklever2</object-name>
+        <object-name>spdbrklever2.circle</object-name>
+        <property>controls/flight/speedbrake-lever</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>-10</dep></entry>
+            <entry><ind>1</ind><dep>10</dep></entry>
+            <entry><ind>2</ind><dep>25</dep></entry>
+            <entry><ind>3</ind><dep>35</dep></entry>
+            <entry><ind>4</ind><dep>60</dep></entry>
         </interpolation>
 		<center>
 			<x-m>-27.1287</x-m>
@@ -807,8 +892,9 @@
         <animation>
         <type>pick</type>
         <object-name>spdbrklever</object-name>
+        <object-name>spdbrklever2</object-name>
         <action>
-            <button>0</button>
+            <button>4</button>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/flight/speedbrake-lever</property>
@@ -822,14 +908,28 @@
     <animation>
         <type>pick</type>
         <object-name>spdbrklever</object-name>
+        <object-name>spdbrklever2</object-name>
         <action>
-            <button>1</button>
+            <button>3</button>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/flight/speedbrake-lever</property>
                 <step>-1</step>
                 <min>0</min>
                 <max>2</max>
+            </binding>
+        </action>
+    </animation>
+	
+    <animation>
+        <type>pick</type>
+        <object-name>spdbrklever</object-name>
+        <object-name>spdbrklever2</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/flight/autospeedbrakes-armed</property>
             </binding>
         </action>
     </animation>

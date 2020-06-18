@@ -5,16 +5,6 @@
 	<path>greennav.ac</path>
 
 	<!-- ANIMATIONS -->
-	<!-- On/off -->
-	<animation>
-		<name>On/off</name>
-		<type>select</type>
-		<object-name>Light</object-name>
-		<condition>
-			<property>controls/lighting/nav-lights</property>
-		</condition>
-	</animation>
-
 	<!-- Billboard animation -->
 	<animation>
 		<name>Billboard</name>

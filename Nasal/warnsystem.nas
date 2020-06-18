@@ -251,7 +251,7 @@ var WEU =
         # calculate flap target speed
         if (me.flaps_tgt<0.01)            # flap up
         {
-			if(!(getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow")))
+			if(!(getprop("gear/gear[1]/wow") or getprop("gear/gear[1]/wow")))
 			{
 				me.takeoff_mode.setValue(0);
 			}
@@ -263,7 +263,7 @@ var WEU =
         elsif (me.flaps_tgt<0.167)        # flap 5
         {
             target_speed = me.fl1.getValue();
-			if(getprop("gear/gear[1]/wow") and getprop("gear/gear[2]/wow"))
+			if(getprop("gear/gear[1]/wow") and getprop("gear/gear[1]/wow"))
 			{
 				me.takeoff_mode.setValue(1);
 			}
@@ -312,7 +312,7 @@ var WEU =
 		{
 			me.stall_warning.setValue(1);
 		}
-		elsif(getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow"))
+		elsif(getprop("gear/gear[1]/wow") or getprop("gear/gear[1]/wow"))
 		{
 			me.stall_warning.setValue(0);
 		}

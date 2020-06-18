@@ -5,6 +5,11 @@
 		<name>Panel lighting</name>
 		<type>material</type>
 		<object-name>screenselector.text</object-name>
+		<object-name>config.text</object-name>
+		<object-name>status.text</object-name>
+		<object-name>misc.text</object-name>
+        <object-name>conseq.text</object-name>
+		<object-name>nd.text</object-name>
 		<emission>
 			<red>1.5</red>
 			<green>1.27</green>
@@ -305,5 +310,81 @@
 			<z-m>0.0053</z-m>
 		</center>
 	</animation>
+	
+	<animation>
+		<type>pick</type>
+        <object-name>config</object-name>
+        <object-name>config.text</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/sd/mode</property>
+				<value>CONFIG</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+        <object-name>status</object-name>
+        <object-name>status.text</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/sd/mode</property>
+				<value>STATUS</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+        <object-name>misc</object-name>
+        <object-name>misc.text</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/sd/mode</property>
+				<value>MISC</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+        <object-name>conseq</object-name>
+        <object-name>conseq.text</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/sd/mode</property>
+				<value>CONSEQ</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+        <object-name>nd</object-name>
+        <object-name>nd.text</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/sd/mode</property>
+				<value>ND</value>
+			</binding>
+		</action>
+	</animation>
+ 
  
 </PropertyList>
